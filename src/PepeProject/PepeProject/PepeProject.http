@@ -1,0 +1,6 @@
+@PepeProject_HostAddress = http://localhost:5295
+
+GET {{PepeProject_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
