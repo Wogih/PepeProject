@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using System.Reflection;
 
 namespace PepeProject.Controllers
 {
@@ -107,6 +108,15 @@ namespace PepeProject.Controllers
 
             Summaries.RemoveAt(index);
             return Ok();
+        }
+
+        [HttpGet("version")]
+        public IActionResult GetVersion()
+        {
+            var assembly = Assembly.GetExecutingAssembly();
+            var version = assembly.GetCustomAttribute<AssemblyInformationalVersionAttribute>()?.InformationalVersion;
+            Console.WriteLine($"ASP.NET Core version: {version}");
+            return Ok($"Version: {version}");
         }
     }
 }

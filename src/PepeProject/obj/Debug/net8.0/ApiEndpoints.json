@@ -99,5 +99,15 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PepeProject.Controllers.WeatherForecastController",
+    "Method": "GetVersion",
+    "RelativePath": "WeatherForecast/version",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
   }
 ]
