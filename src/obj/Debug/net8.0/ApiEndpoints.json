@@ -1,67 +1,40 @@
 [
   {
-    "ContainingType": "PepeProject.Controllers.WeatherForecastController",
+    "ContainingType": "PepeProject.Controllers.UserController",
     "Method": "GetAll",
-    "RelativePath": "WeatherForecast",
+    "RelativePath": "api/User",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [
-      {
-        "Name": "sortIndex",
-        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "IsRequired": false
-      }
-    ],
+    "Parameters": [],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "PepeProject.Controllers.WeatherForecastController",
+    "ContainingType": "PepeProject.Controllers.UserController",
     "Method": "Add",
-    "RelativePath": "WeatherForecast",
+    "RelativePath": "api/User",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "name",
-        "Type": "System.String",
-        "IsRequired": false
+        "Name": "user",
+        "Type": "PepeProject.Contracts.User.CreateUserRequest",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "PepeProject.Controllers.WeatherForecastController",
-    "Method": "Update",
-    "RelativePath": "WeatherForecast",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "index",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "name",
-        "Type": "System.String",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "PepeProject.Controllers.WeatherForecastController",
+    "ContainingType": "PepeProject.Controllers.UserController",
     "Method": "Delete",
-    "RelativePath": "WeatherForecast",
+    "RelativePath": "api/User",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "index",
+        "Name": "id",
         "Type": "System.Int32",
         "IsRequired": false
       }
@@ -69,15 +42,15 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "PepeProject.Controllers.WeatherForecastController",
-    "Method": "GetByIndex",
-    "RelativePath": "WeatherForecast/{index}",
+    "ContainingType": "PepeProject.Controllers.UserController",
+    "Method": "GetById",
+    "RelativePath": "api/User/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "index",
+        "Name": "id",
         "Type": "System.Int32",
         "IsRequired": true
       }
@@ -85,29 +58,24 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "PepeProject.Controllers.WeatherForecastController",
-    "Method": "FindByName",
-    "RelativePath": "WeatherForecast/find-by-name",
-    "HttpMethod": "GET",
+    "ContainingType": "PepeProject.Controllers.UserController",
+    "Method": "Update",
+    "RelativePath": "api/User/{id}",
+    "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "name",
-        "Type": "System.String",
-        "IsRequired": false
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "userRequest",
+        "Type": "PepeProject.Contracts.User.CreateUserRequest",
+        "IsRequired": true
       }
     ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "PepeProject.Controllers.WeatherForecastController",
-    "Method": "GetVersion",
-    "RelativePath": "WeatherForecast/version",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
     "ReturnTypes": []
   }
 ]

@@ -1,25 +1,25 @@
 {
   "openapi": "3.0.1",
   "info": {
-    "title": "PepeProject",
-    "version": "1.0"
+    "title": "Интернет-магазин API",
+    "description": "Краткое описание вашего API",
+    "contact": {
+      "name": "Пример контакта",
+      "url": "https://example.com/contact"
+    },
+    "license": {
+      "name": "Пример лицензии",
+      "url": "https://example.com/license"
+    },
+    "version": "v1"
   },
   "paths": {
-    "/WeatherForecast": {
+    "/api/User": {
       "get": {
         "tags": [
-          "WeatherForecast"
+          "User"
         ],
-        "parameters": [
-          {
-            "name": "sortIndex",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
+        "summary": "Получение данных всех пользователей",
         "responses": {
           "200": {
             "description": "OK"
@@ -28,44 +28,29 @@
       },
       "post": {
         "tags": [
-          "WeatherForecast"
+          "User"
         ],
-        "parameters": [
-          {
-            "name": "name",
-            "in": "query",
-            "schema": {
-              "type": "string"
+        "summary": "Создание нового пользователя",
+        "description": "Пример запроса:\r\n            \r\n    POST /Todo\r\n    {\r\n       \"username\": \"testname\",\r\n       \"email\": \"test@gmail.com\",\r\n       \"passwordHash\": \"testhash\"\r\n    }",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateUserRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateUserRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateUserRequest"
+              }
             }
           }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "put": {
-        "tags": [
-          "WeatherForecast"
-        ],
-        "parameters": [
-          {
-            "name": "index",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          },
-          {
-            "name": "name",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
+        },
         "responses": {
           "200": {
             "description": "OK"
@@ -74,11 +59,12 @@
       },
       "delete": {
         "tags": [
-          "WeatherForecast"
+          "User"
         ],
+        "summary": "Удаление пользователя по Id",
         "parameters": [
           {
-            "name": "index",
+            "name": "id",
             "in": "query",
             "schema": {
               "type": "integer",
@@ -93,14 +79,15 @@
         }
       }
     },
-    "/WeatherForecast/{index}": {
+    "/api/User/{id}": {
       "get": {
         "tags": [
-          "WeatherForecast"
+          "User"
         ],
+        "summary": "Получение данных пользователя по Id",
         "parameters": [
           {
-            "name": "index",
+            "name": "id",
             "in": "path",
             "required": true,
             "schema": {
@@ -114,34 +101,43 @@
             "description": "OK"
           }
         }
-      }
-    },
-    "/WeatherForecast/find-by-name": {
-      "get": {
+      },
+      "put": {
         "tags": [
-          "WeatherForecast"
+          "User"
         ],
+        "summary": "Обновление данных пользователя по Id",
+        "description": "Пример запроса:\r\n            \r\n    POST /Todo\r\n    {\r\n       \"username\": \"testname\",\r\n       \"email\": \"test@gmail.com\",\r\n       \"passwordHash\": \"testhash\"\r\n    }",
         "parameters": [
           {
-            "name": "name",
-            "in": "query",
+            "name": "id",
+            "in": "path",
+            "required": true,
             "schema": {
-              "type": "string"
+              "type": "integer",
+              "format": "int32"
             }
           }
         ],
-        "responses": {
-          "200": {
-            "description": "OK"
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateUserRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateUserRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateUserRequest"
+              }
+            }
           }
-        }
-      }
-    },
-    "/WeatherForecast/version": {
-      "get": {
-        "tags": [
-          "WeatherForecast"
-        ],
+        },
         "responses": {
           "200": {
             "description": "OK"
@@ -150,5 +146,26 @@
       }
     }
   },
-  "components": { }
+  "components": {
+    "schemas": {
+      "CreateUserRequest": {
+        "type": "object",
+        "properties": {
+          "username": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "passwordHash": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
 }

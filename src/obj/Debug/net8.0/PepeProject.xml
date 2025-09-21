@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PepeProject</name>
+    </assembly>
+    <members>
+        <member name="M:PepeProject.Controllers.UserController.GetAll">
+            <summary>
+            Получение данных всех пользователей
+            </summary>
+            <param name="model">Пользователь</param>
+            <returns></returns>
+        </member>
+        <member name="M:PepeProject.Controllers.UserController.GetById(System.Int32)">
+            <summary>
+            Получение данных пользователя по Id
+            </summary>
+            <param name="model">Пользователь</param>
+            <returns></returns>
+        </member>
+        <member name="M:PepeProject.Controllers.UserController.Add(PepeProject.Contracts.User.CreateUserRequest)">
+             <summary>
+             Создание нового пользователя
+             </summary>
+             <remarks>
+             Пример запроса:
+            
+                 POST /Todo
+                 {
+                    "username": "testname",
+                    "email": "test@gmail.com",
+                    "passwordHash": "testhash"
+                 }
+            
+             </remarks>
+             <param name="model">Пользователь</param>
+             <returns></returns>
+        </member>
+        <member name="M:PepeProject.Controllers.UserController.Update(System.Int32,PepeProject.Contracts.User.CreateUserRequest)">
+             <summary>
+             Обновление данных пользователя по Id
+             </summary>
+             <remarks>
+             Пример запроса:
+            
+                 POST /Todo
+                 {
+                    "username": "testname",
+                    "email": "test@gmail.com",
+                    "passwordHash": "testhash"
+                 }
+            
+             </remarks>
+             <param name="model">Пользователь</param>
+             <returns></returns>
+        </member>
+        <member name="M:PepeProject.Controllers.UserController.Delete(System.Int32)">
+            <summary>
+            Удаление пользователя по Id
+            </summary>
+            <param name="model">Пользователь</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
