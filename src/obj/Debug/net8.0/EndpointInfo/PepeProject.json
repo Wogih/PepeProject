@@ -14,6 +14,1376 @@
     "version": "v1"
   },
   "paths": {
+    "/api/Collection": {
+      "get": {
+        "tags": [
+          "Collection"
+        ],
+        "summary": "Получение данных всех коллекций",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Collection"
+        ],
+        "summary": "Создание новой коллекции",
+        "description": "Пример запроса:\r\n            \r\n    POST\r\n    {\r\n       \"userId\": 1,\r\n       \"collectionName\": \"New Collection Name\",\r\n       \"description\": \"New Collection Description\",\r\n       \"isPublic\": true\r\n    }",
+        "requestBody": {
+          "description": "Данные новой коллекции",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCollectionRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCollectionRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCollectionRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Collection/{id}": {
+      "get": {
+        "tags": [
+          "Collection"
+        ],
+        "summary": "Получение данных коллекции по Id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id коллекции",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Collection"
+        ],
+        "summary": "Обновление данных коллекции по Id",
+        "description": "Пример запроса:\r\n            \r\n    PUT \r\n    {\r\n       \"userId\": 1,\r\n       \"collectionName\": \"New Collection Name\",\r\n       \"description\": \"New Collection Description\",\r\n       \"isPublic\": true\r\n    }",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id коллекции",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Обновленные данные коллекции",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCollectionRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCollectionRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCollectionRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Collection"
+        ],
+        "summary": "Удаление коллекции по Id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id коллекции",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/CollectionMeme": {
+      "get": {
+        "tags": [
+          "CollectionMeme"
+        ],
+        "summary": "Получение данных всех коллекции->мем",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "CollectionMeme"
+        ],
+        "summary": "Создание новой коллекции->мем",
+        "description": "Пример запроса:\r\n            \r\n    POST\r\n    {\r\n       \"collectionId\": 1,\r\n       \"memeId\": 1,\r\n    }",
+        "requestBody": {
+          "description": "Данные новой коллекции->мем",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCollectionMemeRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCollectionMemeRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCollectionMemeRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/CollectionMeme/{id}": {
+      "get": {
+        "tags": [
+          "CollectionMeme"
+        ],
+        "summary": "Получение данных коллекции->мем по Id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id коллекции->мем",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "CollectionMeme"
+        ],
+        "summary": "Обновление данных коллекции->мем по Id",
+        "description": "Пример запроса:\r\n            \r\n    PUT \r\n    {\r\n       \"collectionId\": 1,\r\n       \"memeId\": 1,\r\n    }",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id коллекции->мем",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Обновленные данные коллекции->мем",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCollectionMemeRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCollectionMemeRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCollectionMemeRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "CollectionMeme"
+        ],
+        "summary": "Удаление коллекции->мем по Id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id коллекции->мем",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Comment": {
+      "get": {
+        "tags": [
+          "Comment"
+        ],
+        "summary": "Получение данных всех коментариев",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Comment"
+        ],
+        "summary": "Создание нового комментария",
+        "description": "Пример запроса:\r\n            \r\n    PUT \r\n    {\r\n       \"memeId\": 1,\r\n       \"userId\": 1,\r\n       \"commentText\": \"Comment Text\",\r\n       \"parentCommentId\": 1\r\n    }",
+        "requestBody": {
+          "description": "Данные нового комментария",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCommentRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCommentRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCommentRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Comment/{id}": {
+      "get": {
+        "tags": [
+          "Comment"
+        ],
+        "summary": "Получение данных комментария по Id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id комментария",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Comment"
+        ],
+        "summary": "Обновление данных комментария по Id",
+        "description": "Пример запроса:\r\n            \r\n    PUT \r\n    {\r\n       \"memeId\": 1,\r\n       \"userId\": 1,\r\n       \"commentText\": \"Comment Text\",\r\n       \"parentCommentId\": 1\r\n    }",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id комментария",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Обновленные данные комментария",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCommentRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCommentRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCommentRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Comment"
+        ],
+        "summary": "Удаление комментария по Id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id комментария",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Meme": {
+      "get": {
+        "tags": [
+          "Meme"
+        ],
+        "summary": "Получение данных всех мемов",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Meme"
+        ],
+        "summary": "Создание нового мема",
+        "description": "Пример запроса:\r\n            \r\n    POST\r\n    {\r\n       \"userId\": 1,\r\n       \"title\": \"Funny Meme\",\r\n       \"description\": \"This is a description\",\r\n       \"imageUrl\": \"https://example.com/image.jpg\",\r\n       \"isPublic\": true\r\n    }",
+        "requestBody": {
+          "description": "Добавляемые данные мема",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateMemeRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateMemeRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateMemeRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Meme/{id}": {
+      "get": {
+        "tags": [
+          "Meme"
+        ],
+        "summary": "Получение данных мема по Id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id мема",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Meme"
+        ],
+        "summary": "Обновление данных мема по Id",
+        "description": "Пример запроса:\r\n            \r\n    PUT\r\n    {\r\n       \"userId\": 1,\r\n       \"title\": \"Updated Funny Meme\",\r\n       \"description\": \"Updated description\",\r\n       \"imageUrl\": \"https://example.com/updated_image.jpg\",\r\n       \"isPublic\": true\r\n    }",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id мема",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Обновленные данные мема",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateMemeRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateMemeRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateMemeRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Meme"
+        ],
+        "summary": "Удаление мема по Id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id мема",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/MemeMetadatum": {
+      "get": {
+        "tags": [
+          "MemeMetadatum"
+        ],
+        "summary": "Получение данных всех методат",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "MemeMetadatum"
+        ],
+        "summary": "Создание новой методаты",
+        "description": "Пример запроса:\r\n            \r\n    POST\r\n    {\r\n       \"memeId\": 1,\r\n       \"fileSize\": 2048576,\r\n       \"width\": 1920,\r\n       \"height\": 1080,\r\n       \"fileFormat\": \"JPEG\",\r\n       \"mimeType\": \"image/jpeg\"\r\n    }",
+        "requestBody": {
+          "description": "Данные новой методаты",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateMemeMetadatumRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateMemeMetadatumRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateMemeMetadatumRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/MemeMetadatum/{id}": {
+      "get": {
+        "tags": [
+          "MemeMetadatum"
+        ],
+        "summary": "Получение данных методаты по Id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id методаты",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "MemeMetadatum"
+        ],
+        "summary": "Обновление данных методаты по Id",
+        "description": "Пример запроса:\r\n            \r\n    PUT\r\n    {\r\n       \"memeId\": 1,\r\n       \"fileSize\": 2048576,\r\n       \"width\": 1920,\r\n       \"height\": 1080,\r\n       \"fileFormat\": \"JPEG\",\r\n       \"mimeType\": \"image/jpeg\"\r\n    }",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id методаты",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Обновленные данные методаты",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateMemeMetadatumRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateMemeMetadatumRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateMemeMetadatumRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "MemeMetadatum"
+        ],
+        "summary": "Удаление методаты по Id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id методаты",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/MemeTag": {
+      "get": {
+        "tags": [
+          "MemeTag"
+        ],
+        "summary": "Получение данных всех мем->тег",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "MemeTag"
+        ],
+        "summary": "Создание нового мем->тег",
+        "description": "Пример запроса:\r\n            \r\n    POST\r\n    {\r\n       \"memeId\": 1,\r\n       \"tagId\": 1\r\n    }",
+        "requestBody": {
+          "description": "Добавляемые данные мем->тег",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateMemeTagRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateMemeTagRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateMemeTagRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/MemeTag/{id}": {
+      "get": {
+        "tags": [
+          "MemeTag"
+        ],
+        "summary": "Получение данных мем->тег по Id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id мем->тег",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "MemeTag"
+        ],
+        "summary": "Обновление данных мем->тег по Id",
+        "description": "Пример запроса:\r\n            \r\n    PUT\r\n    {\r\n       \"memeId\": 1,\r\n       \"tagId\": 1\r\n    }",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id мем->тег",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Обновленные данные мем->тег",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateMemeTagRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateMemeTagRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateMemeTagRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "MemeTag"
+        ],
+        "summary": "Удаление мем->тег по Id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id мем->тег",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Reaction": {
+      "get": {
+        "tags": [
+          "Reaction"
+        ],
+        "summary": "Получение данных всех реакций",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Reaction"
+        ],
+        "summary": "Создание новой реакции",
+        "description": "Пример запроса:\r\n            \r\n    POST\r\n    {\r\n       \"memeId\": 1,\r\n       \"userId\": 1,\r\n       \"ReactionType\": \"dislike ('like', 'dislike', 'love', 'laugh', 'angry')\",\r\n    }",
+        "requestBody": {
+          "description": "Данные новой реакции",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateReactionRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateReactionRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateReactionRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Reaction/{id}": {
+      "get": {
+        "tags": [
+          "Reaction"
+        ],
+        "summary": "Получение данных реакции по Id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id реакции",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Reaction"
+        ],
+        "summary": "Обновление данных реакции по Id",
+        "description": "Пример запроса:\r\n            \r\n    PUT \r\n    {\r\n       \"memeId\": 1,\r\n       \"userId\": 1,\r\n       \"ReactionType\": \"dislike ('like', 'dislike', 'love', 'laugh', 'angry')\", \r\n    }",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id реакции",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Обновленные данные реакции",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateReactionRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateReactionRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateReactionRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Reaction"
+        ],
+        "summary": "Удаление реакции по Id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id реакции",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Role": {
+      "get": {
+        "tags": [
+          "Role"
+        ],
+        "summary": "Получение данных всех ролей",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Role"
+        ],
+        "summary": "Создание новой роли",
+        "description": "Пример запроса:\r\n            \r\n    POST\r\n    {\r\n       \"roleName\": \"New Role Name\",\r\n       \"description\": \"New Description\"\r\n    }",
+        "requestBody": {
+          "description": "Данные роли",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateRoleRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateRoleRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateRoleRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Role/{id}": {
+      "get": {
+        "tags": [
+          "Role"
+        ],
+        "summary": "Получение данных роли по Id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id роли",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Role"
+        ],
+        "summary": "Обновление данных роли по Id",
+        "description": "Пример запроса:\r\n            \r\n    PUT \r\n    {\r\n       \"roleName\": \"New Role Name\",\r\n       \"description\": \"New Description\"\r\n    }",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id роли",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Обновленные данные роли",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateRoleRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateRoleRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateRoleRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Role"
+        ],
+        "summary": "Удаление роли по Id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id роли",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Tag": {
+      "get": {
+        "tags": [
+          "Tag"
+        ],
+        "summary": "Получение данных всех тегов",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Tag"
+        ],
+        "summary": "Создание нового тега",
+        "description": "Пример запроса:\r\n            \r\n    POST\r\n    {\r\n       \"tagName\": \"New Tag Name\",\r\n    }",
+        "requestBody": {
+          "description": "Данные тега",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateTagRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateTagRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateTagRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Tag/{id}": {
+      "get": {
+        "tags": [
+          "Tag"
+        ],
+        "summary": "Получение данных тега по Id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id тега",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Tag"
+        ],
+        "summary": "Обновление данных тега по Id",
+        "description": "Пример запроса:\r\n            \r\n    PUT \r\n    {\r\n       \"tagName\": \"New Tag Name\",\r\n    }",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id тега",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Обновленные данные тега",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateTagRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateTagRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateTagRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Tag"
+        ],
+        "summary": "Удаление тега по Id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id тега",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/UploadStat": {
+      "get": {
+        "tags": [
+          "UploadStat"
+        ],
+        "summary": "Получение данных всех статистики мема",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "UploadStat"
+        ],
+        "summary": "Создание новой статистики мема",
+        "description": "Пример запроса:\r\n            \r\n    POST\r\n    {\r\n       \"memeId\": 1,\r\n       \"viewsCount\": 1000,\r\n       \"downloadCount\": 100,\r\n       \"shareCount\": 25\r\n    }",
+        "requestBody": {
+          "description": "Данные новой статистики мема",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateUploadStatRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateUploadStatRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateUploadStatRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/UploadStat/{id}": {
+      "get": {
+        "tags": [
+          "UploadStat"
+        ],
+        "summary": "Получение данных статистики мема по Id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id статистики мема",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "UploadStat"
+        ],
+        "summary": "Обновление данных статистики мема по Id",
+        "description": "Пример запроса:\r\n            \r\n    PUT \r\n    {\r\n       \"memeId\": 1,\r\n       \"viewsCount\": 1000,\r\n       \"downloadCount\": 100,\r\n       \"shareCount\": 25\r\n    }",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id статистики мема",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Обновленные данные статистики мема",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateUploadStatRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateUploadStatRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateUploadStatRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "UploadStat"
+        ],
+        "summary": "Удаление статистики мема по Id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id статистики мема",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/User": {
       "get": {
         "tags": [
@@ -31,8 +1401,9 @@
           "User"
         ],
         "summary": "Создание нового пользователя",
-        "description": "Пример запроса:\r\n            \r\n    POST /Todo\r\n    {\r\n       \"username\": \"testname\",\r\n       \"email\": \"test@gmail.com\",\r\n       \"passwordHash\": \"testhash\"\r\n    }",
+        "description": "Пример запроса:\r\n\r\n    POST\r\n    {\r\n       \"username\": \"testname\",\r\n       \"email\": \"test@gmail.com\",\r\n       \"passwordHash\": \"testhash\"\r\n    }",
         "requestBody": {
+          "description": "Добавляемые данные пользователя",
           "content": {
             "application/json": {
               "schema": {
@@ -66,6 +1437,7 @@
           {
             "name": "id",
             "in": "query",
+            "description": "Id пользователя",
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -89,6 +1461,7 @@
           {
             "name": "id",
             "in": "path",
+            "description": "Id пользователя",
             "required": true,
             "schema": {
               "type": "integer",
@@ -107,11 +1480,12 @@
           "User"
         ],
         "summary": "Обновление данных пользователя по Id",
-        "description": "Пример запроса:\r\n            \r\n    POST /Todo\r\n    {\r\n       \"username\": \"testname\",\r\n       \"email\": \"test@gmail.com\",\r\n       \"passwordHash\": \"testhash\"\r\n    }",
+        "description": "Пример запроса:\r\n\r\n    POST\r\n    {\r\n       \"username\": \"testname\",\r\n       \"email\": \"test@gmail.com\",\r\n       \"passwordHash\": \"testhash\"\r\n    }",
         "parameters": [
           {
             "name": "id",
             "in": "path",
+            "description": "Id пользователя",
             "required": true,
             "schema": {
               "type": "integer",
@@ -120,6 +1494,7 @@
           }
         ],
         "requestBody": {
+          "description": "Обновленные данные пользователя",
           "content": {
             "application/json": {
               "schema": {
@@ -144,10 +1519,342 @@
           }
         }
       }
+    },
+    "/api/UserRole": {
+      "get": {
+        "tags": [
+          "UserRole"
+        ],
+        "summary": "Получение данных всех пользователь->роль",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "UserRole"
+        ],
+        "summary": "Создание нового пользователь->роль",
+        "description": "Пример запроса:\r\n\r\n    POST\r\n    {\r\n       \"userId\": 1,\r\n       \"roleId\": 1\r\n    }",
+        "requestBody": {
+          "description": "Добавляемые данные пользователь->роль",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateUserRoleRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateUserRoleRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateUserRoleRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "UserRole"
+        ],
+        "summary": "Удаление пользователь->роль по Id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "description": "Id пользователь->роль",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/UserRole/{id}": {
+      "get": {
+        "tags": [
+          "UserRole"
+        ],
+        "summary": "Получение данных пользователь->роль по Id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id пользователь->роль",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "UserRole"
+        ],
+        "summary": "Обновление данных пользователь->роль по Id",
+        "description": "Пример запроса:\r\n\r\n    POST\r\n    {\r\n       \"userId\": 1,\r\n       \"roleId\": 1\r\n    }",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id v",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Обновленные данные пользователь->роль",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateUserRoleRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateUserRoleRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateUserRoleRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     }
   },
   "components": {
     "schemas": {
+      "CreateCollectionMemeRequest": {
+        "type": "object",
+        "properties": {
+          "collectionId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "memeId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateCollectionRequest": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "collectionName": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "isPublic": {
+            "type": "boolean",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateCommentRequest": {
+        "type": "object",
+        "properties": {
+          "memeId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "userId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "commentText": {
+            "type": "string",
+            "nullable": true
+          },
+          "parentCommentId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateMemeMetadatumRequest": {
+        "type": "object",
+        "properties": {
+          "memeId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fileSize": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "width": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "height": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fileFormat": {
+            "type": "string",
+            "nullable": true
+          },
+          "mimeType": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateMemeRequest": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "imageUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "isPublic": {
+            "type": "boolean",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateMemeTagRequest": {
+        "type": "object",
+        "properties": {
+          "memeId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tagId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateReactionRequest": {
+        "type": "object",
+        "properties": {
+          "memeId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "userId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "reactionType": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateRoleRequest": {
+        "type": "object",
+        "properties": {
+          "roleName": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateTagRequest": {
+        "type": "object",
+        "properties": {
+          "tagName": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateUploadStatRequest": {
+        "type": "object",
+        "properties": {
+          "memeId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "viewsCount": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "downloadCount": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "shareCount": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "CreateUserRequest": {
         "type": "object",
         "properties": {
@@ -162,6 +1869,20 @@
           "passwordHash": {
             "type": "string",
             "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateUserRoleRequest": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "roleId": {
+            "type": "integer",
+            "format": "int32"
           }
         },
         "additionalProperties": false

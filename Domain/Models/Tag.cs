@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Domain.Models;
+﻿namespace Domain.Models;
 
 public partial class Tag
 {
@@ -9,5 +6,7 @@ public partial class Tag
 
     public string TagName { get; set; } = null!;
 
-    public virtual ICollection<Meme> Memes { get; set; } = new List<Meme>();
+    public DateTime? CreatedAt { get; set; }
+
+    public virtual ICollection<MemeTag> MemeTags { get; set; } = new List<MemeTag>();
 }

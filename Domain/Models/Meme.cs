@@ -14,15 +14,19 @@ public partial class Meme
 
     public DateTime? UploadDate { get; set; }
 
+    public bool? IsPublic { get; set; }
+
+    public virtual ICollection<CollectionMeme> CollectionMemes { get; set; } = new List<CollectionMeme>();
+
     public virtual ICollection<Comment> Comments { get; set; } = new List<Comment>();
 
     public virtual MemeMetadatum? MemeMetadatum { get; set; }
 
+    public virtual ICollection<MemeTag> MemeTags { get; set; } = new List<MemeTag>();
+
     public virtual ICollection<Reaction> Reactions { get; set; } = new List<Reaction>();
 
+    public virtual UploadStat? UploadStat { get; set; }
+
     public virtual User User { get; set; } = null!;
-
-    public virtual ICollection<Collection> Collections { get; set; } = new List<Collection>();
-
-    public virtual ICollection<Tag> Tags { get; set; } = new List<Tag>();
 }

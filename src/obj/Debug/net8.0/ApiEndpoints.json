@@ -1,5 +1,795 @@
 [
   {
+    "ContainingType": "PepeProject.Controllers.CollectionController",
+    "Method": "GetAll",
+    "RelativePath": "api/Collection",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PepeProject.Controllers.CollectionController",
+    "Method": "Add",
+    "RelativePath": "api/Collection",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "collection",
+        "Type": "PepeProject.Contracts.Collection.CreateCollectionRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PepeProject.Controllers.CollectionController",
+    "Method": "GetById",
+    "RelativePath": "api/Collection/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PepeProject.Controllers.CollectionController",
+    "Method": "Update",
+    "RelativePath": "api/Collection/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "collectionRequest",
+        "Type": "PepeProject.Contracts.Collection.CreateCollectionRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PepeProject.Controllers.CollectionController",
+    "Method": "Delete",
+    "RelativePath": "api/Collection/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PepeProject.Controllers.CollectionMemeController",
+    "Method": "GetAll",
+    "RelativePath": "api/CollectionMeme",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PepeProject.Controllers.CollectionMemeController",
+    "Method": "Add",
+    "RelativePath": "api/CollectionMeme",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "collectionMeme",
+        "Type": "PepeProject.Contracts.CollectionMeme.CreateCollectionMemeRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PepeProject.Controllers.CollectionMemeController",
+    "Method": "GetById",
+    "RelativePath": "api/CollectionMeme/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PepeProject.Controllers.CollectionMemeController",
+    "Method": "Update",
+    "RelativePath": "api/CollectionMeme/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "collectionRequest",
+        "Type": "PepeProject.Contracts.CollectionMeme.CreateCollectionMemeRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PepeProject.Controllers.CollectionMemeController",
+    "Method": "Delete",
+    "RelativePath": "api/CollectionMeme/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PepeProject.Controllers.CommentController",
+    "Method": "GetAll",
+    "RelativePath": "api/Comment",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PepeProject.Controllers.CommentController",
+    "Method": "Add",
+    "RelativePath": "api/Comment",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "comment",
+        "Type": "PepeProject.Contracts.Comment.CreateCommentRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PepeProject.Controllers.CommentController",
+    "Method": "GetById",
+    "RelativePath": "api/Comment/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PepeProject.Controllers.CommentController",
+    "Method": "Update",
+    "RelativePath": "api/Comment/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "commentRequest",
+        "Type": "PepeProject.Contracts.Comment.CreateCommentRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PepeProject.Controllers.CommentController",
+    "Method": "Delete",
+    "RelativePath": "api/Comment/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PepeProject.Controllers.MemeController",
+    "Method": "GetAll",
+    "RelativePath": "api/Meme",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PepeProject.Controllers.MemeController",
+    "Method": "Add",
+    "RelativePath": "api/Meme",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "meme",
+        "Type": "PepeProject.Contracts.Meme.CreateMemeRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PepeProject.Controllers.MemeController",
+    "Method": "GetById",
+    "RelativePath": "api/Meme/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PepeProject.Controllers.MemeController",
+    "Method": "Update",
+    "RelativePath": "api/Meme/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "memeRequest",
+        "Type": "PepeProject.Contracts.Meme.CreateMemeRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PepeProject.Controllers.MemeController",
+    "Method": "Delete",
+    "RelativePath": "api/Meme/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PepeProject.Controllers.MemeMetadatumController",
+    "Method": "GetAll",
+    "RelativePath": "api/MemeMetadatum",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PepeProject.Controllers.MemeMetadatumController",
+    "Method": "Add",
+    "RelativePath": "api/MemeMetadatum",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "memeMetadatum",
+        "Type": "PepeProject.Contracts.MemeMetadatum.CreateMemeMetadatumRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PepeProject.Controllers.MemeMetadatumController",
+    "Method": "GetById",
+    "RelativePath": "api/MemeMetadatum/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PepeProject.Controllers.MemeMetadatumController",
+    "Method": "Update",
+    "RelativePath": "api/MemeMetadatum/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "memeMetadatumRequest",
+        "Type": "PepeProject.Contracts.MemeMetadatum.CreateMemeMetadatumRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PepeProject.Controllers.MemeMetadatumController",
+    "Method": "Delete",
+    "RelativePath": "api/MemeMetadatum/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PepeProject.Controllers.MemeTagController",
+    "Method": "GetAll",
+    "RelativePath": "api/MemeTag",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PepeProject.Controllers.MemeTagController",
+    "Method": "Add",
+    "RelativePath": "api/MemeTag",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "memeTag",
+        "Type": "PepeProject.Contracts.MemeTag.CreateMemeTagRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PepeProject.Controllers.MemeTagController",
+    "Method": "GetById",
+    "RelativePath": "api/MemeTag/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PepeProject.Controllers.MemeTagController",
+    "Method": "Update",
+    "RelativePath": "api/MemeTag/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "memeTagRequest",
+        "Type": "PepeProject.Contracts.MemeTag.CreateMemeTagRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PepeProject.Controllers.MemeTagController",
+    "Method": "Delete",
+    "RelativePath": "api/MemeTag/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PepeProject.Controllers.ReactionController",
+    "Method": "GetAll",
+    "RelativePath": "api/Reaction",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PepeProject.Controllers.ReactionController",
+    "Method": "Add",
+    "RelativePath": "api/Reaction",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "reaction",
+        "Type": "PepeProject.Contracts.Reaction.CreateReactionRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PepeProject.Controllers.ReactionController",
+    "Method": "GetById",
+    "RelativePath": "api/Reaction/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PepeProject.Controllers.ReactionController",
+    "Method": "Update",
+    "RelativePath": "api/Reaction/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "commentRequest",
+        "Type": "PepeProject.Contracts.Reaction.CreateReactionRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PepeProject.Controllers.ReactionController",
+    "Method": "Delete",
+    "RelativePath": "api/Reaction/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PepeProject.Controllers.RoleController",
+    "Method": "GetAll",
+    "RelativePath": "api/Role",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PepeProject.Controllers.RoleController",
+    "Method": "Add",
+    "RelativePath": "api/Role",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "role",
+        "Type": "PepeProject.Contracts.Role.CreateRoleRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PepeProject.Controllers.RoleController",
+    "Method": "GetById",
+    "RelativePath": "api/Role/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PepeProject.Controllers.RoleController",
+    "Method": "Update",
+    "RelativePath": "api/Role/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "roleRequest",
+        "Type": "PepeProject.Contracts.Role.CreateRoleRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PepeProject.Controllers.RoleController",
+    "Method": "Delete",
+    "RelativePath": "api/Role/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PepeProject.Controllers.TagController",
+    "Method": "GetAll",
+    "RelativePath": "api/Tag",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PepeProject.Controllers.TagController",
+    "Method": "Add",
+    "RelativePath": "api/Tag",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tag",
+        "Type": "PepeProject.Contracts.Tag.CreateTagRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PepeProject.Controllers.TagController",
+    "Method": "GetById",
+    "RelativePath": "api/Tag/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PepeProject.Controllers.TagController",
+    "Method": "Update",
+    "RelativePath": "api/Tag/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "tagRequest",
+        "Type": "PepeProject.Contracts.Tag.CreateTagRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PepeProject.Controllers.TagController",
+    "Method": "Delete",
+    "RelativePath": "api/Tag/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PepeProject.Controllers.UploadStatController",
+    "Method": "GetAll",
+    "RelativePath": "api/UploadStat",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PepeProject.Controllers.UploadStatController",
+    "Method": "Add",
+    "RelativePath": "api/UploadStat",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "uploadStat",
+        "Type": "PepeProject.Contracts.UploadStat.CreateUploadStatRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PepeProject.Controllers.UploadStatController",
+    "Method": "GetById",
+    "RelativePath": "api/UploadStat/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PepeProject.Controllers.UploadStatController",
+    "Method": "Update",
+    "RelativePath": "api/UploadStat/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "uploadStatRequest",
+        "Type": "PepeProject.Contracts.UploadStat.CreateUploadStatRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PepeProject.Controllers.UploadStatController",
+    "Method": "Delete",
+    "RelativePath": "api/UploadStat/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "PepeProject.Controllers.UserController",
     "Method": "GetAll",
     "RelativePath": "api/User",
@@ -73,6 +863,85 @@
       {
         "Name": "userRequest",
         "Type": "PepeProject.Contracts.User.CreateUserRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PepeProject.Controllers.UserRoleController",
+    "Method": "GetAll",
+    "RelativePath": "api/UserRole",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PepeProject.Controllers.UserRoleController",
+    "Method": "Add",
+    "RelativePath": "api/UserRole",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userRole",
+        "Type": "PepeProject.Contracts.UserRole.CreateUserRoleRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PepeProject.Controllers.UserRoleController",
+    "Method": "Delete",
+    "RelativePath": "api/UserRole",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PepeProject.Controllers.UserRoleController",
+    "Method": "GetById",
+    "RelativePath": "api/UserRole/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PepeProject.Controllers.UserRoleController",
+    "Method": "Update",
+    "RelativePath": "api/UserRole/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "userRoleRequest",
+        "Type": "PepeProject.Contracts.UserRole.CreateUserRoleRequest",
         "IsRequired": true
       }
     ],

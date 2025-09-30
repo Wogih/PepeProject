@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PepeProject")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f280915a980dfde1b0cac3ea7dc4e7ade470a59d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f944b7127f44608705f007cbde1913745639fab8")]
 [assembly: System.Reflection.AssemblyProductAttribute("PepeProject")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PepeProject")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

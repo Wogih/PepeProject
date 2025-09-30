@@ -4,62 +4,627 @@
         <name>PepeProject</name>
     </assembly>
     <members>
+        <member name="M:PepeProject.Controllers.CollectionController.GetAll">
+            <summary>
+            Получение данных всех коллекций
+            </summary>
+        </member>
+        <member name="M:PepeProject.Controllers.CollectionController.GetById(System.Int32)">
+            <summary>
+            Получение данных коллекции по Id
+            </summary>
+            <param name="id">Id коллекции</param>
+        </member>
+        <member name="M:PepeProject.Controllers.CollectionController.Add(PepeProject.Contracts.Collection.CreateCollectionRequest)">
+             <summary>
+             Создание новой коллекции
+             </summary>
+             <remarks>
+             Пример запроса:
+            
+                 POST
+                 {
+                    "userId": 1,
+                    "collectionName": "New Collection Name",
+                    "description": "New Collection Description",
+                    "isPublic": true
+                 }
+             </remarks>
+             <param name="collection">Данные новой коллекции</param>
+        </member>
+        <member name="M:PepeProject.Controllers.CollectionController.Update(System.Int32,PepeProject.Contracts.Collection.CreateCollectionRequest)">
+             <summary>
+             Обновление данных коллекции по Id
+             </summary>
+             <remarks>
+             Пример запроса:
+            
+                 PUT 
+                 {
+                    "userId": 1,
+                    "collectionName": "New Collection Name",
+                    "description": "New Collection Description",
+                    "isPublic": true
+                 }
+            
+             </remarks>
+             <param name="id">Id коллекции</param>
+             <param name="collectionRequest">Обновленные данные коллекции</param>
+        </member>
+        <member name="M:PepeProject.Controllers.CollectionController.Delete(System.Int32)">
+            <summary>
+            Удаление коллекции по Id
+            </summary>
+            <param name="id">Id коллекции</param>
+        </member>
+        <member name="M:PepeProject.Controllers.CollectionMemeController.GetAll">
+            <summary>
+            Получение данных всех коллекции->мем
+            </summary>
+        </member>
+        <member name="M:PepeProject.Controllers.CollectionMemeController.GetById(System.Int32)">
+            <summary>
+            Получение данных коллекции->мем по Id
+            </summary>
+            <param name="id">Id коллекции->мем</param>
+        </member>
+        <member name="M:PepeProject.Controllers.CollectionMemeController.Add(PepeProject.Contracts.CollectionMeme.CreateCollectionMemeRequest)">
+             <summary>
+             Создание новой коллекции->мем
+             </summary>
+             <remarks>
+             Пример запроса:
+            
+                 POST
+                 {
+                    "collectionId": 1,
+                    "memeId": 1,
+                 }
+             </remarks>
+             <param name="collectionMeme">Данные новой коллекции->мем</param>
+        </member>
+        <member name="M:PepeProject.Controllers.CollectionMemeController.Update(System.Int32,PepeProject.Contracts.CollectionMeme.CreateCollectionMemeRequest)">
+             <summary>
+             Обновление данных коллекции->мем по Id
+             </summary>
+             <remarks>
+             Пример запроса:
+            
+                 PUT 
+                 {
+                    "collectionId": 1,
+                    "memeId": 1,
+                 }
+            
+             </remarks>
+             <param name="id">Id коллекции->мем</param>
+             <param name="collectionRequest">Обновленные данные коллекции->мем</param>
+        </member>
+        <member name="M:PepeProject.Controllers.CollectionMemeController.Delete(System.Int32)">
+            <summary>
+            Удаление коллекции->мем по Id
+            </summary>
+            <param name="id">Id коллекции->мем</param>
+        </member>
+        <member name="M:PepeProject.Controllers.CommentController.GetAll">
+            <summary>
+            Получение данных всех коментариев
+            </summary>
+        </member>
+        <member name="M:PepeProject.Controllers.CommentController.GetById(System.Int32)">
+            <summary>
+            Получение данных комментария по Id
+            </summary>
+            <param name="id">Id комментария</param>
+        </member>
+        <member name="M:PepeProject.Controllers.CommentController.Add(PepeProject.Contracts.Comment.CreateCommentRequest)">
+             <summary>
+             Создание нового комментария
+             </summary>
+             <remarks>
+             Пример запроса:
+            
+                 PUT 
+                 {
+                    "memeId": 1,
+                    "userId": 1,
+                    "commentText": "Comment Text",
+                    "parentCommentId": 1
+                 }
+             </remarks>
+             <param name="comment">Данные нового комментария</param>
+        </member>
+        <member name="M:PepeProject.Controllers.CommentController.Update(System.Int32,PepeProject.Contracts.Comment.CreateCommentRequest)">
+             <summary>
+             Обновление данных комментария по Id
+             </summary>
+             <remarks>
+             Пример запроса:
+            
+                 PUT 
+                 {
+                    "memeId": 1,
+                    "userId": 1,
+                    "commentText": "Comment Text",
+                    "parentCommentId": 1
+                 }
+            
+             </remarks>
+             <param name="id">Id комментария</param>
+             <param name="commentRequest">Обновленные данные комментария</param>
+        </member>
+        <member name="M:PepeProject.Controllers.CommentController.Delete(System.Int32)">
+            <summary>
+            Удаление комментария по Id
+            </summary>
+            <param name="id">Id комментария</param>
+        </member>
+        <member name="M:PepeProject.Controllers.MemeController.GetAll">
+            <summary>
+            Получение данных всех мемов
+            </summary>
+        </member>
+        <member name="M:PepeProject.Controllers.MemeController.GetById(System.Int32)">
+            <summary>
+            Получение данных мема по Id
+            </summary>
+            <param name="id">Id мема</param>
+        </member>
+        <member name="M:PepeProject.Controllers.MemeController.Add(PepeProject.Contracts.Meme.CreateMemeRequest)">
+             <summary>
+             Создание нового мема
+             </summary>
+             <remarks>
+             Пример запроса:
+            
+                 POST
+                 {
+                    "userId": 1,
+                    "title": "Funny Meme",
+                    "description": "This is a description",
+                    "imageUrl": "https://example.com/image.jpg",
+                    "isPublic": true
+                 }
+            
+             </remarks>
+             /// <param name="meme">Добавляемые данные мема</param>
+        </member>
+        <member name="M:PepeProject.Controllers.MemeController.Update(System.Int32,PepeProject.Contracts.Meme.CreateMemeRequest)">
+             <summary>
+             Обновление данных мема по Id
+             </summary>
+             <remarks>
+             Пример запроса:
+            
+                 PUT
+                 {
+                    "userId": 1,
+                    "title": "Updated Funny Meme",
+                    "description": "Updated description",
+                    "imageUrl": "https://example.com/updated_image.jpg",
+                    "isPublic": true
+                 }
+            
+             </remarks>
+             <param name="id">Id мема</param>
+             <param name="memeRequest">Обновленные данные мема</param>
+        </member>
+        <member name="M:PepeProject.Controllers.MemeController.Delete(System.Int32)">
+            <summary>
+            Удаление мема по Id
+            </summary>
+            <param name="id">Id мема</param>
+        </member>
+        <member name="M:PepeProject.Controllers.MemeMetadatumController.GetAll">
+            <summary>
+            Получение данных всех методат 
+            </summary>
+        </member>
+        <member name="M:PepeProject.Controllers.MemeMetadatumController.GetById(System.Int32)">
+            <summary>
+            Получение данных методаты по Id
+            </summary>
+            <param name="id">Id методаты</param>
+        </member>
+        <member name="M:PepeProject.Controllers.MemeMetadatumController.Add(PepeProject.Contracts.MemeMetadatum.CreateMemeMetadatumRequest)">
+             <summary>
+             Создание новой методаты
+             </summary>
+             <remarks>
+             Пример запроса:
+            
+                 POST
+                 {
+                    "memeId": 1,
+                    "fileSize": 2048576,
+                    "width": 1920,
+                    "height": 1080,
+                    "fileFormat": "JPEG",
+                    "mimeType": "image/jpeg"
+                 }
+             </remarks>
+             <param name="memeMetadatum">Данные новой методаты</param>
+        </member>
+        <member name="M:PepeProject.Controllers.MemeMetadatumController.Update(System.Int32,PepeProject.Contracts.MemeMetadatum.CreateMemeMetadatumRequest)">
+             <summary>
+             Обновление данных методаты по Id
+             </summary>
+             <remarks>
+             Пример запроса:
+            
+                 PUT
+                 {
+                    "memeId": 1,
+                    "fileSize": 2048576,
+                    "width": 1920,
+                    "height": 1080,
+                    "fileFormat": "JPEG",
+                    "mimeType": "image/jpeg"
+                 }
+            
+             </remarks>
+             <param name="id">Id методаты</param>
+             <param name="memeMetadatumRequest">Обновленные данные методаты</param>
+        </member>
+        <member name="M:PepeProject.Controllers.MemeMetadatumController.Delete(System.Int32)">
+            <summary>
+            Удаление методаты по Id
+            </summary>
+            <param name="id">Id методаты</param>
+        </member>
+        <member name="M:PepeProject.Controllers.MemeTagController.GetAll">
+            <summary>
+            Получение данных всех мем->тег
+            </summary>
+        </member>
+        <member name="M:PepeProject.Controllers.MemeTagController.GetById(System.Int32)">
+            <summary>
+            Получение данных мем->тег по Id
+            </summary>
+            <param name="id">Id мем->тег</param>
+        </member>
+        <member name="M:PepeProject.Controllers.MemeTagController.Add(PepeProject.Contracts.MemeTag.CreateMemeTagRequest)">
+             <summary>
+             Создание нового мем->тег
+             </summary>
+             <remarks>
+             Пример запроса:
+            
+                 POST
+                 {
+                    "memeId": 1,
+                    "tagId": 1
+                 }
+            
+             </remarks>
+             /// <param name="memeTag">Добавляемые данные мем->тег</param>
+        </member>
+        <member name="M:PepeProject.Controllers.MemeTagController.Update(System.Int32,PepeProject.Contracts.MemeTag.CreateMemeTagRequest)">
+             <summary>
+             Обновление данных мем->тег по Id
+             </summary>
+             <remarks>
+             Пример запроса:
+            
+                 PUT
+                 {
+                    "memeId": 1,
+                    "tagId": 1
+                 }
+            
+             </remarks>
+             <param name="id">Id мем->тег</param>
+             <param name="memeTagRequest">Обновленные данные мем->тег</param>
+        </member>
+        <member name="M:PepeProject.Controllers.MemeTagController.Delete(System.Int32)">
+            <summary>
+            Удаление мем->тег по Id
+            </summary>
+            <param name="id">Id мем->тег</param>
+        </member>
+        <member name="M:PepeProject.Controllers.ReactionController.GetAll">
+            <summary>
+            Получение данных всех реакций
+            </summary>
+        </member>
+        <member name="M:PepeProject.Controllers.ReactionController.GetById(System.Int32)">
+            <summary>
+            Получение данных реакции по Id
+            </summary>
+            <param name="id">Id реакции</param>
+        </member>
+        <member name="M:PepeProject.Controllers.ReactionController.Add(PepeProject.Contracts.Reaction.CreateReactionRequest)">
+             <summary>
+             Создание новой реакции
+             </summary>
+             <remarks>
+             Пример запроса:
+            
+                 POST
+                 {
+                    "memeId": 1,
+                    "userId": 1,
+                    "ReactionType": "dislike ('like', 'dislike', 'love', 'laugh', 'angry')",
+                 }
+             </remarks>
+             <param name="reaction">Данные новой реакции</param>
+        </member>
+        <member name="M:PepeProject.Controllers.ReactionController.Update(System.Int32,PepeProject.Contracts.Reaction.CreateReactionRequest)">
+             <summary>
+             Обновление данных реакции по Id
+             </summary>
+             <remarks>
+             Пример запроса:
+            
+                 PUT 
+                 {
+                    "memeId": 1,
+                    "userId": 1,
+                    "ReactionType": "dislike ('like', 'dislike', 'love', 'laugh', 'angry')", 
+                 }
+            
+             </remarks>
+             <param name="id">Id реакции</param>
+             <param name="commentRequest">Обновленные данные реакции</param>
+        </member>
+        <member name="M:PepeProject.Controllers.ReactionController.Delete(System.Int32)">
+            <summary>
+            Удаление реакции по Id
+            </summary>
+            <param name="id">Id реакции</param>
+        </member>
+        <member name="M:PepeProject.Controllers.RoleController.GetAll">
+            <summary>
+            Получение данных всех ролей
+            </summary>
+        </member>
+        <member name="M:PepeProject.Controllers.RoleController.GetById(System.Int32)">
+            <summary>
+            Получение данных роли по Id
+            </summary>
+            <param name="id">Id роли</param>
+        </member>
+        <member name="M:PepeProject.Controllers.RoleController.Add(PepeProject.Contracts.Role.CreateRoleRequest)">
+             <summary>
+             Создание новой роли
+             </summary>
+             <remarks>
+             Пример запроса:
+            
+                 POST
+                 {
+                    "roleName": "New Role Name",
+                    "description": "New Description"
+                 }
+            
+             </remarks>
+             <param name="role">Данные роли</param>
+        </member>
+        <member name="M:PepeProject.Controllers.RoleController.Update(System.Int32,PepeProject.Contracts.Role.CreateRoleRequest)">
+             <summary>
+             Обновление данных роли по Id
+             </summary>
+             <remarks>
+             Пример запроса:
+            
+                 PUT 
+                 {
+                    "roleName": "New Role Name",
+                    "description": "New Description"
+                 }
+            
+             </remarks>
+             <param name="id">Id роли</param>
+             <param name="roleRequest">Обновленные данные роли</param>
+        </member>
+        <member name="M:PepeProject.Controllers.RoleController.Delete(System.Int32)">
+            <summary>
+            Удаление роли по Id
+            </summary>
+            <param name="id">Id роли</param>
+        </member>
+        <member name="M:PepeProject.Controllers.TagController.GetAll">
+            <summary>
+            Получение данных всех тегов
+            </summary>
+        </member>
+        <member name="M:PepeProject.Controllers.TagController.GetById(System.Int32)">
+            <summary>
+            Получение данных тега по Id
+            </summary>
+            <param name="id">Id тега</param>
+        </member>
+        <member name="M:PepeProject.Controllers.TagController.Add(PepeProject.Contracts.Tag.CreateTagRequest)">
+             <summary>
+             Создание нового тега
+             </summary>
+             <remarks>
+             Пример запроса:
+            
+                 POST
+                 {
+                    "tagName": "New Tag Name",
+                 }
+            
+             </remarks>
+             <param name="tag">Данные тега</param>
+        </member>
+        <member name="M:PepeProject.Controllers.TagController.Update(System.Int32,PepeProject.Contracts.Tag.CreateTagRequest)">
+             <summary>
+             Обновление данных тега по Id
+             </summary>
+             <remarks>
+             Пример запроса:
+            
+                 PUT 
+                 {
+                    "tagName": "New Tag Name",
+                 }
+            
+             </remarks>
+             <param name="id">Id тега</param>
+             <param name="tagRequest">Обновленные данные тега</param>
+        </member>
+        <member name="M:PepeProject.Controllers.TagController.Delete(System.Int32)">
+            <summary>
+            Удаление тега по Id
+            </summary>
+            <param name="id">Id тега</param>
+        </member>
+        <member name="M:PepeProject.Controllers.UploadStatController.GetAll">
+            <summary>
+            Получение данных всех статистики мема
+            </summary>
+        </member>
+        <member name="M:PepeProject.Controllers.UploadStatController.GetById(System.Int32)">
+            <summary>
+            Получение данных статистики мема по Id
+            </summary>
+            <param name="id">Id статистики мема</param>
+        </member>
+        <member name="M:PepeProject.Controllers.UploadStatController.Add(PepeProject.Contracts.UploadStat.CreateUploadStatRequest)">
+             <summary>
+             Создание новой статистики мема
+             </summary>
+             <remarks>
+             Пример запроса:
+            
+                 POST
+                 {
+                    "memeId": 1,
+                    "viewsCount": 1000,
+                    "downloadCount": 100,
+                    "shareCount": 25
+                 }
+             </remarks>
+             <param name="uploadStat">Данные новой статистики мема</param>
+        </member>
+        <member name="M:PepeProject.Controllers.UploadStatController.Update(System.Int32,PepeProject.Contracts.UploadStat.CreateUploadStatRequest)">
+             <summary>
+             Обновление данных статистики мема по Id
+             </summary>
+             <remarks>
+             Пример запроса:
+            
+                 PUT 
+                 {
+                    "memeId": 1,
+                    "viewsCount": 1000,
+                    "downloadCount": 100,
+                    "shareCount": 25
+                 }
+            
+             </remarks>
+             <param name="id">Id статистики мема</param>
+             <param name="uploadStatRequest">Обновленные данные статистики мема</param>
+        </member>
+        <member name="M:PepeProject.Controllers.UploadStatController.Delete(System.Int32)">
+            <summary>
+            Удаление статистики мема по Id
+            </summary>
+            <param name="id">Id статистики мема</param>
+        </member>
         <member name="M:PepeProject.Controllers.UserController.GetAll">
             <summary>
             Получение данных всех пользователей
             </summary>
-            <param name="model">Пользователь</param>
-            <returns></returns>
         </member>
         <member name="M:PepeProject.Controllers.UserController.GetById(System.Int32)">
             <summary>
             Получение данных пользователя по Id
             </summary>
-            <param name="model">Пользователь</param>
-            <returns></returns>
+            <param name="id">Id пользователя</param>
         </member>
         <member name="M:PepeProject.Controllers.UserController.Add(PepeProject.Contracts.User.CreateUserRequest)">
-             <summary>
-             Создание нового пользователя
-             </summary>
-             <remarks>
-             Пример запроса:
+            <summary>
+            Создание нового пользователя
+            </summary>
+            <remarks>
+            Пример запроса:
             
-                 POST /Todo
-                 {
-                    "username": "testname",
-                    "email": "test@gmail.com",
-                    "passwordHash": "testhash"
-                 }
+                POST
+                {
+                   "username": "testname",
+                   "email": "test@gmail.com",
+                   "passwordHash": "testhash"
+                }
             
-             </remarks>
-             <param name="model">Пользователь</param>
-             <returns></returns>
+            </remarks>
+            <param name="user">Добавляемые данные пользователя</param>
         </member>
         <member name="M:PepeProject.Controllers.UserController.Update(System.Int32,PepeProject.Contracts.User.CreateUserRequest)">
-             <summary>
-             Обновление данных пользователя по Id
-             </summary>
-             <remarks>
-             Пример запроса:
+            <summary>
+            Обновление данных пользователя по Id
+            </summary>
+            <remarks>
+            Пример запроса:
             
-                 POST /Todo
-                 {
-                    "username": "testname",
-                    "email": "test@gmail.com",
-                    "passwordHash": "testhash"
-                 }
+                POST
+                {
+                   "username": "testname",
+                   "email": "test@gmail.com",
+                   "passwordHash": "testhash"
+                }
             
-             </remarks>
-             <param name="model">Пользователь</param>
-             <returns></returns>
+            </remarks>
+            <param name="id">Id пользователя</param>
+            <param name="userRequest">Обновленные данные пользователя</param>
         </member>
         <member name="M:PepeProject.Controllers.UserController.Delete(System.Int32)">
             <summary>
             Удаление пользователя по Id
             </summary>
-            <param name="model">Пользователь</param>
-            <returns></returns>
+            <param name="id">Id пользователя</param>
+        </member>
+        <member name="M:PepeProject.Controllers.UserRoleController.GetAll">
+            <summary>
+            Получение данных всех пользователь->роль
+            </summary>
+        </member>
+        <member name="M:PepeProject.Controllers.UserRoleController.GetById(System.Int32)">
+            <summary>
+            Получение данных пользователь->роль по Id
+            </summary>
+            <param name="id">Id пользователь->роль</param>
+        </member>
+        <member name="M:PepeProject.Controllers.UserRoleController.Add(PepeProject.Contracts.UserRole.CreateUserRoleRequest)">
+            <summary>
+            Создание нового пользователь->роль
+            </summary>
+            <remarks>
+            Пример запроса:
+            
+                POST
+                {
+                   "userId": 1,
+                   "roleId": 1
+                }
+            
+            </remarks>
+            <param name="userRole">Добавляемые данные пользователь->роль</param>
+        </member>
+        <member name="M:PepeProject.Controllers.UserRoleController.Update(System.Int32,PepeProject.Contracts.UserRole.CreateUserRoleRequest)">
+            <summary>
+            Обновление данных пользователь->роль по Id
+            </summary>
+            <remarks>
+            Пример запроса:
+            
+                POST
+                {
+                   "userId": 1,
+                   "roleId": 1
+                }
+            
+            </remarks>
+            <param name="id">Id v</param>
+            <param name="userRoleRequest">Обновленные данные пользователь->роль</param>
+        </member>
+        <member name="M:PepeProject.Controllers.UserRoleController.Delete(System.Int32)">
+            <summary>
+            Удаление пользователь->роль по Id
+            </summary>
+            <param name="id">Id пользователь->роль</param>
         </member>
     </members>
 </doc>

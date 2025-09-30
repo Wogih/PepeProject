@@ -1,9 +1,20 @@
 
 using BusinessLogic.Services;
-using DataAccess.Models;
+using DataAccess;
 using DataAccess.Wrapper;
 using Domain.Interfaces;
-using Domain.Wrapper;
+using Domain.Interfaces.ICollection;
+using Domain.Interfaces.ICollectionMeme;
+using Domain.Interfaces.IComment;
+using Domain.Interfaces.IMeme;
+using Domain.Interfaces.IMemeMetadatum;
+using Domain.Interfaces.IMemeTag;
+using Domain.Interfaces.IReaction;
+using Domain.Interfaces.IRole;
+using Domain.Interfaces.ITag;
+using Domain.Interfaces.IUploadStat;
+using Domain.Interfaces.IUser;
+using Domain.Interfaces.IUserRole;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using System.Reflection;
@@ -17,10 +28,21 @@ namespace PepeProject
             var builder = WebApplication.CreateBuilder(args);
 
             builder.Services.AddDbContext<MisContext>(
-                options => options.UseSqlServer("Server=DESKTOP-KUHU8KC\\SQLEXPRESS;Database=MIS;User Id=sa;Password=1;TrustServerCertificate=true;"));
+                options => options.UseSqlServer("Server=DESKTOP-K6LFJKO;Database=MIS;User Id=sa;Password=1;TrustServerCertificate=true;"));
 
             builder.Services.AddScoped<IRepositoryWrapper, RepositoryWrapper>();
             builder.Services.AddScoped<IUserService, UserService>();
+            builder.Services.AddScoped<IMemeService, MemeService>();
+            builder.Services.AddScoped<ITagService, TagService>();
+            builder.Services.AddScoped<IRoleService, RoleService>();
+            builder.Services.AddScoped<ICommentService, CommentService>();
+            builder.Services.AddScoped<IReactionService, ReactionService>();
+            builder.Services.AddScoped<ICollectionService, CollectionService>();
+            builder.Services.AddScoped<IMemeMetadatumService, MemeMetadatumService>();
+            builder.Services.AddScoped<IUploadStatService, UploadStatService>();
+            builder.Services.AddScoped<ICollectionMemeService, CollectionMemeService>();
+            builder.Services.AddScoped<IMemeTagService, MemeTagService>();
+            builder.Services.AddScoped<IUserRoleService, UserRoleService>();
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -30,16 +52,16 @@ namespace PepeProject
                 options.SwaggerDoc("v1", new OpenApiInfo
                 {
                     Version = "v1",
-                    Title = "Интернет-магазин API",
-                    Description = "Краткое описание вашего API",
+                    Title = "РРЅС‚РµСЂРЅРµС‚-РјР°РіР°Р·РёРЅ API",
+                    Description = "РљСЂР°С‚РєРѕРµ РѕРїРёСЃР°РЅРёРµ РІР°С€РµРіРѕ API",
                     Contact = new OpenApiContact
                     {
-                        Name = "Пример контакта",
+                        Name = "РџСЂРёРјРµСЂ РєРѕРЅС‚Р°РєС‚Р°",
                         Url = new Uri("https://example.com/contact")
                     },
                     License = new OpenApiLicense
                     {
-                        Name = "Пример лицензии",
+                        Name = "РџСЂРёРјРµСЂ Р»РёС†РµРЅР·РёРё",
                         Url = new Uri("https://example.com/license")
                     }
                 });

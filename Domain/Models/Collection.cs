@@ -8,9 +8,15 @@ public partial class Collection
 
     public string CollectionName { get; set; } = null!;
 
+    public string? Description { get; set; }
+
+    public bool? IsPublic { get; set; }
+
     public DateTime? CreatedAt { get; set; }
 
-    public virtual User User { get; set; } = null!;
+    public DateTime? UpdatedAt { get; set; }
 
-    public virtual ICollection<Meme> Memes { get; set; } = new List<Meme>();
+    public virtual ICollection<CollectionMeme> CollectionMemes { get; set; } = new List<CollectionMeme>();
+
+    public virtual User User { get; set; } = null!;
 }

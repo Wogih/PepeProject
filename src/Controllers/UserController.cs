@@ -1,4 +1,4 @@
-﻿using Domain.Interfaces;
+using Domain.Interfaces.IUser;
 using Domain.Models;
 using Mapster;
 using Microsoft.AspNetCore.Mvc;
@@ -19,8 +19,6 @@ namespace PepeProject.Controllers
         /// <summary>
         /// Получение данных всех пользователей
         /// </summary>
-        /// <param name="model">Пользователь</param>
-        /// <returns></returns>
 
         // GET api/<UsersController>
         [HttpGet]
@@ -28,15 +26,14 @@ namespace PepeProject.Controllers
         {
 
             var result = await _userService.GetAll();
-            var respose = result.Adapt<GetUserResponse>();
+            var respose = result.Adapt<List<GetUserResponse>>();
             return Ok(respose);
         }
 
         /// <summary>
         /// Получение данных пользователя по Id
         /// </summary>
-        /// <param name="model">Пользователь</param>
-        /// <returns></returns>
+        /// <param name="id">Id пользователя</param>
 
         // GET api/<UsersController>
         [HttpGet("{id}")]
@@ -52,17 +49,16 @@ namespace PepeProject.Controllers
         /// </summary>
         /// <remarks>
         /// Пример запроса:
-        ///
-        ///     POST /Todo
+        /// 
+        ///     POST
         ///     {
         ///        "username": "testname",
         ///        "email": "test@gmail.com",
         ///        "passwordHash": "testhash"
         ///     }
-        ///
+        /// 
         /// </remarks>
-        /// <param name="model">Пользователь</param>
-        /// <returns></returns>
+        /// <param name="user">Добавляемые данные пользователя</param>
 
         // POST api/<UsersController>
         [HttpPost]
@@ -78,17 +74,17 @@ namespace PepeProject.Controllers
         /// </summary>
         /// <remarks>
         /// Пример запроса:
-        ///
-        ///     POST /Todo
+        /// 
+        ///     POST
         ///     {
         ///        "username": "testname",
         ///        "email": "test@gmail.com",
         ///        "passwordHash": "testhash"
         ///     }
-        ///
+        /// 
         /// </remarks>
-        /// <param name="model">Пользователь</param>
-        /// <returns></returns>
+        /// <param name="id">Id пользователя</param>
+        /// <param name="userRequest">Обновленные данные пользователя</param>
 
         // DELETE api/<UsersController>
         [HttpPut("{id}")]
@@ -115,8 +111,7 @@ namespace PepeProject.Controllers
         /// <summary>
         /// Удаление пользователя по Id
         /// </summary>
-        /// <param name="model">Пользователь</param>
-        /// <returns></returns>
+        /// <param name="id">Id пользователя</param>
 
         // DELETE api/<UsersController>
         [HttpDelete]

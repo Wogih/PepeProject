@@ -579,23 +579,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\leooo\\.nuget\\packages\\": {},
+    "C:\\Users\\Student\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\Сопровождение информационных систем\\PepeProject\\BusinessLogic\\BusinessLogic.csproj",
+      "projectUniqueName": "D:\\Сопровождение информационных систем\\PepeProject\\BusinessLogic\\BusinessLogic.csproj",
       "projectName": "BusinessLogic",
-      "projectPath": "G:\\Сопровождение информационных систем\\PepeProject\\BusinessLogic\\BusinessLogic.csproj",
-      "packagesPath": "C:\\Users\\leooo\\.nuget\\packages\\",
-      "outputPath": "G:\\Сопровождение информационных систем\\PepeProject\\BusinessLogic\\obj\\",
+      "projectPath": "D:\\Сопровождение информационных систем\\PepeProject\\BusinessLogic\\BusinessLogic.csproj",
+      "packagesPath": "C:\\Users\\Student\\.nuget\\packages\\",
+      "outputPath": "D:\\Сопровождение информационных систем\\PepeProject\\BusinessLogic\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\leooo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Student\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -610,8 +610,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "G:\\Сопровождение информационных систем\\PepeProject\\Domain\\Domain.csproj": {
-              "projectPath": "G:\\Сопровождение информационных систем\\PepeProject\\Domain\\Domain.csproj"
+            "D:\\Сопровождение информационных систем\\PepeProject\\Domain\\Domain.csproj": {
+              "projectPath": "D:\\Сопровождение информационных систем\\PepeProject\\Domain\\Domain.csproj"
             }
           }
         }
@@ -647,7 +647,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

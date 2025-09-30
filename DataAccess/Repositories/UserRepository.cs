@@ -1,5 +1,4 @@
-﻿using DataAccess.Models;
-using Domain.Interfaces;
+using Domain.Interfaces.IUser;
 using Domain.Models;
 
 namespace DataAccess.Repositories

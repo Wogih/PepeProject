@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Domain.Models;
+﻿namespace Domain.Models;
 
 public partial class User
 {
@@ -23,7 +20,5 @@ public partial class User
 
     public virtual ICollection<Reaction> Reactions { get; set; } = new List<Reaction>();
 
-    public virtual ICollection<UploadStat> UploadStats { get; set; } = new List<UploadStat>();
-
-    public virtual ICollection<Role> Roles { get; set; } = new List<Role>();
+    public virtual ICollection<UserRole> UserRoles { get; set; } = new List<UserRole>();
 }

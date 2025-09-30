@@ -1,6 +1,6 @@
-﻿using Domain.Interfaces;
+using Domain.Interfaces;
+using Domain.Interfaces.IUser;
 using Domain.Models;
-using Domain.Wrapper;
 using Microsoft.EntityFrameworkCore;
 
 namespace BusinessLogic.Services

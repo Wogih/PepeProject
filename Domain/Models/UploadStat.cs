@@ -1,19 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Domain.Models;
+﻿namespace Domain.Models;
 
 public partial class UploadStat
 {
     public int StatId { get; set; }
 
-    public int UserId { get; set; }
+    public int MemeId { get; set; }
 
-    public int? UploadCount { get; set; }
+    public int? ViewsCount { get; set; }
 
-    public int? TotalViews { get; set; }
+    public int? DownloadCount { get; set; }
 
-    public DateTime? LastUploadDate { get; set; }
+    public int? ShareCount { get; set; }
 
-    public virtual User User { get; set; } = null!;
+    public DateTime? LastViewed { get; set; }
+
+    public DateTime? LastUpdated { get; set; }
+
+    public virtual Meme Meme { get; set; } = null!;
 }
