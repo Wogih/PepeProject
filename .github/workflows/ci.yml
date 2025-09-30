@@ -1,0 +1,61 @@
+name: CI Build and Code Analysis
+
+on:
+  push:
+    branches: [ "**" ]
+  pull_request:
+    branches: [ "**" ]
+
+env:
+  DOTNET_VERSION: '8.0.x'
+  SOLUTION_FILE: '**/*.sln'
+
+jobs:
+  code-quality:
+    name: Code Quality Checks
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: ${{ env.DOTNET_VERSION }}
+
+    - name: Install format tool
+      run: dotnet tool install -g dotnet-format
+
+    - name: Check code formatting
+      run: |
+        dotnet format --verify-no-changes --verbosity detailed
+        echo "✅ Code formatting check passed"
+
+    - name: Validate project structure
+      run: |
+        dotnet restore --dry-run
+        echo "✅ Project structure is valid"
+
+  build-and-test:
+    name: Build and Test
+    runs-on: ubuntu-latest
+    needs: code-quality  # Зависит от успешного прохождения проверки кода
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: ${{ env.DOTNET_VERSION }}
+
+    - name: Restore dependencies
+      run: dotnet restore
+
+    - name: Build
+      run: dotnet build --configuration Release --no-restore --warnaserror
+
+    - name: Run tests
+      run: dotnet test --configuration Release --no-build --verbosity normal
