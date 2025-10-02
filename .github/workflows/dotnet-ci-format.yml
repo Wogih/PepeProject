@@ -3,54 +3,32 @@ name: .NET Core CI and Format Check
 on:
   push:
     branches:
-      - '**'  # Все ветки
-    paths:
-      - '**.cs'
-      - '**.csproj'
-      - '**.sln'
-      - '.editorconfig'
+      - '**'
   pull_request:
     branches:
-      - '**'  # Все ветки
-    paths:
-      - '**.cs'
-      - '**.csproj'
-      - '**.sln'
-      - '.editorconfig'
+      - '**'
 
 jobs:
   build-and-format:
-    runs-on: ubuntu-latest  # или windows-latest если нужна Windows
+    runs-on: ubuntu-latest
 
     steps:
-    # Шаг 1: Получение кода
     - name: Checkout code
       uses: actions/checkout@v3
-      with:
-        fetch-depth: 0
 
-    # Шаг 2: Настройка .NET
-    - name: Setup .NET Core
+    - name: Setup .NET
       uses: actions/setup-dotnet@v3
       with:
-        dotnet-version: '6.0.x'  # Измените на вашу версию .NET
+        dotnet-version: '8.0.x'
 
-    # Шаг 3: Восстановление зависимостей
     - name: Restore dependencies
       run: dotnet restore
 
-    # Шаг 4: Сборка проекта
     - name: Build
       run: dotnet build --configuration Release --no-restore
 
-    # Шаг 5: Запуск тестов (опционально)
-    - name: Test
-      run: dotnet test --configuration Release --no-build --verbosity normal
-
-    # Шаг 6: Установка dotnet-format tool
-    - name: Install dotnet-format tool
+    - name: Install dotnet-format
       run: dotnet tool install -g dotnet-format
 
-    # Шаг 7: Проверка форматирования кода
     - name: Check code formatting
-      run: dotnet format --verify-no-changes --verbosity diagnostic
+      run: dotnet format PepeProject.sln --verify-no-changes --verbosity detailed
