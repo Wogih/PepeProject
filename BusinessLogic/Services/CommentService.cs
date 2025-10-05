@@ -14,40 +14,123 @@ namespace BusinessLogic.Services
             _repositoryWrapper = repositoryWrapper;
         }
 
-        public Task<List<Comment>> GetAll()
+        public async Task<List<Comment>> GetAll()
         {
-            return _repositoryWrapper.Comment.FindAll().ToListAsync();
+            return await _repositoryWrapper.Comment.FindAll();
         }
 
-        public Task<Comment> GetById(int id)
+        public async Task<Comment> GetById(int id)
         {
-            var comment = _repositoryWrapper.Comment
-                .FindByCondition(x => x.CommentId == id).First();
-            return Task.FromResult(comment);
+            var comments = await _repositoryWrapper.Comment
+                .FindByCondition(x => x.CommentId == id);
+
+            if (!comments.Any())
+            {
+                throw new InvalidOperationException("Comment not found.");
+            }
+
+            if (comments.Count > 1)
+            {
+                throw new InvalidOperationException("Multiple comments found with the same ID.");
+            }
+
+            return comments.First();
         }
 
-        public Task Create(Comment model)
+        public async Task<List<Comment>> GetByMemeId(int memeId)
         {
-            _repositoryWrapper.Comment.Create(model);
-            _repositoryWrapper.Save();
-            return Task.CompletedTask;
+            return await _repositoryWrapper.Comment
+                .FindByCondition(x => x.MemeId == memeId);
         }
 
-        public Task Update(Comment model)
+        public async Task<List<Comment>> GetReplies(int parentCommentId)
         {
-            _repositoryWrapper.Comment.Update(model);
-            _repositoryWrapper.Save();
-            return Task.CompletedTask;
+            return await _repositoryWrapper.Comment
+                .FindByCondition(x => x.ParentCommentId == parentCommentId);
         }
 
-        public Task Delete(int id)
+        public async Task Create(Comment model)
         {
-            var comment = _repositoryWrapper.Comment
-                .FindByCondition(x => x.CommentId == id).First();
+            ArgumentNullException.ThrowIfNull(model);
 
-            _repositoryWrapper.Comment.Delete(comment);
-            _repositoryWrapper.Save();
-            return Task.CompletedTask;
+            if (string.IsNullOrWhiteSpace(model.CommentText))
+            {
+                throw new ArgumentException("CommentText cannot be null, empty, or whitespace.", nameof(model.CommentText));
+            }
+
+            if (model.MemeId <= 0)
+            {
+                throw new ArgumentException("MemeId must be greater than 0.", nameof(model.MemeId));
+            }
+
+            if (model.UserId <= 0)
+            {
+                throw new ArgumentException("UserId must be greater than 0.", nameof(model.UserId));
+            }
+
+            if (model.ParentCommentId.HasValue)
+            {
+                var parentComment = await _repositoryWrapper.Comment
+                    .FindByCondition(x => x.CommentId == model.ParentCommentId.Value);
+                
+                if (!parentComment.Any())
+                {
+                    throw new InvalidOperationException("Parent comment not found.");
+                }
+            }
+
+            await _repositoryWrapper.Comment.Create(model);
+            await _repositoryWrapper.Save();
+        }
+
+        public async Task Update(Comment model)
+        {
+            ArgumentNullException.ThrowIfNull(model);
+
+            if (string.IsNullOrWhiteSpace(model.CommentText))
+            {
+                throw new ArgumentException("CommentText cannot be null, empty, or whitespace.", nameof(model.CommentText));
+            }
+
+            if (model.MemeId <= 0)
+            {
+                throw new ArgumentException("MemeId must be greater than 0.", nameof(model.MemeId));
+            }
+
+            if (model.UserId <= 0)
+            {
+                throw new ArgumentException("UserId must be greater than 0.", nameof(model.UserId));
+            }
+
+            await _repositoryWrapper.Comment.Update(model);
+            await _repositoryWrapper.Save();
+        }
+
+        public async Task Delete(int id)
+        {
+            var comments = await _repositoryWrapper.Comment
+                .FindByCondition(x => x.CommentId == id);
+            
+            if (!comments.Any())
+            {
+                throw new InvalidOperationException("Comment not found.");
+            }
+
+            if (comments.Count > 1)
+            {
+                throw new InvalidOperationException("Multiple comments found with the same ID.");
+            }
+
+            var replies = await _repositoryWrapper.Comment
+                .FindByCondition(x => x.ParentCommentId == id);
+            
+            if (replies.Any())
+            {
+                throw new InvalidOperationException("Cannot delete comment that has replies. Delete replies first.");
+            }
+
+            await _repositoryWrapper.Comment.Delete(comments.First());
+            await _repositoryWrapper.Save();
         }
     }
 }

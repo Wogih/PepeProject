@@ -5,49 +5,79 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BusinessLogic.Services
 {
-    public class UserService : IUserService
+    public class UserService(IRepositoryWrapper repositoryWrapper) : IUserService
     {
-        private IRepositoryWrapper _repositoryWrapper;
-
-        public UserService(IRepositoryWrapper repositoryWrapper)
+        public async Task<List<User>> GetAll()
         {
-            _repositoryWrapper = repositoryWrapper;
+            return await repositoryWrapper.User.FindAll();
         }
 
-        public Task<List<User>> GetAll()
+        public async Task<User> GetById(int id)
         {
-            return _repositoryWrapper.User.FindAll().ToListAsync();
+            var users = await repositoryWrapper.User
+                .FindByCondition(x => x.UserId == id);
+
+            if (!users.Any())
+            {
+                throw new InvalidOperationException("User not found.");
+            }
+
+            if (users.Count > 1)
+            {
+                throw new InvalidOperationException("Multiple users found with the same ID.");
+            }
+
+            return users.First();
         }
 
-        public Task<User> GetById(int id)
+        public async Task Create(User model)
         {
-            var user = _repositoryWrapper.User
-                .FindByCondition(x => x.UserId == id).First();
-            return Task.FromResult(user);
+            ArgumentNullException.ThrowIfNull(model);
+
+            if (string.IsNullOrWhiteSpace(model.Username))
+            {
+                throw new ArgumentException("Username cannot be null, empty, or whitespace.", nameof(model.Username));
+            }
+
+            if (string.IsNullOrWhiteSpace(model.Email))
+            {
+                throw new ArgumentException("Email cannot be null, empty, or whitespace.", nameof(model.Email));
+            }
+
+            if (string.IsNullOrWhiteSpace(model.PasswordHash))
+            {
+                throw new ArgumentException("PasswordHash cannot be null, empty, or whitespace.", nameof(model.PasswordHash));
+            }
+
+            await repositoryWrapper.User.Create(model);
+            await repositoryWrapper.Save();
         }
 
-        public Task Create(User model)
+        public async Task Update(User model)
         {
-            _repositoryWrapper.User.Create(model);
-            _repositoryWrapper.Save();
-            return Task.CompletedTask;
+            ArgumentNullException.ThrowIfNull(model);
+
+            await repositoryWrapper.User.Update(model);
+            await repositoryWrapper.Save();
         }
 
-        public Task Update(User model)
+        public async Task Delete(int id)
         {
-            _repositoryWrapper.User.Update(model);
-            _repositoryWrapper.Save();
-            return Task.CompletedTask;
-        }
+            var users = await repositoryWrapper.User
+                .FindByCondition(x => x.UserId == id);
+            
+            if (!users.Any())
+            {
+                throw new InvalidOperationException("User not found.");
+            }
 
-        public Task Delete(int id)
-        {
-            var user = _repositoryWrapper.User
-                .FindByCondition(x => x.UserId == id).First();
+            if (users.Count > 1)
+            {
+                throw new InvalidOperationException("Multiple users found with the same ID.");
+            }
 
-            _repositoryWrapper.User.Delete(user);
-            _repositoryWrapper.Save();
-            return Task.CompletedTask;
+            await repositoryWrapper.User.Delete(users.First());
+            await repositoryWrapper.Save();
         }
     }
 }

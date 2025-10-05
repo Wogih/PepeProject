@@ -2,6 +2,7 @@ using Domain.Interfaces;
 using Domain.Interfaces.IMeme;
 using Domain.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Text;
 
 namespace BusinessLogic.Services
 {
@@ -14,40 +15,115 @@ namespace BusinessLogic.Services
             _repositoryWrapper = repositoryWrapper;
         }
 
-        public Task<List<Meme>> GetAll()
+        public async Task<List<Meme>> GetAll()
         {
-            return _repositoryWrapper.Meme.FindAll().ToListAsync();
+            return await _repositoryWrapper.Meme.FindAll();
         }
 
-        public Task<Meme> GetById(int id)
+        public async Task<Meme> GetById(int id)
         {
-            var meme = _repositoryWrapper.Meme
-                .FindByCondition(x => x.MemeId == id).First();
-            return Task.FromResult(meme);
+            if (id <= 0)
+            {
+                throw new ArgumentException("Invalid id.");
+            }
+
+            var meme = await _repositoryWrapper.Meme
+                .FindByCondition(x => x.MemeId == id);
+            
+            if (!meme.Any())
+            {
+                throw new InvalidOperationException("Meme not found.");
+            }
+
+            if (meme.Count > 1)
+            {
+                throw new InvalidOperationException("Multiple memes found with the same ID.");
+            }
+            
+            return meme.First();
         }
 
-        public Task Create(Meme model)
+        public async Task Create(Meme model)
         {
-            _repositoryWrapper.Meme.Create(model);
-            _repositoryWrapper.Save();
-            return Task.CompletedTask;
+            ArgumentNullException.ThrowIfNull(model);
+
+            if (model.MemeId <= 0)
+            {
+                throw new ArgumentException("Invalid id.");
+            }
+
+            if (string.IsNullOrWhiteSpace(model.Title))
+            {
+                throw new ArgumentException("Title is required.");
+            }
+
+            if (string.IsNullOrWhiteSpace(model.ImageUrl))
+            {
+                throw new ArgumentException("ImageUrl is required.");
+            }
+            
+            await _repositoryWrapper.Meme.Create(model);
+            await _repositoryWrapper.Save();
         }
 
-        public Task Update(Meme model)
+        public async Task Update(Meme model)
         {
-            _repositoryWrapper.Meme.Update(model);
-            _repositoryWrapper.Save();
-            return Task.CompletedTask;
+            ArgumentNullException.ThrowIfNull(model);
+
+            if (model.MemeId <= 0)
+            {
+                throw new ArgumentException("Invalid id.");
+            }
+
+            if (string.IsNullOrWhiteSpace(model.Title))
+            {
+                throw new ArgumentException("Title is required.");
+            }
+
+            if (string.IsNullOrWhiteSpace(model.ImageUrl))
+            {
+                throw new ArgumentException("ImageUrl is required.");
+            }
+
+            var existingMeme = await _repositoryWrapper.Meme
+                .FindByCondition(x => x.MemeId == model.MemeId);
+            
+            if (!existingMeme.Any())
+            {
+                throw new InvalidOperationException("Meme not found.");
+            }
+
+            if (existingMeme.Count > 1)
+            {
+                throw new InvalidOperationException("Multiple memes found with the same ID.");
+            }
+            
+            await _repositoryWrapper.Meme.Update(model);
+            await _repositoryWrapper.Save();
         }
 
-        public Task Delete(int id)
+        public async Task Delete(int id)
         {
-            var meme = _repositoryWrapper.Meme
-                .FindByCondition(x => x.MemeId == id).First();
+            if (id <= 0)
+            {
+                throw new ArgumentException("Invalid id.");
+            }
 
-            _repositoryWrapper.Meme.Delete(meme);
-            _repositoryWrapper.Save();
-            return Task.CompletedTask;
+            var meme = await _repositoryWrapper.Meme
+                .FindByCondition(x => x.MemeId == id);
+            
+            if (!meme.Any())
+            {
+                throw new InvalidOperationException("Meme not found.");
+            }
+
+            if (meme.Count > 1)
+            {
+                throw new InvalidOperationException("Multiple memes found with the same ID.");
+            }
+    
+            await _repositoryWrapper.Meme.Delete(meme.First());
+            await _repositoryWrapper.Save();
         }
     }
 }
