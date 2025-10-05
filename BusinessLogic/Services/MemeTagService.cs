@@ -71,7 +71,7 @@ namespace BusinessLogic.Services
         {
             var memeTags = await _repositoryWrapper.MemeTag
                 .FindByCondition(x => x.MemeId == memeId && x.TagId == tagId);
-            
+
             return memeTags.Any();
         }
 
@@ -79,7 +79,7 @@ namespace BusinessLogic.Services
         {
             var memeTags = await _repositoryWrapper.MemeTag
                 .FindByCondition(x => x.MemeId == memeId);
-            
+
             return memeTags.Select(mt => mt.TagId).ToList();
         }
 
@@ -87,7 +87,7 @@ namespace BusinessLogic.Services
         {
             var memeTags = await _repositoryWrapper.MemeTag
                 .FindByCondition(x => x.TagId == tagId);
-            
+
             return memeTags.Select(mt => mt.MemeId).ToList();
         }
 
@@ -95,7 +95,7 @@ namespace BusinessLogic.Services
         {
             var memeTags = await _repositoryWrapper.MemeTag
                 .FindByCondition(x => x.MemeId == memeId);
-            
+
             return memeTags.Count;
         }
 
@@ -103,7 +103,7 @@ namespace BusinessLogic.Services
         {
             var memeTags = await _repositoryWrapper.MemeTag
                 .FindByCondition(x => x.TagId == tagId);
-            
+
             return memeTags.Count;
         }
 
@@ -123,7 +123,7 @@ namespace BusinessLogic.Services
 
             var meme = await _repositoryWrapper.Meme
                 .FindByCondition(x => x.MemeId == model.MemeId);
-            
+
             if (!meme.Any())
             {
                 throw new InvalidOperationException("Meme not found.");
@@ -131,7 +131,7 @@ namespace BusinessLogic.Services
 
             var tag = await _repositoryWrapper.Tag
                 .FindByCondition(x => x.TagId == model.TagId);
-            
+
             if (!tag.Any())
             {
                 throw new InvalidOperationException("Tag not found.");
@@ -139,7 +139,7 @@ namespace BusinessLogic.Services
 
             var existingMemeTags = await _repositoryWrapper.MemeTag
                 .FindByCondition(x => x.MemeId == model.MemeId && x.TagId == model.TagId);
-            
+
             if (existingMemeTags.Any())
             {
                 throw new InvalidOperationException("MemeTag relationship already exists.");
@@ -184,7 +184,7 @@ namespace BusinessLogic.Services
 
             var existingMemeTags = await _repositoryWrapper.MemeTag
                 .FindByCondition(x => x.MemeTagId == model.MemeTagId);
-            
+
             if (!existingMemeTags.Any())
             {
                 throw new InvalidOperationException("MemeTag not found.");
@@ -192,7 +192,7 @@ namespace BusinessLogic.Services
 
             var meme = await _repositoryWrapper.Meme
                 .FindByCondition(x => x.MemeId == model.MemeId);
-            
+
             if (!meme.Any())
             {
                 throw new InvalidOperationException("Meme not found.");
@@ -200,17 +200,17 @@ namespace BusinessLogic.Services
 
             var tag = await _repositoryWrapper.Tag
                 .FindByCondition(x => x.TagId == model.TagId);
-            
+
             if (!tag.Any())
             {
                 throw new InvalidOperationException("Tag not found.");
             }
 
             var duplicateMemeTags = await _repositoryWrapper.MemeTag
-                .FindByCondition(x => x.MemeId == model.MemeId && 
-                                     x.TagId == model.TagId && 
+                .FindByCondition(x => x.MemeId == model.MemeId &&
+                                     x.TagId == model.TagId &&
                                      x.MemeTagId != model.MemeTagId);
-            
+
             if (duplicateMemeTags.Any())
             {
                 throw new InvalidOperationException("Another MemeTag with the same meme and tag already exists.");
@@ -224,7 +224,7 @@ namespace BusinessLogic.Services
         {
             var memeTags = await _repositoryWrapper.MemeTag
                 .FindByCondition(x => x.MemeTagId == id);
-            
+
             if (!memeTags.Any())
             {
                 throw new InvalidOperationException("MemeTag not found.");
@@ -243,7 +243,7 @@ namespace BusinessLogic.Services
         {
             var memeTags = await _repositoryWrapper.MemeTag
                 .FindByCondition(x => x.MemeId == memeId && x.TagId == tagId);
-            
+
             if (!memeTags.Any())
             {
                 throw new InvalidOperationException("MemeTag not found for specified meme and tag.");
@@ -262,7 +262,7 @@ namespace BusinessLogic.Services
         {
             var memeTags = await _repositoryWrapper.MemeTag
                 .FindByCondition(x => x.MemeId == memeId);
-            
+
             foreach (var memeTag in memeTags)
             {
                 await _repositoryWrapper.MemeTag.Delete(memeTag);
@@ -278,7 +278,7 @@ namespace BusinessLogic.Services
         {
             var memeTags = await _repositoryWrapper.MemeTag
                 .FindByCondition(x => x.TagId == tagId);
-            
+
             foreach (var memeTag in memeTags)
             {
                 await _repositoryWrapper.MemeTag.Delete(memeTag);
@@ -294,9 +294,9 @@ namespace BusinessLogic.Services
         {
             var memeTags = await _repositoryWrapper.MemeTag
                 .FindByCondition(x => x.TagId == tagId);
-            
+
             var memeIds = memeTags.Select(mt => mt.MemeId).ToList();
-            
+
             if (!memeIds.Any())
             {
                 return new List<Meme>();
@@ -304,7 +304,7 @@ namespace BusinessLogic.Services
 
             var memes = await _repositoryWrapper.Meme
                 .FindByCondition(x => memeIds.Contains(x.MemeId));
-            
+
             return memes;
         }
 
@@ -312,9 +312,9 @@ namespace BusinessLogic.Services
         {
             var memeTags = await _repositoryWrapper.MemeTag
                 .FindByCondition(x => x.MemeId == memeId);
-            
+
             var tagIds = memeTags.Select(mt => mt.TagId).ToList();
-            
+
             if (!tagIds.Any())
             {
                 return new List<Tag>();
@@ -322,7 +322,7 @@ namespace BusinessLogic.Services
 
             var tags = await _repositoryWrapper.Tag
                 .FindByCondition(x => tagIds.Contains(x.TagId));
-            
+
             return tags;
         }
     }

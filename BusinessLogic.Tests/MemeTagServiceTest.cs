@@ -23,12 +23,12 @@ namespace BusinessLogic.Tests
             _mockMemeTagRepository = new Mock<IMemeTagRepository>();
             _mockMemeRepository = new Mock<IMemeRepository>();
             _mockTagRepository = new Mock<ITagRepository>();
-            
+
             _mockRepositoryWrapper.Setup(x => x.MemeTag).Returns(_mockMemeTagRepository.Object);
             _mockRepositoryWrapper.Setup(x => x.Meme).Returns(_mockMemeRepository.Object);
             _mockRepositoryWrapper.Setup(x => x.Tag).Returns(_mockTagRepository.Object);
             _mockRepositoryWrapper.Setup(x => x.Save()).Returns(Task.CompletedTask);
-            
+
             _memeTagService = new MemeTagService(_mockRepositoryWrapper.Object);
         }
 
@@ -40,10 +40,10 @@ namespace BusinessLogic.Tests
             // Arrange
             var emptyList = new List<MemeTag>();
             _mockMemeTagRepository.Setup(x => x.FindAll()).ReturnsAsync(emptyList);
-            
+
             // Act
             var result = await _memeTagService.GetAll();
-            
+
             // Assert
             Assert.Empty(result);
         }
@@ -58,10 +58,10 @@ namespace BusinessLogic.Tests
                 new MemeTag() { MemeTagId = 2, MemeId = 1, TagId = 2 }
             };
             _mockMemeTagRepository.Setup(x => x.FindAll()).ReturnsAsync(memeTags);
-            
+
             // Act
             var result = await _memeTagService.GetAll();
-            
+
             // Assert
             Assert.Equal(memeTags, result);
         }
@@ -71,7 +71,7 @@ namespace BusinessLogic.Tests
         {
             // Arrange
             _mockMemeTagRepository.Setup(x => x.FindAll()).ThrowsAsync(new InvalidOperationException("DB Error"));
-            
+
             // Act & Assert
             await Assert.ThrowsAsync<InvalidOperationException>(async () => await _memeTagService.GetAll());
         }
@@ -184,7 +184,7 @@ namespace BusinessLogic.Tests
                 .ReturnsAsync(new List<MemeTag> { existingMemeTag });
 
             // Act
-            var result = await _memeTagService.ExistsForMemeAndTag(memeId, tagId);
+            bool result = await _memeTagService.ExistsForMemeAndTag(memeId, tagId);
 
             // Assert
             Assert.True(result);
@@ -205,7 +205,7 @@ namespace BusinessLogic.Tests
                 .ReturnsAsync(memeTags);
 
             // Act
-            var result = await _memeTagService.GetTagCountForMeme(memeId);
+            int result = await _memeTagService.GetTagCountForMeme(memeId);
 
             // Assert
             Assert.Equal(3, result);
@@ -226,7 +226,7 @@ namespace BusinessLogic.Tests
                 .ReturnsAsync(memeTags);
 
             // Act
-            var result = await _memeTagService.GetMemeCountForTag(tagId);
+            int result = await _memeTagService.GetMemeCountForTag(tagId);
 
             // Assert
             Assert.Equal(3, result);
@@ -344,7 +344,7 @@ namespace BusinessLogic.Tests
             // Arrange
             var existingMemeTag = new MemeTag { MemeTagId = 1, MemeId = 1, TagId = 1 };
             var newMemeTag = new MemeTag { MemeId = 1, TagId = 1 };
-            
+
             _mockMemeRepository.Setup(x => x.FindByCondition(It.IsAny<Expression<Func<Meme, bool>>>()))
                 .ReturnsAsync(new List<Meme> { new Meme() });
             _mockTagRepository.Setup(x => x.FindByCondition(It.IsAny<Expression<Func<Tag, bool>>>()))
@@ -395,7 +395,7 @@ namespace BusinessLogic.Tests
             await _memeTagService.AddTagToMeme(memeId, tagId);
 
             // Assert
-            _mockMemeTagRepository.Verify(x => x.Create(It.Is<MemeTag>(mt => 
+            _mockMemeTagRepository.Verify(x => x.Create(It.Is<MemeTag>(mt =>
                 mt.MemeId == memeId && mt.TagId == tagId)), Times.Once);
             _mockRepositoryWrapper.Verify(x => x.Save(), Times.Once);
         }
@@ -517,7 +517,7 @@ namespace BusinessLogic.Tests
                 new Meme { MemeId = 1, Title = "Meme 1" },
                 new Meme { MemeId = 2, Title = "Meme 2" }
             };
-            
+
             _mockMemeTagRepository.Setup(x => x.FindByCondition(It.IsAny<Expression<Func<MemeTag, bool>>>()))
                 .ReturnsAsync(memeTags);
             _mockMemeRepository.Setup(x => x.FindByCondition(It.IsAny<Expression<Func<Meme, bool>>>()))
@@ -545,7 +545,7 @@ namespace BusinessLogic.Tests
                 new Tag { TagId = 1, TagName = "Tag 1" },
                 new Tag { TagId = 2, TagName = "Tag 2" }
             };
-            
+
             _mockMemeTagRepository.Setup(x => x.FindByCondition(It.IsAny<Expression<Func<MemeTag, bool>>>()))
                 .ReturnsAsync(memeTags);
             _mockTagRepository.Setup(x => x.FindByCondition(It.IsAny<Expression<Func<Tag, bool>>>()))
@@ -571,4 +571,3 @@ namespace BusinessLogic.Tests
         }
     }
 }
-               

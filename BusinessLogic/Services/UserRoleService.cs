@@ -76,7 +76,7 @@ namespace BusinessLogic.Services
         {
             var userRoles = await _repositoryWrapper.UserRole
                 .FindByCondition(x => x.UserRoleId == id);
-            
+
             if (!userRoles.Any())
             {
                 throw new InvalidOperationException("UserRole not found.");

@@ -17,10 +17,10 @@ namespace BusinessLogic.Tests
         {
             _mockRepositoryWrapper = new Mock<IRepositoryWrapper>();
             _mockUploadStatRepository = new Mock<IUploadStatRepository>();
-            
+
             _mockRepositoryWrapper.Setup(x => x.UploadStat).Returns(_mockUploadStatRepository.Object);
             _mockRepositoryWrapper.Setup(x => x.Save()).Returns(Task.CompletedTask);
-            
+
             _uploadStatService = new UploadStatService(_mockRepositoryWrapper.Object);
         }
 
@@ -32,10 +32,10 @@ namespace BusinessLogic.Tests
             // Arrange
             var emptyList = new List<UploadStat>();
             _mockUploadStatRepository.Setup(x => x.FindAll()).ReturnsAsync(emptyList);
-            
+
             // Act
             var result = await _uploadStatService.GetAll();
-            
+
             // Assert
             Assert.Empty(result);
         }
@@ -50,10 +50,10 @@ namespace BusinessLogic.Tests
                 new UploadStat() { StatId = 2, MemeId = 2, ViewsCount = 200, DownloadCount = 20, ShareCount = 10 }
             };
             _mockUploadStatRepository.Setup(x => x.FindAll()).ReturnsAsync(uploadStats);
-            
+
             // Act
             var result = await _uploadStatService.GetAll();
-            
+
             // Assert
             Assert.Equal(uploadStats, result);
         }
@@ -63,7 +63,7 @@ namespace BusinessLogic.Tests
         {
             // Arrange
             _mockUploadStatRepository.Setup(x => x.FindAll()).ThrowsAsync(new InvalidOperationException("DB Error"));
-            
+
             // Act & Assert
             await Assert.ThrowsAsync<InvalidOperationException>(async () => await _uploadStatService.GetAll());
         }
@@ -208,7 +208,7 @@ namespace BusinessLogic.Tests
             // Arrange
             var existingUploadStat = new UploadStat { StatId = 1, MemeId = 1, ViewsCount = 100 };
             var newUploadStat = new UploadStat { MemeId = 1, ViewsCount = 0 };
-            
+
             _mockUploadStatRepository.Setup(x => x.FindByCondition(It.IsAny<Expression<Func<UploadStat, bool>>>()))
                 .ReturnsAsync(new List<UploadStat> { existingUploadStat });
 

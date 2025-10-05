@@ -65,7 +65,7 @@ namespace BusinessLogic.Services
 
             var existingStats = await _repositoryWrapper.UploadStat
                 .FindByCondition(x => x.MemeId == model.MemeId);
-            
+
             if (existingStats.Any())
             {
                 throw new InvalidOperationException("UploadStat for this meme already exists.");
@@ -90,7 +90,7 @@ namespace BusinessLogic.Services
 
             var existingStats = await _repositoryWrapper.UploadStat
                 .FindByCondition(x => x.StatId == model.StatId);
-            
+
             if (!existingStats.Any())
             {
                 throw new InvalidOperationException("UploadStat not found.");
@@ -141,7 +141,7 @@ namespace BusinessLogic.Services
         {
             var uploadStats = await _repositoryWrapper.UploadStat
                 .FindByCondition(x => x.StatId == id);
-            
+
             if (!uploadStats.Any())
             {
                 throw new InvalidOperationException("UploadStat not found.");

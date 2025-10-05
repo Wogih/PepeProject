@@ -17,10 +17,10 @@ namespace BusinessLogic.Tests
         {
             _mockRepositoryWrapper = new Mock<IRepositoryWrapper>();
             _mockMemeMetadatumRepository = new Mock<IMemeMetadatumRepository>();
-            
+
             _mockRepositoryWrapper.Setup(x => x.MemeMetadatum).Returns(_mockMemeMetadatumRepository.Object);
             _mockRepositoryWrapper.Setup(x => x.Save()).Returns(Task.CompletedTask);
-            
+
             _memeMetadatumService = new MemeMetadatumService(_mockRepositoryWrapper.Object);
         }
 
@@ -32,10 +32,10 @@ namespace BusinessLogic.Tests
             // Arrange
             var emptyList = new List<MemeMetadatum>();
             _mockMemeMetadatumRepository.Setup(x => x.FindAll()).ReturnsAsync(emptyList);
-            
+
             // Act
             var result = await _memeMetadatumService.GetAll();
-            
+
             // Assert
             Assert.Empty(result);
         }
@@ -50,10 +50,10 @@ namespace BusinessLogic.Tests
                 new MemeMetadatum() { MetadataId = 2, MemeId = 2, FileSize = 2048, Width = 1024, Height = 768, FileFormat = "PNG", MimeType = "image/png" }
             };
             _mockMemeMetadatumRepository.Setup(x => x.FindAll()).ReturnsAsync(memeMetadata);
-            
+
             // Act
             var result = await _memeMetadatumService.GetAll();
-            
+
             // Assert
             Assert.Equal(memeMetadata, result);
         }
@@ -63,7 +63,7 @@ namespace BusinessLogic.Tests
         {
             // Arrange
             _mockMemeMetadatumRepository.Setup(x => x.FindAll()).ThrowsAsync(new InvalidOperationException("DB Error"));
-            
+
             // Act & Assert
             await Assert.ThrowsAsync<InvalidOperationException>(async () => await _memeMetadatumService.GetAll());
         }
@@ -74,15 +74,15 @@ namespace BusinessLogic.Tests
         public async Task GetById_MemeMetadatumExists_ReturnsCorrectMemeMetadatum()
         {
             // Arrange
-            var existingMemeMetadatum = new MemeMetadatum 
-            { 
-                MetadataId = 1, 
-                MemeId = 1, 
-                FileSize = 1024, 
-                Width = 800, 
-                Height = 600, 
-                FileFormat = "JPEG", 
-                MimeType = "image/jpeg" 
+            var existingMemeMetadatum = new MemeMetadatum
+            {
+                MetadataId = 1,
+                MemeId = 1,
+                FileSize = 1024,
+                Width = 800,
+                Height = 600,
+                FileFormat = "JPEG",
+                MimeType = "image/jpeg"
             };
             _mockMemeMetadatumRepository.Setup(x => x.FindByCondition(It.IsAny<Expression<Func<MemeMetadatum, bool>>>()))
                 .ReturnsAsync(new List<MemeMetadatum> { existingMemeMetadatum });
@@ -145,15 +145,15 @@ namespace BusinessLogic.Tests
         {
             // Arrange
             const int memeId = 1;
-            var existingMemeMetadatum = new MemeMetadatum 
-            { 
-                MetadataId = 1, 
-                MemeId = memeId, 
-                FileSize = 1024, 
-                Width = 800, 
-                Height = 600, 
-                FileFormat = "JPEG", 
-                MimeType = "image/jpeg" 
+            var existingMemeMetadatum = new MemeMetadatum
+            {
+                MetadataId = 1,
+                MemeId = memeId,
+                FileSize = 1024,
+                Width = 800,
+                Height = 600,
+                FileFormat = "JPEG",
+                MimeType = "image/jpeg"
             };
             _mockMemeMetadatumRepository.Setup(x => x.FindByCondition(It.IsAny<Expression<Func<MemeMetadatum, bool>>>()))
                 .ReturnsAsync(new List<MemeMetadatum> { existingMemeMetadatum });
@@ -239,7 +239,7 @@ namespace BusinessLogic.Tests
             // Arrange
             var existingMemeMetadatum = new MemeMetadatum { MetadataId = 1, MemeId = 1, FileSize = 1024, Width = 800, Height = 600, FileFormat = "JPEG", MimeType = "image/jpeg" };
             var newMemeMetadatum = new MemeMetadatum { MemeId = 1, FileSize = 2048, Width = 1024, Height = 768, FileFormat = "PNG", MimeType = "image/png" };
-            
+
             _mockMemeMetadatumRepository.Setup(x => x.FindByCondition(It.IsAny<Expression<Func<MemeMetadatum, bool>>>()))
                 .ReturnsAsync(new List<MemeMetadatum> { existingMemeMetadatum });
 
@@ -253,14 +253,14 @@ namespace BusinessLogic.Tests
         public async Task Create_CorrectMemeMetadatum_CallsCreateAndSave()
         {
             // Arrange
-            var validMemeMetadatum = new MemeMetadatum 
-            { 
-                MemeId = 1, 
-                FileSize = 1024, 
-                Width = 800, 
-                Height = 600, 
-                FileFormat = "JPEG", 
-                MimeType = "image/jpeg" 
+            var validMemeMetadatum = new MemeMetadatum
+            {
+                MemeId = 1,
+                FileSize = 1024,
+                Width = 800,
+                Height = 600,
+                FileFormat = "JPEG",
+                MimeType = "image/jpeg"
             };
             _mockMemeMetadatumRepository.Setup(x => x.FindByCondition(It.IsAny<Expression<Func<MemeMetadatum, bool>>>()))
                 .ReturnsAsync(new List<MemeMetadatum>());
@@ -277,14 +277,14 @@ namespace BusinessLogic.Tests
         public async Task Create_ThrowsException_WhenRepositoryCreateThrows()
         {
             // Arrange
-            var validMemeMetadatum = new MemeMetadatum 
-            { 
-                MemeId = 1, 
-                FileSize = 1024, 
-                Width = 800, 
-                Height = 600, 
-                FileFormat = "JPEG", 
-                MimeType = "image/jpeg" 
+            var validMemeMetadatum = new MemeMetadatum
+            {
+                MemeId = 1,
+                FileSize = 1024,
+                Width = 800,
+                Height = 600,
+                FileFormat = "JPEG",
+                MimeType = "image/jpeg"
             };
             _mockMemeMetadatumRepository.Setup(x => x.FindByCondition(It.IsAny<Expression<Func<MemeMetadatum, bool>>>()))
                 .ReturnsAsync(new List<MemeMetadatum>());
@@ -299,14 +299,14 @@ namespace BusinessLogic.Tests
         public async Task Create_ThrowsException_WhenSaveThrows()
         {
             // Arrange
-            var validMemeMetadatum = new MemeMetadatum 
-            { 
-                MemeId = 1, 
-                FileSize = 1024, 
-                Width = 800, 
-                Height = 600, 
-                FileFormat = "JPEG", 
-                MimeType = "image/jpeg" 
+            var validMemeMetadatum = new MemeMetadatum
+            {
+                MemeId = 1,
+                FileSize = 1024,
+                Width = 800,
+                Height = 600,
+                FileFormat = "JPEG",
+                MimeType = "image/jpeg"
             };
             _mockMemeMetadatumRepository.Setup(x => x.FindByCondition(It.IsAny<Expression<Func<MemeMetadatum, bool>>>()))
                 .ReturnsAsync(new List<MemeMetadatum>());
@@ -344,15 +344,15 @@ namespace BusinessLogic.Tests
         public async Task Update_NonExistentMemeMetadatum_ThrowsInvalidOperationException()
         {
             // Arrange
-            var memeMetadatum = new MemeMetadatum 
-            { 
-                MetadataId = 1, 
-                MemeId = 1, 
-                FileSize = 1024, 
-                Width = 800, 
-                Height = 600, 
-                FileFormat = "JPEG", 
-                MimeType = "image/jpeg" 
+            var memeMetadatum = new MemeMetadatum
+            {
+                MetadataId = 1,
+                MemeId = 1,
+                FileSize = 1024,
+                Width = 800,
+                Height = 600,
+                FileFormat = "JPEG",
+                MimeType = "image/jpeg"
             };
             _mockMemeMetadatumRepository.Setup(x => x.FindByCondition(It.IsAny<Expression<Func<MemeMetadatum, bool>>>()))
                 .ReturnsAsync(new List<MemeMetadatum>());
@@ -367,15 +367,15 @@ namespace BusinessLogic.Tests
         public async Task Update_ValidMemeMetadatum_CallsUpdateAndSave()
         {
             // Arrange
-            var updatedMemeMetadatum = new MemeMetadatum 
-            { 
-                MetadataId = 1, 
-                MemeId = 1, 
-                FileSize = 2048, 
-                Width = 1024, 
-                Height = 768, 
-                FileFormat = "PNG", 
-                MimeType = "image/png" 
+            var updatedMemeMetadatum = new MemeMetadatum
+            {
+                MetadataId = 1,
+                MemeId = 1,
+                FileSize = 2048,
+                Width = 1024,
+                Height = 768,
+                FileFormat = "PNG",
+                MimeType = "image/png"
             };
             _mockMemeMetadatumRepository.Setup(x => x.FindByCondition(It.IsAny<Expression<Func<MemeMetadatum, bool>>>()))
                 .ReturnsAsync(new List<MemeMetadatum> { updatedMemeMetadatum });
@@ -397,15 +397,15 @@ namespace BusinessLogic.Tests
             const int memeId = 1;
             const int maxWidth = 1920;
             const int maxHeight = 1080;
-            var memeMetadatum = new MemeMetadatum 
-            { 
-                MetadataId = 1, 
-                MemeId = memeId, 
-                FileSize = 1024, 
-                Width = 800, 
-                Height = 600, 
-                FileFormat = "JPEG", 
-                MimeType = "image/jpeg" 
+            var memeMetadatum = new MemeMetadatum
+            {
+                MetadataId = 1,
+                MemeId = memeId,
+                FileSize = 1024,
+                Width = 800,
+                Height = 600,
+                FileFormat = "JPEG",
+                MimeType = "image/jpeg"
             };
             _mockMemeMetadatumRepository.Setup(x => x.FindByCondition(It.IsAny<Expression<Func<MemeMetadatum, bool>>>()))
                 .ReturnsAsync(new List<MemeMetadatum> { memeMetadatum });
@@ -422,15 +422,15 @@ namespace BusinessLogic.Tests
             const int memeId = 1;
             const int maxWidth = 800;
             const int maxHeight = 600;
-            var memeMetadatum = new MemeMetadatum 
-            { 
-                MetadataId = 1, 
-                MemeId = memeId, 
-                FileSize = 1024, 
-                Width = 1024, 
-                Height = 768, 
-                FileFormat = "JPEG", 
-                MimeType = "image/jpeg" 
+            var memeMetadatum = new MemeMetadatum
+            {
+                MetadataId = 1,
+                MemeId = memeId,
+                FileSize = 1024,
+                Width = 1024,
+                Height = 768,
+                FileFormat = "JPEG",
+                MimeType = "image/jpeg"
             };
             _mockMemeMetadatumRepository.Setup(x => x.FindByCondition(It.IsAny<Expression<Func<MemeMetadatum, bool>>>()))
                 .ReturnsAsync(new List<MemeMetadatum> { memeMetadatum });
@@ -445,15 +445,15 @@ namespace BusinessLogic.Tests
             // Arrange
             const int memeId = 1;
             const long maxFileSize = 2048;
-            var memeMetadatum = new MemeMetadatum 
-            { 
-                MetadataId = 1, 
-                MemeId = memeId, 
-                FileSize = 1024, 
-                Width = 800, 
-                Height = 600, 
-                FileFormat = "JPEG", 
-                MimeType = "image/jpeg" 
+            var memeMetadatum = new MemeMetadatum
+            {
+                MetadataId = 1,
+                MemeId = memeId,
+                FileSize = 1024,
+                Width = 800,
+                Height = 600,
+                FileFormat = "JPEG",
+                MimeType = "image/jpeg"
             };
             _mockMemeMetadatumRepository.Setup(x => x.FindByCondition(It.IsAny<Expression<Func<MemeMetadatum, bool>>>()))
                 .ReturnsAsync(new List<MemeMetadatum> { memeMetadatum });
@@ -469,15 +469,15 @@ namespace BusinessLogic.Tests
             // Arrange
             const int memeId = 1;
             const long maxFileSize = 512;
-            var memeMetadatum = new MemeMetadatum 
-            { 
-                MetadataId = 1, 
-                MemeId = memeId, 
-                FileSize = 1024, 
-                Width = 800, 
-                Height = 600, 
-                FileFormat = "JPEG", 
-                MimeType = "image/jpeg" 
+            var memeMetadatum = new MemeMetadatum
+            {
+                MetadataId = 1,
+                MemeId = memeId,
+                FileSize = 1024,
+                Width = 800,
+                Height = 600,
+                FileFormat = "JPEG",
+                MimeType = "image/jpeg"
             };
             _mockMemeMetadatumRepository.Setup(x => x.FindByCondition(It.IsAny<Expression<Func<MemeMetadatum, bool>>>()))
                 .ReturnsAsync(new List<MemeMetadatum> { memeMetadatum });
@@ -496,7 +496,7 @@ namespace BusinessLogic.Tests
                 .ReturnsAsync(new List<MemeMetadatum> { memeMetadatum });
 
             // Act
-            var result = await _memeMetadatumService.ExistsForMeme(memeId);
+            bool result = await _memeMetadatumService.ExistsForMeme(memeId);
 
             // Assert
             Assert.True(result);
@@ -511,7 +511,7 @@ namespace BusinessLogic.Tests
                 .ReturnsAsync(new List<MemeMetadatum>());
 
             // Act
-            var result = await _memeMetadatumService.ExistsForMeme(memeId);
+            bool result = await _memeMetadatumService.ExistsForMeme(memeId);
 
             // Assert
             Assert.False(result);

@@ -71,7 +71,7 @@ namespace BusinessLogic.Services
         {
             var collectionMemes = await _repositoryWrapper.CollectionMeme
                 .FindByCondition(x => x.CollectionId == collectionId && x.MemeId == memeId);
-            
+
             return collectionMemes.Any();
         }
 
@@ -79,7 +79,7 @@ namespace BusinessLogic.Services
         {
             var collectionMemes = await _repositoryWrapper.CollectionMeme
                 .FindByCondition(x => x.CollectionId == collectionId);
-            
+
             return collectionMemes.Count;
         }
 
@@ -99,7 +99,7 @@ namespace BusinessLogic.Services
 
             var collection = await _repositoryWrapper.Collection
                 .FindByCondition(x => x.CollectionId == model.CollectionId);
-            
+
             if (!collection.Any())
             {
                 throw new InvalidOperationException("Collection not found.");
@@ -107,7 +107,7 @@ namespace BusinessLogic.Services
 
             var meme = await _repositoryWrapper.Meme
                 .FindByCondition(x => x.MemeId == model.MemeId);
-            
+
             if (!meme.Any())
             {
                 throw new InvalidOperationException("Meme not found.");
@@ -115,7 +115,7 @@ namespace BusinessLogic.Services
 
             var existingCollectionMemes = await _repositoryWrapper.CollectionMeme
                 .FindByCondition(x => x.CollectionId == model.CollectionId && x.MemeId == model.MemeId);
-            
+
             if (existingCollectionMemes.Any())
             {
                 throw new InvalidOperationException("Meme is already in this collection.");
@@ -152,7 +152,7 @@ namespace BusinessLogic.Services
 
             var existingCollectionMemes = await _repositoryWrapper.CollectionMeme
                 .FindByCondition(x => x.CollectionMemeId == model.CollectionMemeId);
-            
+
             if (!existingCollectionMemes.Any())
             {
                 throw new InvalidOperationException("CollectionMeme not found.");
@@ -160,7 +160,7 @@ namespace BusinessLogic.Services
 
             var collection = await _repositoryWrapper.Collection
                 .FindByCondition(x => x.CollectionId == model.CollectionId);
-            
+
             if (!collection.Any())
             {
                 throw new InvalidOperationException("Collection not found.");
@@ -168,17 +168,17 @@ namespace BusinessLogic.Services
 
             var meme = await _repositoryWrapper.Meme
                 .FindByCondition(x => x.MemeId == model.MemeId);
-            
+
             if (!meme.Any())
             {
                 throw new InvalidOperationException("Meme not found.");
             }
 
             var duplicateCollectionMemes = await _repositoryWrapper.CollectionMeme
-                .FindByCondition(x => x.CollectionId == model.CollectionId && 
-                                     x.MemeId == model.MemeId && 
+                .FindByCondition(x => x.CollectionId == model.CollectionId &&
+                                     x.MemeId == model.MemeId &&
                                      x.CollectionMemeId != model.CollectionMemeId);
-            
+
             if (duplicateCollectionMemes.Any())
             {
                 throw new InvalidOperationException("Another CollectionMeme with the same collection and meme already exists.");
@@ -192,7 +192,7 @@ namespace BusinessLogic.Services
         {
             var collectionMemes = await _repositoryWrapper.CollectionMeme
                 .FindByCondition(x => x.CollectionMemeId == id);
-            
+
             if (!collectionMemes.Any())
             {
                 throw new InvalidOperationException("CollectionMeme not found.");
@@ -211,7 +211,7 @@ namespace BusinessLogic.Services
         {
             var collectionMemes = await _repositoryWrapper.CollectionMeme
                 .FindByCondition(x => x.CollectionId == collectionId && x.MemeId == memeId);
-            
+
             if (!collectionMemes.Any())
             {
                 throw new InvalidOperationException("CollectionMeme not found for specified collection and meme.");
@@ -230,7 +230,7 @@ namespace BusinessLogic.Services
         {
             var collectionMemes = await _repositoryWrapper.CollectionMeme
                 .FindByCondition(x => x.CollectionId == collectionId);
-            
+
             foreach (var collectionMeme in collectionMemes)
             {
                 await _repositoryWrapper.CollectionMeme.Delete(collectionMeme);
@@ -246,7 +246,7 @@ namespace BusinessLogic.Services
         {
             var collectionMemes = await _repositoryWrapper.CollectionMeme
                 .FindByCondition(x => x.CollectionId == collectionId);
-            
+
             return collectionMemes.Select(cm => cm.MemeId).ToList();
         }
 
@@ -254,7 +254,7 @@ namespace BusinessLogic.Services
         {
             var collectionMemes = await _repositoryWrapper.CollectionMeme
                 .FindByCondition(x => x.MemeId == memeId);
-            
+
             return collectionMemes.Select(cm => cm.CollectionId).ToList();
         }
     }

@@ -17,10 +17,10 @@ namespace BusinessLogic.Tests
         {
             _mockRepositoryWrapper = new Mock<IRepositoryWrapper>();
             _mockReactionRepository = new Mock<IReactionRepository>();
-            
+
             _mockRepositoryWrapper.Setup(x => x.Reaction).Returns(_mockReactionRepository.Object);
             _mockRepositoryWrapper.Setup(x => x.Save()).Returns(Task.CompletedTask);
-            
+
             _reactionService = new ReactionService(_mockRepositoryWrapper.Object);
         }
 
@@ -32,10 +32,10 @@ namespace BusinessLogic.Tests
             // Arrange
             var emptyList = new List<Reaction>();
             _mockReactionRepository.Setup(x => x.FindAll()).ReturnsAsync(emptyList);
-            
+
             // Act
             var result = await _reactionService.GetAll();
-            
+
             // Assert
             Assert.Empty(result);
         }
@@ -50,10 +50,10 @@ namespace BusinessLogic.Tests
                 new Reaction() { ReactionId = 2, MemeId = 1, UserId = 2, ReactionType = "dislike" }
             };
             _mockReactionRepository.Setup(x => x.FindAll()).ReturnsAsync(reactions);
-            
+
             // Act
             var result = await _reactionService.GetAll();
-            
+
             // Assert
             Assert.Equal(reactions, result);
         }
@@ -63,7 +63,7 @@ namespace BusinessLogic.Tests
         {
             // Arrange
             _mockReactionRepository.Setup(x => x.FindAll()).ThrowsAsync(new InvalidOperationException("DB Error"));
-            
+
             // Act & Assert
             await Assert.ThrowsAsync<InvalidOperationException>(async () => await _reactionService.GetAll());
         }
@@ -308,7 +308,7 @@ namespace BusinessLogic.Tests
             // Arrange
             var existingReaction = new Reaction { ReactionId = 1, MemeId = 1, UserId = 1, ReactionType = "like" };
             var newReaction = new Reaction { MemeId = 1, UserId = 1, ReactionType = "dislike" };
-            
+
             _mockReactionRepository.Setup(x => x.FindByCondition(It.IsAny<Expression<Func<Reaction, bool>>>()))
                 .ReturnsAsync(new List<Reaction> { existingReaction });
 

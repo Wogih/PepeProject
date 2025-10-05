@@ -99,7 +99,7 @@ namespace BusinessLogic.Services
             // Проверяем, не существует ли уже реакция от этого пользователя на этот мем
             var existingReactions = await _repositoryWrapper.Reaction
                 .FindByCondition(x => x.MemeId == model.MemeId && x.UserId == model.UserId);
-            
+
             if (existingReactions.Any())
             {
                 throw new InvalidOperationException("User has already reacted to this meme.");
@@ -131,7 +131,7 @@ namespace BusinessLogic.Services
             // Убеждаемся, что реакция существует
             var existingReactions = await _repositoryWrapper.Reaction
                 .FindByCondition(x => x.ReactionId == model.ReactionId);
-            
+
             if (!existingReactions.Any())
             {
                 throw new InvalidOperationException("Reaction not found.");
@@ -172,7 +172,7 @@ namespace BusinessLogic.Services
         {
             var reactions = await _repositoryWrapper.Reaction
                 .FindByCondition(x => x.ReactionId == id);
-            
+
             if (!reactions.Any())
             {
                 throw new InvalidOperationException("Reaction not found.");
@@ -191,7 +191,7 @@ namespace BusinessLogic.Services
         {
             var reactions = await _repositoryWrapper.Reaction
                 .FindByCondition(x => x.MemeId == memeId && x.UserId == userId);
-            
+
             if (!reactions.Any())
             {
                 throw new InvalidOperationException("Reaction not found for specified meme and user.");

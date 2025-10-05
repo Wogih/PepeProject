@@ -23,7 +23,7 @@ namespace BusinessLogic.Services
         {
             var tags = await _repositoryWrapper.Tag
                 .FindByCondition(x => x.TagId == id);
-            
+
             if (!tags.Any())
             {
                 throw new InvalidOperationException("Tag not found.");
@@ -33,7 +33,7 @@ namespace BusinessLogic.Services
             {
                 throw new InvalidOperationException("Multiple tags found with the same ID.");
             }
-            
+
             return tags.First();
         }
 
@@ -45,7 +45,7 @@ namespace BusinessLogic.Services
             {
                 throw new ArgumentException("TagName cannot be null, empty, or whitespace.", nameof(model.TagName));
             }
-            
+
             await _repositoryWrapper.Tag.Create(model);
             await _repositoryWrapper.Save();
         }
@@ -58,7 +58,7 @@ namespace BusinessLogic.Services
             {
                 throw new ArgumentException("TagName cannot be null, empty, or whitespace.", nameof(model.TagName));
             }
-            
+
             await _repositoryWrapper.Tag.Update(model);
             await _repositoryWrapper.Save();
         }
@@ -67,7 +67,7 @@ namespace BusinessLogic.Services
         {
             var tags = await _repositoryWrapper.Tag
                 .FindByCondition(x => x.TagId == id);
-            
+
             if (!tags.Any())
             {
                 throw new InvalidOperationException("Tag not found.");
@@ -77,7 +77,7 @@ namespace BusinessLogic.Services
             {
                 throw new InvalidOperationException("Multiple tags found with the same ID.");
             }
-    
+
             await _repositoryWrapper.Tag.Delete(tags.First());
             await _repositoryWrapper.Save();
         }

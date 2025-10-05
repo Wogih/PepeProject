@@ -72,7 +72,7 @@ namespace BusinessLogic.Services
             {
                 var parentComment = await _repositoryWrapper.Comment
                     .FindByCondition(x => x.CommentId == model.ParentCommentId.Value);
-                
+
                 if (!parentComment.Any())
                 {
                     throw new InvalidOperationException("Parent comment not found.");
@@ -110,7 +110,7 @@ namespace BusinessLogic.Services
         {
             var comments = await _repositoryWrapper.Comment
                 .FindByCondition(x => x.CommentId == id);
-            
+
             if (!comments.Any())
             {
                 throw new InvalidOperationException("Comment not found.");
@@ -123,7 +123,7 @@ namespace BusinessLogic.Services
 
             var replies = await _repositoryWrapper.Comment
                 .FindByCondition(x => x.ParentCommentId == id);
-            
+
             if (replies.Any())
             {
                 throw new InvalidOperationException("Cannot delete comment that has replies. Delete replies first.");

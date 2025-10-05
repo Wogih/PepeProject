@@ -29,7 +29,7 @@ namespace BusinessLogic.Services
 
             var meme = await _repositoryWrapper.Meme
                 .FindByCondition(x => x.MemeId == id);
-            
+
             if (!meme.Any())
             {
                 throw new InvalidOperationException("Meme not found.");
@@ -39,7 +39,7 @@ namespace BusinessLogic.Services
             {
                 throw new InvalidOperationException("Multiple memes found with the same ID.");
             }
-            
+
             return meme.First();
         }
 
@@ -61,7 +61,7 @@ namespace BusinessLogic.Services
             {
                 throw new ArgumentException("ImageUrl is required.");
             }
-            
+
             await _repositoryWrapper.Meme.Create(model);
             await _repositoryWrapper.Save();
         }
@@ -87,7 +87,7 @@ namespace BusinessLogic.Services
 
             var existingMeme = await _repositoryWrapper.Meme
                 .FindByCondition(x => x.MemeId == model.MemeId);
-            
+
             if (!existingMeme.Any())
             {
                 throw new InvalidOperationException("Meme not found.");
@@ -97,7 +97,7 @@ namespace BusinessLogic.Services
             {
                 throw new InvalidOperationException("Multiple memes found with the same ID.");
             }
-            
+
             await _repositoryWrapper.Meme.Update(model);
             await _repositoryWrapper.Save();
         }
@@ -111,7 +111,7 @@ namespace BusinessLogic.Services
 
             var meme = await _repositoryWrapper.Meme
                 .FindByCondition(x => x.MemeId == id);
-            
+
             if (!meme.Any())
             {
                 throw new InvalidOperationException("Meme not found.");
@@ -121,7 +121,7 @@ namespace BusinessLogic.Services
             {
                 throw new InvalidOperationException("Multiple memes found with the same ID.");
             }
-    
+
             await _repositoryWrapper.Meme.Delete(meme.First());
             await _repositoryWrapper.Save();
         }

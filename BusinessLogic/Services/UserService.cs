@@ -65,7 +65,7 @@ namespace BusinessLogic.Services
         {
             var users = await repositoryWrapper.User
                 .FindByCondition(x => x.UserId == id);
-            
+
             if (!users.Any())
             {
                 throw new InvalidOperationException("User not found.");

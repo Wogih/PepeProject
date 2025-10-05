@@ -17,10 +17,10 @@ namespace BusinessLogic.Tests
         {
             _mockRepositoryWrapper = new Mock<IRepositoryWrapper>();
             _mockTagRepository = new Mock<ITagRepository>();
-            
+
             _mockRepositoryWrapper.Setup(x => x.Tag).Returns(_mockTagRepository.Object);
             _mockRepositoryWrapper.Setup(x => x.Save()).Returns(Task.CompletedTask);
-            
+
             _tagService = new TagService(_mockRepositoryWrapper.Object);
         }
 
@@ -32,10 +32,10 @@ namespace BusinessLogic.Tests
             // Arrange
             var emptyList = new List<Tag>();
             _mockTagRepository.Setup(x => x.FindAll()).ReturnsAsync(emptyList);
-            
+
             // Act
             var result = await _tagService.GetAll();
-            
+
             // Assert
             Assert.Empty(result);
         }
@@ -50,10 +50,10 @@ namespace BusinessLogic.Tests
                 new Tag() { TagId = 2, TagName = "TestTag2" }
             };
             _mockTagRepository.Setup(x => x.FindAll()).ReturnsAsync(tags);
-            
+
             // Act
             var result = await _tagService.GetAll();
-            
+
             // Assert
             Assert.Equal(tags, result);
         }
@@ -63,7 +63,7 @@ namespace BusinessLogic.Tests
         {
             // Arrange
             _mockTagRepository.Setup(x => x.FindAll()).ThrowsAsync(new InvalidOperationException("DB Error"));
-            
+
             // Act & Assert
             await Assert.ThrowsAsync<InvalidOperationException>(async () => await _tagService.GetAll());
         }

@@ -84,7 +84,7 @@ namespace BusinessLogic.Services
             // Проверяем, не существует ли уже коллекция с таким именем у этого пользователя
             var existingCollections = await _repositoryWrapper.Collection
                 .FindByCondition(x => x.UserId == model.UserId && x.CollectionName == model.CollectionName);
-            
+
             if (existingCollections.Any())
             {
                 throw new InvalidOperationException("Collection with this name already exists for the user.");
@@ -115,7 +115,7 @@ namespace BusinessLogic.Services
             // Убеждаемся, что коллекция существует
             var existingCollections = await _repositoryWrapper.Collection
                 .FindByCondition(x => x.CollectionId == model.CollectionId);
-            
+
             if (!existingCollections.Any())
             {
                 throw new InvalidOperationException("Collection not found.");
@@ -123,10 +123,10 @@ namespace BusinessLogic.Services
 
             // Проверяем, не существует ли другой коллекции с таким именем у этого пользователя
             var duplicateCollections = await _repositoryWrapper.Collection
-                .FindByCondition(x => x.UserId == model.UserId && 
-                                     x.CollectionName == model.CollectionName && 
+                .FindByCondition(x => x.UserId == model.UserId &&
+                                     x.CollectionName == model.CollectionName &&
                                      x.CollectionId != model.CollectionId);
-            
+
             if (duplicateCollections.Any())
             {
                 throw new InvalidOperationException("Another collection with this name already exists for the user.");
@@ -179,7 +179,7 @@ namespace BusinessLogic.Services
         {
             var collections = await _repositoryWrapper.Collection
                 .FindByCondition(x => x.CollectionId == id);
-            
+
             if (!collections.Any())
             {
                 throw new InvalidOperationException("Collection not found.");
@@ -193,7 +193,7 @@ namespace BusinessLogic.Services
             // Проверяем, есть ли мемы в коллекции
             var collectionMemes = await _repositoryWrapper.CollectionMeme
                 .FindByCondition(x => x.CollectionId == id);
-            
+
             if (collectionMemes.Any())
             {
                 throw new InvalidOperationException("Cannot delete collection that contains memes. Remove memes first.");
@@ -207,7 +207,7 @@ namespace BusinessLogic.Services
         {
             var collections = await _repositoryWrapper.Collection
                 .FindByCondition(x => x.CollectionId == collectionId && x.UserId == userId);
-            
+
             return collections.Any();
         }
 
@@ -215,7 +215,7 @@ namespace BusinessLogic.Services
         {
             var collectionMemes = await _repositoryWrapper.CollectionMeme
                 .FindByCondition(x => x.CollectionId == collectionId);
-            
+
             return collectionMemes.Count;
         }
     }

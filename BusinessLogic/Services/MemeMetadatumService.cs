@@ -90,7 +90,7 @@ namespace BusinessLogic.Services
 
             var existingMetadata = await _repositoryWrapper.MemeMetadatum
                 .FindByCondition(x => x.MemeId == model.MemeId);
-            
+
             if (existingMetadata.Any())
             {
                 throw new InvalidOperationException("MemeMetadatum for this meme already exists.");
@@ -136,7 +136,7 @@ namespace BusinessLogic.Services
 
             var existingMetadata = await _repositoryWrapper.MemeMetadatum
                 .FindByCondition(x => x.MetadataId == model.MetadataId);
-            
+
             if (!existingMetadata.Any())
             {
                 throw new InvalidOperationException("MemeMetadatum not found.");
@@ -150,7 +150,7 @@ namespace BusinessLogic.Services
         {
             var memeMetadata = await _repositoryWrapper.MemeMetadatum
                 .FindByCondition(x => x.MetadataId == id);
-            
+
             if (!memeMetadata.Any())
             {
                 throw new InvalidOperationException("MemeMetadatum not found.");
@@ -169,7 +169,7 @@ namespace BusinessLogic.Services
         {
             var memeMetadata = await _repositoryWrapper.MemeMetadatum
                 .FindByCondition(x => x.MemeId == memeId);
-            
+
             if (!memeMetadata.Any())
             {
                 throw new InvalidOperationException("MemeMetadatum for specified meme not found.");
@@ -188,14 +188,14 @@ namespace BusinessLogic.Services
         {
             var memeMetadata = await _repositoryWrapper.MemeMetadatum
                 .FindByCondition(x => x.MemeId == memeId);
-            
+
             return memeMetadata.Any();
         }
 
         public async Task ValidateImageDimensions(int memeId, int maxWidth, int maxHeight)
         {
             var memeMetadata = await GetByMemeId(memeId);
-            
+
             if (memeMetadata.Width > maxWidth || memeMetadata.Height > maxHeight)
             {
                 throw new InvalidOperationException($"Image dimensions exceed maximum allowed size. Maximum: {maxWidth}x{maxHeight}, Actual: {memeMetadata.Width}x{memeMetadata.Height}");
@@ -205,7 +205,7 @@ namespace BusinessLogic.Services
         public async Task ValidateFileSize(int memeId, long maxFileSize)
         {
             var memeMetadata = await GetByMemeId(memeId);
-            
+
             if (memeMetadata.FileSize > maxFileSize)
             {
                 throw new InvalidOperationException($"File size exceeds maximum allowed size. Maximum: {maxFileSize} bytes, Actual: {memeMetadata.FileSize} bytes");

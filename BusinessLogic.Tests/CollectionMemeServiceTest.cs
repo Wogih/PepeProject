@@ -23,12 +23,12 @@ namespace BusinessLogic.Tests
             _mockCollectionMemeRepository = new Mock<ICollectionMemeRepository>();
             _mockCollectionRepository = new Mock<ICollectionRepository>();
             _mockMemeRepository = new Mock<IMemeRepository>();
-            
+
             _mockRepositoryWrapper.Setup(x => x.CollectionMeme).Returns(_mockCollectionMemeRepository.Object);
             _mockRepositoryWrapper.Setup(x => x.Collection).Returns(_mockCollectionRepository.Object);
             _mockRepositoryWrapper.Setup(x => x.Meme).Returns(_mockMemeRepository.Object);
             _mockRepositoryWrapper.Setup(x => x.Save()).Returns(Task.CompletedTask);
-            
+
             _collectionMemeService = new CollectionMemeService(_mockRepositoryWrapper.Object);
         }
 
@@ -40,10 +40,10 @@ namespace BusinessLogic.Tests
             // Arrange
             var emptyList = new List<CollectionMeme>();
             _mockCollectionMemeRepository.Setup(x => x.FindAll()).ReturnsAsync(emptyList);
-            
+
             // Act
             var result = await _collectionMemeService.GetAll();
-            
+
             // Assert
             Assert.Empty(result);
         }
@@ -58,10 +58,10 @@ namespace BusinessLogic.Tests
                 new CollectionMeme() { CollectionMemeId = 2, CollectionId = 1, MemeId = 2 }
             };
             _mockCollectionMemeRepository.Setup(x => x.FindAll()).ReturnsAsync(collectionMemes);
-            
+
             // Act
             var result = await _collectionMemeService.GetAll();
-            
+
             // Assert
             Assert.Equal(collectionMemes, result);
         }
@@ -71,7 +71,7 @@ namespace BusinessLogic.Tests
         {
             // Arrange
             _mockCollectionMemeRepository.Setup(x => x.FindAll()).ThrowsAsync(new InvalidOperationException("DB Error"));
-            
+
             // Act & Assert
             await Assert.ThrowsAsync<InvalidOperationException>(async () => await _collectionMemeService.GetAll());
         }
@@ -201,7 +201,7 @@ namespace BusinessLogic.Tests
                 .ReturnsAsync(new List<CollectionMeme> { existingCollectionMeme });
 
             // Act
-            var result = await _collectionMemeService.ExistsInCollection(collectionId, memeId);
+            bool result = await _collectionMemeService.ExistsInCollection(collectionId, memeId);
 
             // Assert
             Assert.True(result);
@@ -217,7 +217,7 @@ namespace BusinessLogic.Tests
                 .ReturnsAsync(new List<CollectionMeme>());
 
             // Act
-            var result = await _collectionMemeService.ExistsInCollection(collectionId, memeId);
+            bool result = await _collectionMemeService.ExistsInCollection(collectionId, memeId);
 
             // Assert
             Assert.False(result);
@@ -240,7 +240,7 @@ namespace BusinessLogic.Tests
                 .ReturnsAsync(collectionMemes);
 
             // Act
-            var result = await _collectionMemeService.GetMemeCountInCollection(collectionId);
+            int result = await _collectionMemeService.GetMemeCountInCollection(collectionId);
 
             // Assert
             Assert.Equal(3, result);
@@ -308,7 +308,7 @@ namespace BusinessLogic.Tests
             // Arrange
             var existingCollectionMeme = new CollectionMeme { CollectionMemeId = 1, CollectionId = 1, MemeId = 1 };
             var newCollectionMeme = new CollectionMeme { CollectionId = 1, MemeId = 1 };
-            
+
             _mockCollectionRepository.Setup(x => x.FindByCondition(It.IsAny<Expression<Func<Collection, bool>>>()))
                 .ReturnsAsync(new List<Collection> { new Collection() });
             _mockMemeRepository.Setup(x => x.FindByCondition(It.IsAny<Expression<Func<Meme, bool>>>()))
@@ -359,7 +359,7 @@ namespace BusinessLogic.Tests
             await _collectionMemeService.AddMemeToCollection(collectionId, memeId);
 
             // Assert
-            _mockCollectionMemeRepository.Verify(x => x.Create(It.Is<CollectionMeme>(cm => 
+            _mockCollectionMemeRepository.Verify(x => x.Create(It.Is<CollectionMeme>(cm =>
                 cm.CollectionId == collectionId && cm.MemeId == memeId)), Times.Once);
             _mockRepositoryWrapper.Verify(x => x.Save(), Times.Once);
         }

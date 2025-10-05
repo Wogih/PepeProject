@@ -20,11 +20,11 @@ namespace BusinessLogic.Tests
             _mockRepositoryWrapper = new Mock<IRepositoryWrapper>();
             _mockCollectionRepository = new Mock<ICollectionRepository>();
             _mockCollectionMemeRepository = new Mock<ICollectionMemeRepository>();
-            
+
             _mockRepositoryWrapper.Setup(x => x.Collection).Returns(_mockCollectionRepository.Object);
             _mockRepositoryWrapper.Setup(x => x.CollectionMeme).Returns(_mockCollectionMemeRepository.Object);
             _mockRepositoryWrapper.Setup(x => x.Save()).Returns(Task.CompletedTask);
-            
+
             _collectionService = new CollectionService(_mockRepositoryWrapper.Object);
         }
 
@@ -36,10 +36,10 @@ namespace BusinessLogic.Tests
             // Arrange
             var emptyList = new List<Collection>();
             _mockCollectionRepository.Setup(x => x.FindAll()).ReturnsAsync(emptyList);
-            
+
             // Act
             var result = await _collectionService.GetAll();
-            
+
             // Assert
             Assert.Empty(result);
         }
@@ -54,10 +54,10 @@ namespace BusinessLogic.Tests
                 new Collection() { CollectionId = 2, UserId = 2, CollectionName = "Test Collection 2", Description = "Desc 2", IsPublic = false }
             };
             _mockCollectionRepository.Setup(x => x.FindAll()).ReturnsAsync(collections);
-            
+
             // Act
             var result = await _collectionService.GetAll();
-            
+
             // Assert
             Assert.Equal(collections, result);
         }
@@ -67,7 +67,7 @@ namespace BusinessLogic.Tests
         {
             // Arrange
             _mockCollectionRepository.Setup(x => x.FindAll()).ThrowsAsync(new InvalidOperationException("DB Error"));
-            
+
             // Act & Assert
             await Assert.ThrowsAsync<InvalidOperationException>(async () => await _collectionService.GetAll());
         }
@@ -85,7 +85,7 @@ namespace BusinessLogic.Tests
                 new Collection { CollectionId = 3, UserId = 3, CollectionName = "Public 2", IsPublic = true }
             };
             _mockCollectionRepository.Setup(x => x.FindByCondition(It.IsAny<Expression<Func<Collection, bool>>>()))
-                .ReturnsAsync((Expression<Func<Collection, bool>> predicate) => 
+                .ReturnsAsync((Expression<Func<Collection, bool>> predicate) =>
                     collections.Where(predicate.Compile()).ToList());
 
             // Act
@@ -110,7 +110,7 @@ namespace BusinessLogic.Tests
                 new Collection { CollectionId = 3, UserId = 2, CollectionName = "Other User Collection" }
             };
             _mockCollectionRepository.Setup(x => x.FindByCondition(It.IsAny<Expression<Func<Collection, bool>>>()))
-                .ReturnsAsync((Expression<Func<Collection, bool>> predicate) => 
+                .ReturnsAsync((Expression<Func<Collection, bool>> predicate) =>
                     collections.Where(predicate.Compile()).ToList());
 
             // Act
@@ -180,7 +180,7 @@ namespace BusinessLogic.Tests
             var existingCollection = new Collection { CollectionId = collectionId, UserId = 2, CollectionName = "Other User Collection" };
             _mockCollectionRepository.Setup(x => x.FindByCondition(It.IsAny<Expression<Func<Collection, bool>>>()))
                 .ReturnsAsync(new List<Collection> { existingCollection });
-            
+
             _mockCollectionRepository.Setup(x => x.FindByCondition(It.IsAny<Expression<Func<Collection, bool>>>()))
                 .ReturnsAsync((Expression<Func<Collection, bool>> predicate) =>
                 {
@@ -235,7 +235,7 @@ namespace BusinessLogic.Tests
             // Arrange
             var existingCollection = new Collection { CollectionId = 1, UserId = 1, CollectionName = "Existing Collection" };
             var newCollection = new Collection { UserId = 1, CollectionName = "Existing Collection" };
-            
+
             _mockCollectionRepository.Setup(x => x.FindByCondition(It.IsAny<Expression<Func<Collection, bool>>>()))
                 .ReturnsAsync(new List<Collection> { existingCollection });
 
@@ -310,11 +310,11 @@ namespace BusinessLogic.Tests
             // Arrange
             var existingCollection = new Collection { CollectionId = 1, UserId = 1, CollectionName = "Existing Collection" };
             var updatedCollection = new Collection { CollectionId = 2, UserId = 1, CollectionName = "Existing Collection" };
-            
-            _mockCollectionRepository.Setup(x => x.FindByCondition(It.Is<Expression<Func<Collection, bool>>>(e => 
+
+            _mockCollectionRepository.Setup(x => x.FindByCondition(It.Is<Expression<Func<Collection, bool>>>(e =>
                 e.Compile()(new Collection { CollectionId = updatedCollection.CollectionId }))))
                 .ReturnsAsync(new List<Collection> { updatedCollection });
-            _mockCollectionRepository.Setup(x => x.FindByCondition(It.Is<Expression<Func<Collection, bool>>>(e => 
+            _mockCollectionRepository.Setup(x => x.FindByCondition(It.Is<Expression<Func<Collection, bool>>>(e =>
                 e.Compile()(new Collection { UserId = updatedCollection.UserId, CollectionName = updatedCollection.CollectionName }))))
                 .ReturnsAsync(new List<Collection> { existingCollection });
 
@@ -393,7 +393,7 @@ namespace BusinessLogic.Tests
             {
                 new CollectionMeme { CollectionMemeId = 1, CollectionId = deleteCollectionId, MemeId = 1 }
             };
-            
+
             _mockCollectionRepository.Setup(x => x.FindByCondition(It.IsAny<Expression<Func<Collection, bool>>>()))
                 .ReturnsAsync(new List<Collection> { existingCollection });
             _mockCollectionMemeRepository.Setup(x => x.FindByCondition(It.IsAny<Expression<Func<CollectionMeme, bool>>>()))
@@ -418,7 +418,7 @@ namespace BusinessLogic.Tests
                 .ReturnsAsync(new List<Collection> { collection });
 
             // Act
-            var result = await _collectionService.IsCollectionOwner(collectionId, userId);
+            bool result = await _collectionService.IsCollectionOwner(collectionId, userId);
 
             // Assert
             Assert.True(result);
@@ -431,7 +431,7 @@ namespace BusinessLogic.Tests
             const int collectionId = 1;
             const int userId = 1;
             var collection = new Collection { CollectionId = collectionId, UserId = 2 }; // Different user
-            
+
             _mockCollectionRepository.Setup(x => x.FindByCondition(It.IsAny<Expression<Func<Collection, bool>>>()))
                 .ReturnsAsync((Expression<Func<Collection, bool>> predicate) =>
                 {
@@ -440,7 +440,7 @@ namespace BusinessLogic.Tests
                 });
 
             // Act
-            var result = await _collectionService.IsCollectionOwner(collectionId, userId);
+            bool result = await _collectionService.IsCollectionOwner(collectionId, userId);
 
             // Assert
             Assert.False(result);
@@ -461,7 +461,7 @@ namespace BusinessLogic.Tests
                 .ReturnsAsync(collectionMemes);
 
             // Act
-            var result = await _collectionService.GetCollectionMemeCount(collectionId);
+            int result = await _collectionService.GetCollectionMemeCount(collectionId);
 
             // Assert
             Assert.Equal(3, result);

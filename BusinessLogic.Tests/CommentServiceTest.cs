@@ -17,10 +17,10 @@ namespace BusinessLogic.Tests
         {
             _mockRepositoryWrapper = new Mock<IRepositoryWrapper>();
             _mockCommentRepository = new Mock<ICommentRepository>();
-            
+
             _mockRepositoryWrapper.Setup(x => x.Comment).Returns(_mockCommentRepository.Object);
             _mockRepositoryWrapper.Setup(x => x.Save()).Returns(Task.CompletedTask);
-            
+
             _commentService = new CommentService(_mockRepositoryWrapper.Object);
         }
 
@@ -32,10 +32,10 @@ namespace BusinessLogic.Tests
             // Arrange
             var emptyList = new List<Comment>();
             _mockCommentRepository.Setup(x => x.FindAll()).ReturnsAsync(emptyList);
-            
+
             // Act
             var result = await _commentService.GetAll();
-            
+
             // Assert
             Assert.Empty(result);
         }
@@ -50,10 +50,10 @@ namespace BusinessLogic.Tests
                 new Comment() { CommentId = 2, CommentText = "Test Comment 2", UserId = 2, MemeId = 1 }
             };
             _mockCommentRepository.Setup(x => x.FindAll()).ReturnsAsync(comments);
-            
+
             // Act
             var result = await _commentService.GetAll();
-            
+
             // Assert
             Assert.Equal(comments, result);
         }
@@ -63,7 +63,7 @@ namespace BusinessLogic.Tests
         {
             // Arrange
             _mockCommentRepository.Setup(x => x.FindAll()).ThrowsAsync(new InvalidOperationException("DB Error"));
-            
+
             // Act & Assert
             await Assert.ThrowsAsync<InvalidOperationException>(async () => await _commentService.GetAll());
         }
@@ -230,12 +230,12 @@ namespace BusinessLogic.Tests
         public async Task Create_WithNonExistentParentComment_ThrowsInvalidOperationException()
         {
             // Arrange
-            var commentWithInvalidParent = new Comment 
-            { 
-                CommentText = "Valid Comment", 
-                UserId = 1, 
-                MemeId = 1, 
-                ParentCommentId = 999 
+            var commentWithInvalidParent = new Comment
+            {
+                CommentText = "Valid Comment",
+                UserId = 1,
+                MemeId = 1,
+                ParentCommentId = 999
             };
             _mockCommentRepository.Setup(x => x.FindByCondition(It.IsAny<Expression<Func<Comment, bool>>>()))
                 .ReturnsAsync(new List<Comment>());
@@ -264,8 +264,8 @@ namespace BusinessLogic.Tests
             // Arrange
             var parentComment = new Comment { CommentId = 1, CommentText = "Parent", UserId = 1, MemeId = 1 };
             var replyComment = new Comment { CommentText = "Reply", UserId = 2, MemeId = 1, ParentCommentId = 1 };
-            
-            _mockCommentRepository.Setup(x => x.FindByCondition(It.Is<Expression<Func<Comment, bool>>>(e => 
+
+            _mockCommentRepository.Setup(x => x.FindByCondition(It.Is<Expression<Func<Comment, bool>>>(e =>
                 e.Compile()(parentComment))))
                 .ReturnsAsync(new List<Comment> { parentComment });
 
@@ -371,7 +371,7 @@ namespace BusinessLogic.Tests
             var existingComment = new Comment { CommentId = deleteCommentId, CommentText = "Delete Me", UserId = 1, MemeId = 1 };
             _mockCommentRepository.Setup(x => x.FindByCondition(It.IsAny<Expression<Func<Comment, bool>>>()))
                 .ReturnsAsync(new List<Comment> { existingComment });
-            _mockCommentRepository.Setup(x => x.FindByCondition(It.Is<Expression<Func<Comment, bool>>>(e => 
+            _mockCommentRepository.Setup(x => x.FindByCondition(It.Is<Expression<Func<Comment, bool>>>(e =>
                 e.Compile()(new Comment { ParentCommentId = deleteCommentId }))))
                 .ReturnsAsync(new List<Comment>());
 
@@ -389,15 +389,15 @@ namespace BusinessLogic.Tests
             // Arrange
             int deleteCommentId = 1;
             var existingComment = new Comment { CommentId = deleteCommentId, CommentText = "Delete Me", UserId = 1, MemeId = 1 };
-            var replies = new List<Comment> 
-            { 
-                new Comment { CommentId = 2, CommentText = "Reply", UserId = 2, MemeId = 1, ParentCommentId = deleteCommentId } 
+            var replies = new List<Comment>
+            {
+                new Comment { CommentId = 2, CommentText = "Reply", UserId = 2, MemeId = 1, ParentCommentId = deleteCommentId }
             };
-            
-            _mockCommentRepository.Setup(x => x.FindByCondition(It.Is<Expression<Func<Comment, bool>>>(e => 
+
+            _mockCommentRepository.Setup(x => x.FindByCondition(It.Is<Expression<Func<Comment, bool>>>(e =>
                 e.Compile()(existingComment))))
                 .ReturnsAsync(new List<Comment> { existingComment });
-            _mockCommentRepository.Setup(x => x.FindByCondition(It.Is<Expression<Func<Comment, bool>>>(e => 
+            _mockCommentRepository.Setup(x => x.FindByCondition(It.Is<Expression<Func<Comment, bool>>>(e =>
                 e.Compile()(new Comment { ParentCommentId = deleteCommentId }))))
                 .ReturnsAsync(replies);
 
@@ -462,7 +462,7 @@ namespace BusinessLogic.Tests
             var existingComment = new Comment { CommentId = deleteCommentId, CommentText = "Delete Me", UserId = 1, MemeId = 1 };
             _mockCommentRepository.Setup(x => x.FindByCondition(It.IsAny<Expression<Func<Comment, bool>>>()))
                 .ReturnsAsync(new List<Comment> { existingComment });
-            _mockCommentRepository.Setup(x => x.FindByCondition(It.Is<Expression<Func<Comment, bool>>>(e => 
+            _mockCommentRepository.Setup(x => x.FindByCondition(It.Is<Expression<Func<Comment, bool>>>(e =>
                 e.Compile()(new Comment { ParentCommentId = deleteCommentId }))))
                 .ReturnsAsync(new List<Comment>());
             _mockCommentRepository.Setup(x => x.Delete(existingComment)).ThrowsAsync(new InvalidOperationException("Delete Error"));
@@ -480,7 +480,7 @@ namespace BusinessLogic.Tests
             var existingComment = new Comment { CommentId = deleteCommentId, CommentText = "Delete Me", UserId = 1, MemeId = 1 };
             _mockCommentRepository.Setup(x => x.FindByCondition(It.IsAny<Expression<Func<Comment, bool>>>()))
                 .ReturnsAsync(new List<Comment> { existingComment });
-            _mockCommentRepository.Setup(x => x.FindByCondition(It.Is<Expression<Func<Comment, bool>>>(e => 
+            _mockCommentRepository.Setup(x => x.FindByCondition(It.Is<Expression<Func<Comment, bool>>>(e =>
                 e.Compile()(new Comment { ParentCommentId = deleteCommentId }))))
                 .ReturnsAsync(new List<Comment>());
             _mockRepositoryWrapper.Setup(x => x.Save()).ThrowsAsync(new InvalidOperationException("Save Error"));

@@ -58,9 +58,9 @@ namespace BusinessLogic.Tests
             Assert.Equal(userRoles.Count, result.Count);
             foreach (var expected in userRoles)
             {
-                Assert.Contains(result, actual => 
-                    actual.UserRoleId == expected.UserRoleId && 
-                    actual.UserId == expected.UserId && 
+                Assert.Contains(result, actual =>
+                    actual.UserRoleId == expected.UserRoleId &&
+                    actual.UserId == expected.UserId &&
                     actual.RoleId == expected.RoleId);
             }
         }
