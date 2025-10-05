@@ -27,6 +27,6 @@ namespace Domain.Interfaces
         ICollectionMemeRepository CollectionMeme { get; }
         IMemeTagRepository MemeTag { get; }
         IUserRoleRepository UserRole { get; }
-        void Save();
+        Task Save();
     }
 }

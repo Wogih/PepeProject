@@ -146,9 +146,9 @@ namespace DataAccess.Wrapper
         {
             _repoContext = repoContext;
         }
-        public void Save()
+        public async Task Save()
         {
-            _repoContext.SaveChanges();
+            await _repoContext.SaveChangesAsync();
         }
     }
 }

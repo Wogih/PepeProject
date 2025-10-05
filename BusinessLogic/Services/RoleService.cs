@@ -5,49 +5,69 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BusinessLogic.Services
 {
-    public class RoleService : IRoleService
+    public class RoleService(IRepositoryWrapper repositoryWrapper) : IRoleService
     {
-        private IRepositoryWrapper _repositoryWrapper;
-
-        public RoleService(IRepositoryWrapper repositoryWrapper)
+        public async Task<List<Role>> GetAll()
         {
-            _repositoryWrapper = repositoryWrapper;
+            return await repositoryWrapper.Role.FindAll();
         }
 
-        public Task<List<Role>> GetAll()
+        public async Task<Role> GetById(int id)
         {
-            return _repositoryWrapper.Role.FindAll().ToListAsync();
+            var roles = await repositoryWrapper.Role
+                .FindByCondition(x => x.RoleId == id);
+
+            if (!roles.Any())
+            {
+                throw new InvalidOperationException("Role not found.");
+            }
+
+            if (roles.Count > 1)
+            {
+                throw new InvalidOperationException("Multiple roles found with the same ID.");
+            }
+
+            return roles.First();
         }
 
-        public Task<Role> GetById(int id)
+        public async Task Create(Role model)
         {
-            var role = _repositoryWrapper.Role
-                .FindByCondition(x => x.RoleId == id).First();
-            return Task.FromResult(role);
+            ArgumentNullException.ThrowIfNull(model);
+
+            if (string.IsNullOrWhiteSpace(model.RoleName))
+            {
+                throw new ArgumentException("Name cannot be null, empty, or whitespace.", nameof(model.RoleName));
+            }
+
+            await repositoryWrapper.Role.Create(model);
+            await repositoryWrapper.Save();
         }
 
-        public Task Create(Role model)
+        public async Task Update(Role model)
         {
-            _repositoryWrapper.Role.Create(model);
-            _repositoryWrapper.Save();
-            return Task.CompletedTask;
+            ArgumentNullException.ThrowIfNull(model);
+
+            await repositoryWrapper.Role.Update(model);
+            await repositoryWrapper.Save();
         }
 
-        public Task Update(Role model)
+        public async Task Delete(int id)
         {
-            _repositoryWrapper.Role.Update(model);
-            _repositoryWrapper.Save();
-            return Task.CompletedTask;
-        }
+            var roles = await repositoryWrapper.Role
+                .FindByCondition(x => x.RoleId == id);
 
-        public Task Delete(int id)
-        {
-            var role = _repositoryWrapper.Role
-                .FindByCondition(x => x.RoleId == id).First();
+            if (!roles.Any())
+            {
+                throw new InvalidOperationException("Role not found.");
+            }
 
-            _repositoryWrapper.Role.Delete(role);
-            _repositoryWrapper.Save();
-            return Task.CompletedTask;
+            if (roles.Count > 1)
+            {
+                throw new InvalidOperationException("Multiple roles found with the same ID.");
+            }
+
+            await repositoryWrapper.Role.Delete(roles.First());
+            await repositoryWrapper.Save();
         }
     }
 }

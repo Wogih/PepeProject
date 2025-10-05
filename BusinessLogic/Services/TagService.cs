@@ -14,40 +14,72 @@ namespace BusinessLogic.Services
             _repositoryWrapper = repositoryWrapper;
         }
 
-        public Task<List<Tag>> GetAll()
+        public async Task<List<Tag>> GetAll()
         {
-            return _repositoryWrapper.Tag.FindAll().ToListAsync();
+            return await _repositoryWrapper.Tag.FindAll();
         }
 
-        public Task<Tag> GetById(int id)
+        public async Task<Tag> GetById(int id)
         {
-            var tag = _repositoryWrapper.Tag
-                .FindByCondition(x => x.TagId == id).First();
-            return Task.FromResult(tag);
+            var tags = await _repositoryWrapper.Tag
+                .FindByCondition(x => x.TagId == id);
+
+            if (!tags.Any())
+            {
+                throw new InvalidOperationException("Tag not found.");
+            }
+
+            if (tags.Count > 1)
+            {
+                throw new InvalidOperationException("Multiple tags found with the same ID.");
+            }
+
+            return tags.First();
         }
 
-        public Task Create(Tag model)
+        public async Task Create(Tag model)
         {
-            _repositoryWrapper.Tag.Create(model);
-            _repositoryWrapper.Save();
-            return Task.CompletedTask;
+            ArgumentNullException.ThrowIfNull(model);
+
+            if (string.IsNullOrWhiteSpace(model.TagName))
+            {
+                throw new ArgumentException("TagName cannot be null, empty, or whitespace.", nameof(model.TagName));
+            }
+
+            await _repositoryWrapper.Tag.Create(model);
+            await _repositoryWrapper.Save();
         }
 
-        public Task Update(Tag model)
+        public async Task Update(Tag model)
         {
-            _repositoryWrapper.Tag.Update(model);
-            _repositoryWrapper.Save();
-            return Task.CompletedTask;
+            ArgumentNullException.ThrowIfNull(model);
+
+            if (string.IsNullOrWhiteSpace(model.TagName))
+            {
+                throw new ArgumentException("TagName cannot be null, empty, or whitespace.", nameof(model.TagName));
+            }
+
+            await _repositoryWrapper.Tag.Update(model);
+            await _repositoryWrapper.Save();
         }
 
-        public Task Delete(int id)
+        public async Task Delete(int id)
         {
-            var tag = _repositoryWrapper.Tag
-                .FindByCondition(x => x.TagId == id).First();
+            var tags = await _repositoryWrapper.Tag
+                .FindByCondition(x => x.TagId == id);
 
-            _repositoryWrapper.Tag.Delete(tag);
-            _repositoryWrapper.Save();
-            return Task.CompletedTask;
+            if (!tags.Any())
+            {
+                throw new InvalidOperationException("Tag not found.");
+            }
+
+            if (tags.Count > 1)
+            {
+                throw new InvalidOperationException("Multiple tags found with the same ID.");
+            }
+
+            await _repositoryWrapper.Tag.Delete(tags.First());
+            await _repositoryWrapper.Save();
         }
     }
 }

@@ -27,8 +27,5 @@ jobs:
     - name: Build
       run: dotnet build src/PepeProject.sln --configuration Release --no-restore
 
-    - name: Install dotnet-format
-      run: dotnet tool install -g dotnet-format
-
     - name: Check code formatting
       run: dotnet format src/PepeProject.sln --verify-no-changes --verbosity detailed

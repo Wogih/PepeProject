@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Сопровождение информационных систем\\PepeProject\\BusinessLogic\\BusinessLogic.csproj": {}
+    "G:\\Сопровождение информационных систем\\PepeProject\\BusinessLogic\\BusinessLogic.csproj": {}
   },
   "projects": {
-    "D:\\Сопровождение информационных систем\\PepeProject\\BusinessLogic\\BusinessLogic.csproj": {
+    "G:\\Сопровождение информационных систем\\PepeProject\\BusinessLogic\\BusinessLogic.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Сопровождение информационных систем\\PepeProject\\BusinessLogic\\BusinessLogic.csproj",
+        "projectUniqueName": "G:\\Сопровождение информационных систем\\PepeProject\\BusinessLogic\\BusinessLogic.csproj",
         "projectName": "BusinessLogic",
-        "projectPath": "D:\\Сопровождение информационных систем\\PepeProject\\BusinessLogic\\BusinessLogic.csproj",
-        "packagesPath": "C:\\Users\\Student\\.nuget\\packages\\",
-        "outputPath": "D:\\Сопровождение информационных систем\\PepeProject\\BusinessLogic\\obj\\",
+        "projectPath": "G:\\Сопровождение информационных систем\\PepeProject\\BusinessLogic\\BusinessLogic.csproj",
+        "packagesPath": "C:\\Users\\leooo\\.nuget\\packages\\",
+        "outputPath": "G:\\Сопровождение информационных систем\\PepeProject\\BusinessLogic\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Student\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\leooo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -32,8 +32,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\Сопровождение информационных систем\\PepeProject\\Domain\\Domain.csproj": {
-                "projectPath": "D:\\Сопровождение информационных систем\\PepeProject\\Domain\\Domain.csproj"
+              "G:\\Сопровождение информационных систем\\PepeProject\\Domain\\Domain.csproj": {
+                "projectPath": "G:\\Сопровождение информационных систем\\PepeProject\\Domain\\Domain.csproj"
               }
             }
           }
@@ -69,24 +69,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Сопровождение информационных систем\\PepeProject\\Domain\\Domain.csproj": {
+    "G:\\Сопровождение информационных систем\\PepeProject\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Сопровождение информационных систем\\PepeProject\\Domain\\Domain.csproj",
+        "projectUniqueName": "G:\\Сопровождение информационных систем\\PepeProject\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "D:\\Сопровождение информационных систем\\PepeProject\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\Student\\.nuget\\packages\\",
-        "outputPath": "D:\\Сопровождение информационных систем\\PepeProject\\Domain\\obj\\",
+        "projectPath": "G:\\Сопровождение информационных систем\\PepeProject\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\leooo\\.nuget\\packages\\",
+        "outputPath": "G:\\Сопровождение информационных систем\\PepeProject\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Student\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\leooo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -121,7 +121,7 @@
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[8.0.20, )"
+              "version": "[9.0.9, )"
             }
           },
           "imports": [
@@ -140,7 +140,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
