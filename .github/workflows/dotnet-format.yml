@@ -15,11 +15,8 @@ jobs:
         with:
           dotnet-version: '8.0.x'
 
-      - name: Install dotnet-format tool
-        run: dotnet tool update -g dotnet-format
-
       - name: Check out code
         uses: actions/checkout@v3
 
       - name: Run dotnet format
-        run: dotnet-format --folder --check --verbosity diagnostic
+        run: dotnet format src/PepeProject.sln --verify-no-changes --verbosity detailed
