@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "dgSpecHash": "dacPg4AAi9s=",
-  "success": false,
+  "dgSpecHash": "KRRC/EPqHbc=",
+  "success": true,
   "projectFilePath": "G:\\Сопровождение информационных систем\\PepeProject\\tests\\BusinessLogic.Tests\\BusinessLogic.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\leooo\\.nuget\\packages\\castle.core\\5.1.1\\castle.core.5.1.1.nupkg.sha512",
@@ -36,17 +36,5 @@
     "C:\\Users\\leooo\\.nuget\\packages\\xunit.extensibility.execution\\2.9.3\\xunit.extensibility.execution.2.9.3.nupkg.sha512",
     "C:\\Users\\leooo\\.nuget\\packages\\xunit.runner.visualstudio\\3.1.5\\xunit.runner.visualstudio.3.1.5.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1104",
-      "level": "Error",
-      "message": "Unable to find project 'G:\\Сопровождение информационных систем\\PepeProject\\tests\\BusinessLogic\\BusinessLogic.csproj'. Check that the project reference is valid and that the project file exists.",
-      "projectPath": "G:\\Сопровождение информационных систем\\PepeProject\\tests\\BusinessLogic.Tests\\BusinessLogic.Tests.csproj",
-      "filePath": "G:\\Сопровождение информационных систем\\PepeProject\\tests\\BusinessLogic.Tests\\BusinessLogic.Tests.csproj",
-      "libraryId": "G:\\Сопровождение информационных систем\\PepeProject\\tests\\BusinessLogic\\BusinessLogic.csproj",
-      "targetGraphs": [
-        "net8.0"
-      ]
-    }
-  ]
+  "logs": []
 }
