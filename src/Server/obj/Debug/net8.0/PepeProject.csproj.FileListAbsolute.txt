@@ -735,3 +735,4 @@ G:\Сопровождение информационных систем\PepeProj
 G:\Сопровождение информационных систем\PepeProject\src\Server\obj\Debug\net8.0\PepeProject.pdb
 G:\Сопровождение информационных систем\PepeProject\src\Server\obj\Debug\net8.0\PepeProject.genruntimeconfig.cache
 G:\Сопровождение информационных систем\PepeProject\src\Server\obj\Debug\net8.0\ref\PepeProject.dll
+G:\Сопровождение информационных систем\PepeProject\src\Server\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

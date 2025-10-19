@@ -1,0 +1,45 @@
+@page "/"
+
+<h1>Hello, world!</h1>
+
+<p>Текущая дата: @CurrentDate</p>
+<p>Текущее время: @CurrentTime</p>
+
+@foreach (var user in result)
+{
+	<p>@user.Username @user.Email @user.CreatedAt.ToShortDateString()</p>
+}
+
+@code {
+	public partial class User
+	{
+		public int UserId { get; set; }
+
+		public string Username { get; set; } = null!;
+
+		public string Email { get; set; } = null!;
+
+		public string PasswordHash { get; set; } = null!;
+
+		public DateTime CreatedAt { get; set; }
+	}
+
+	public User[] result = new User[] { };
+
+	string CurrentDate;
+	string CurrentTime;
+
+	protected override async Task OnInitializedAsync()
+	{
+		var date = DateTime.Now;
+		CurrentDate = date.ToShortDateString();
+		CurrentTime = date.ToShortTimeString();
+
+		var client = new HttpClient();
+		client.BaseAddress = new Uri("https://pepeproject.onrender.com/");
+
+		result = await client.GetFromJsonAsync<User[]>("api/User");
+
+		return;
+	}
+}

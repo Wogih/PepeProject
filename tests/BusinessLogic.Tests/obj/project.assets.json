@@ -1754,6 +1754,7 @@
   "projectFileDependencyGroups": {
     "net8.0": [
       "BusinessLogic >= 1.0.0",
+      "G:\\Сопровождение информационных систем\\PepeProject\\tests\\BusinessLogic\\BusinessLogic.csproj",
       "Microsoft.NET.Test.Sdk >= 18.0.0",
       "Moq >= 4.20.72",
       "coverlet.collector >= 6.0.4",
@@ -1795,6 +1796,9 @@
           "projectReferences": {
             "G:\\Сопровождение информационных систем\\PepeProject\\src\\BusinessLogic\\BusinessLogic.csproj": {
               "projectPath": "G:\\Сопровождение информационных систем\\PepeProject\\src\\BusinessLogic\\BusinessLogic.csproj"
+            },
+            "G:\\Сопровождение информационных систем\\PepeProject\\tests\\BusinessLogic\\BusinessLogic.csproj": {
+              "projectPath": "G:\\Сопровождение информационных систем\\PepeProject\\tests\\BusinessLogic\\BusinessLogic.csproj"
             }
           }
         }
@@ -1856,8 +1860,19 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1104",
+      "level": "Error",
+      "message": "Unable to find project 'G:\\Сопровождение информационных систем\\PepeProject\\tests\\BusinessLogic\\BusinessLogic.csproj'. Check that the project reference is valid and that the project file exists.",
+      "libraryId": "G:\\Сопровождение информационных систем\\PepeProject\\tests\\BusinessLogic\\BusinessLogic.csproj",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
 }

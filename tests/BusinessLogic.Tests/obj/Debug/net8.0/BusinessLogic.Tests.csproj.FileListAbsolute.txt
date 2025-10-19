@@ -117,3 +117,6 @@ G:\Сопровождение информационных систем\PepeProj
 G:\Сопровождение информационных систем\PepeProject\BusinessLogic.Tests\bin\Debug\net8.0\.msCoverageSourceRootsMapping_BusinessLogic.Tests
 G:\Сопровождение информационных систем\PepeProject\BusinessLogic.Tests\bin\Debug\net8.0\xunit.runner.visualstudio.testadapter.dll
 G:\Сопровождение информационных систем\PepeProject\BusinessLogic.Tests\bin\Debug\net8.0\System.Diagnostics.DiagnosticSource.dll
+G:\Сопровождение информационных систем\PepeProject\tests\BusinessLogic.Tests\obj\Debug\net8.0\BusinessLogic.Tests.dll
+G:\Сопровождение информационных систем\PepeProject\tests\BusinessLogic.Tests\obj\Debug\net8.0\refint\BusinessLogic.Tests.dll
+G:\Сопровождение информационных систем\PepeProject\tests\BusinessLogic.Tests\obj\Debug\net8.0\BusinessLogic.Tests.pdb

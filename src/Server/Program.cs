@@ -88,6 +88,10 @@ namespace PepeProject
                 app.UseSwaggerUI();
             }
 
+            app.UseCors(builder => builder.WithOrigins(new[] { "https://localhost:7121/", })
+                .AllowAnyHeader()
+                .AllowAnyMethod());
+
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
