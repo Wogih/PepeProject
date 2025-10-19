@@ -22,10 +22,10 @@ jobs:
         dotnet-version: '8.0.x'
         
     - name: Restore dependencies
-      run: dotnet restore src/PepeProject.sln
+      run: dotnet restore PepeProject.sln
       
     - name: Build solution
-      run: dotnet build src/PepeProject.sln --no-restore --configuration Release
+      run: dotnet build PepeProject.sln --no-restore --configuration Release
       
     - name: Run tests
-      run: dotnet test src/PepeProject.sln --no-build --verbosity normal --configuration Release
+      run: dotnet test PepeProject.sln --no-build --verbosity normal --configuration Release

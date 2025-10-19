@@ -22,10 +22,10 @@ jobs:
         dotnet-version: '8.0.x'
 
     - name: Restore dependencies
-      run: dotnet restore src/PepeProject.sln
+      run: dotnet restore PepeProject.sln
 
     - name: Build
-      run: dotnet build src/PepeProject.sln --configuration Release --no-restore
+      run: dotnet build PepeProject.sln --configuration Release --no-restore
 
     - name: Check code formatting
-      run: dotnet format src/PepeProject.sln --verify-no-changes --verbosity detailed
+      run: dotnet format PepeProject.sln --verify-no-changes --verbosity detailed
