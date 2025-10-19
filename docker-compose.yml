@@ -1,0 +1,20 @@
+services:
+  pepeproject:
+    image: ${DOCKER_REGISTRY-}pepeproject
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - ASPNETCORE_URLS=http://+:5000
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionString=Server=db;Database=MyTest;User=sa;Password=PepeTheBest123!;MultipleActiveResultSets=true;TrustServerCertificate=true
+    ports:
+      - "5000:5000"
+    depends_on:
+      - db
+  db:
+    image: "mcr.microsoft.com/mssql/server"
+    environment:
+      - "SA_PASSWORD=PepeTheBest123!"
+      - "ACCEPT_EULA=Y"
+    container_name: mssql
