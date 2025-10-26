@@ -1031,6 +1031,6 @@ G:\Сопровождение информационных систем\PepeProj
 G:\Сопровождение информационных систем\PepeProject\BlazorClient\obj\Debug\net8.0\refint\BlazorClient.dll
 G:\Сопровождение информационных систем\PepeProject\BlazorClient\obj\Debug\net8.0\BlazorClient.pdb
 G:\Сопровождение информационных систем\PepeProject\BlazorClient\obj\Debug\net8.0\ref\BlazorClient.dll
-G:\Сопровождение информационных систем\PepeProject\BlazorClient\obj\Debug\net8.0\compressed\xr8uyhrrs6-x9djnv8zh0.gz
-G:\Сопровождение информационных систем\PepeProject\BlazorClient\obj\Debug\net8.0\compressed\p76m9ok4sd-cp51xarkqu.gz
-G:\Сопровождение информационных систем\PepeProject\BlazorClient\obj\Debug\net8.0\compressed\bllwa4ry6o-w9iybhw6as.gz
+G:\Сопровождение информационных систем\PepeProject\BlazorClient\obj\Debug\net8.0\compressed\xr8uyhrrs6-4byo7q3irr.gz
+G:\Сопровождение информационных систем\PepeProject\BlazorClient\obj\Debug\net8.0\compressed\p76m9ok4sd-z53w3p0c77.gz
+G:\Сопровождение информационных систем\PepeProject\BlazorClient\obj\Debug\net8.0\compressed\bllwa4ry6o-agpdxrp2wt.gz
