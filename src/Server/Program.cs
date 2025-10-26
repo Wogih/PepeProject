@@ -88,7 +88,7 @@ namespace PepeProject
                 app.UseSwaggerUI();
             }
 
-            app.UseCors(builder => builder.WithOrigins(new[] { "https://localhost:7121", })
+            app.UseCors(builder => builder.WithOrigins(new[] { "https://client-84bq.onrender.com", })
                 .AllowAnyHeader()
                 .AllowAnyMethod());
 
