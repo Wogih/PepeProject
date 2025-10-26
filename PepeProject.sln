@@ -28,7 +28,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docker", "Docker", "{30C1A3
 		Dockerfile = Dockerfile
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorClient", "BlazorClient\BlazorClient.csproj", "{56E89ED0-E4E7-4A3A-B7E0-1AC11DA5257A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorClient", "src\BlazorClient\BlazorClient.csproj", "{56E89ED0-E4E7-4A3A-B7E0-1AC11DA5257A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
