@@ -182,3 +182,92 @@ button {
         text-align: center;
         color: white;
     }
+
+
+/* Custom Colors */
+.text-purple {
+    color: #683aa4 !important;
+}
+
+.bg-purple {
+    background-color: #683aa4 !important;
+}
+
+.btn-purple {
+    background-color: #683aa4;
+    border-color: #683aa4;
+    color: white;
+}
+
+    .btn-purple:hover {
+        background-color: #5a2f8a;
+        border-color: #5a2f8a;
+        color: white;
+    }
+
+.btn-outline-purple {
+    border-color: #683aa4;
+    color: #683aa4;
+}
+
+    .btn-outline-purple:hover {
+        background-color: #683aa4;
+        color: white;
+    }
+
+/* Hero Section */
+#hero {
+    padding-top: 100px;
+    padding-bottom: 80px;
+}
+
+/* Category Cards */
+.category-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+    .category-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+/* Icon Wrapper */
+.icon-wrapper {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Trending Section */
+#trending {
+    padding: 80px 0;
+}
+
+/* Contact Section */
+#contact {
+    background: linear-gradient(135deg, #683aa4 0%, #8a5cc5 100%);
+    padding: 80px 0;
+}
+
+/* Responsive Images */
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Navbar Brand */
+.navbar-brand {
+    font-size: 1.5rem;
+}
+
+/* Card Hover Effects */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.15) !important;
+    }
