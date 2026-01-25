@@ -15,15 +15,19 @@ using Domain.Interfaces.ITag;
 using Domain.Interfaces.IUploadStat;
 using Domain.Interfaces.IUser;
 using Domain.Interfaces.IUserRole;
+using Mapster;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using PepeProject.Authorization;
+using PepeProject.Helpers;
 using System.Reflection;
+using System.Text.Json.Serialization;
 
 namespace PepeProject
 {
     public class Program
     {
-        public static void Main(string[] args)
+        public static async Task Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
 
@@ -44,9 +48,11 @@ namespace PepeProject
             builder.Services.AddScoped<IMemeTagService, MemeTagService>();
             builder.Services.AddScoped<IUserRoleService, UserRoleService>();
 
-            builder.Services.AddControllers();
+            builder.Services.AddControllers().AddJsonOptions(x =>
+                x.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()));
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
+            builder.Services.AddMapster();
             builder.Services.AddSwaggerGen(options =>
             {
                 options.SwaggerDoc("v1", new OpenApiInfo
@@ -66,6 +72,36 @@ namespace PepeProject
                     }
                 });
 
+                options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                {
+                    Description = @"JWT Authorization header using the Bearer scheme. \r\n\r\n 
+                      Enter 'Bearer' [space] and then your token in the text input below.
+                      \r\n\r\nExample: 'Bearer 12345abcdef'",
+                    Name = "Authorization",
+                    In = ParameterLocation.Header,
+                    Type = SecuritySchemeType.ApiKey,
+                    Scheme = "Bearer"
+                });
+
+                options.AddSecurityRequirement(new OpenApiSecurityRequirement()
+                {
+                {
+                    new OpenApiSecurityScheme
+                    {
+                    Reference = new OpenApiReference
+                        {
+                        Type = ReferenceType.SecurityScheme,
+                        Id = "Bearer"
+                        },
+                        Scheme = "oauth2",
+                        Name = "Bearer",
+                        In = ParameterLocation.Header,
+
+                    },
+                    new List<string>()
+                    }
+                });
+
                 string xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
 
                 options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename));
@@ -78,7 +114,7 @@ namespace PepeProject
                 var services = scope.ServiceProvider;
 
                 var context = services.GetRequiredService<MisContext>();
-                context.Database.Migrate();
+                await context.Database.MigrateAsync();
             }
 
             // Configure the HTTP request pipeline.
@@ -96,6 +132,8 @@ namespace PepeProject
 
             app.UseAuthorization();
 
+            app.UseMiddleware<ErrorHandlerMiddleware>();
+            app.UseMiddleware<JwtMiddleware>();
 
             app.MapControllers();
 
