@@ -198,6 +198,9 @@
             "projectReferences": {
               "G:\\Сопровождение информационных систем\\PepeProject\\src\\BusinessLogic\\BusinessLogic.csproj": {
                 "projectPath": "G:\\Сопровождение информационных систем\\PepeProject\\src\\BusinessLogic\\BusinessLogic.csproj"
+              },
+              "G:\\Сопровождение информационных систем\\PepeProject\\tests\\BusinessLogic\\BusinessLogic.csproj": {
+                "projectPath": "G:\\Сопровождение информационных систем\\PepeProject\\tests\\BusinessLogic\\BusinessLogic.csproj"
               }
             }
           }
