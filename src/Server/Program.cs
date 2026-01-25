@@ -1,4 +1,7 @@
 
+using BackendApi.Authorization;
+using BusinessLogic.Authorization;
+using BusinessLogic.Helpers;
 using BusinessLogic.Services;
 using DataAccess;
 using DataAccess.Wrapper;
@@ -30,6 +33,12 @@ namespace PepeProject
         public static async Task Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
+            builder.Services.Configure<AppSettings>(builder.Configuration.GetSection("AppSettings"));
+
+            builder.Services.AddScoped<IJwtUtils, JwtUtils>();
+            builder.Services.AddScoped<IAccountService, AccountService>();
+            builder.Services.AddScoped<IEmailService, EmailService>();
 
             builder.Services.AddDbContext<MisContext>(
                 options => options.UseSqlServer(builder.Configuration["ConnectionString"]));
