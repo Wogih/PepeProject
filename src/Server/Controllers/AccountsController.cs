@@ -49,7 +49,7 @@ namespace PepeProject.Controllers
         [HttpPost("refresh-token")]
         public async Task<ActionResult<AuthenticateResponse>> RefreshToken()
         {
-            var refreshToken = Request.Cookies["refreshToken"];
+            string? refreshToken = Request.Cookies["refreshToken"];
             var response = await _accountService.RefreshToken(refreshToken, ipAddress());
             setTokenCookie(response.RefreshToken);
             return Ok(response);
@@ -58,7 +58,7 @@ namespace PepeProject.Controllers
         [HttpPost("revoke-token")]
         public async Task<IActionResult> RevokeToken(RevokeTokenRequest model)
         {
-            var token = model.Token ?? Request.Cookies["refreshToken"];
+            string? token = model.Token ?? Request.Cookies["refreshToken"];
 
             if (string.IsNullOrEmpty(token))
                 return BadRequest(new { message = "Token is required" });

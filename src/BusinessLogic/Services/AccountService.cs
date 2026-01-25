@@ -48,7 +48,7 @@ namespace BusinessLogic.Services
             if (account == null || !account.IsVerified || !BCrypt.Net.BCrypt.Verify(model.Password, account.PasswordHash))
                 throw new AppException("Email or password is incorrect");
 
-            var jwtToken = _jwtUtils.GenerateJwtToken(account);
+            string jwtToken = _jwtUtils.GenerateJwtToken(account);
             var refreshToken = await _jwtUtils.GenerateRefreshToken(ipAddress);
             account.RefreshTokens.Add(refreshToken);
 
@@ -89,9 +89,9 @@ namespace BusinessLogic.Services
 
         private async Task<string> generateResetToken()
         {
-            var token = Convert.ToHexString(RandomNumberGenerator.GetBytes(64));
+            string token = Convert.ToHexString(RandomNumberGenerator.GetBytes(64));
 
-            var tokenIsUnique = (await _repositoryWrapper.User.FindByCondition(x => x.ResetToken == token)).Count == 0;
+            bool tokenIsUnique = (await _repositoryWrapper.User.FindByCondition(x => x.ResetToken == token)).Count == 0;
             if (!tokenIsUnique)
                 return await generateResetToken();
 
@@ -180,7 +180,7 @@ namespace BusinessLogic.Services
             await _repositoryWrapper.User.Update(account);
             await _repositoryWrapper.Save();
 
-            var jwtToken = _jwtUtils.GenerateJwtToken(account);
+            string jwtToken = _jwtUtils.GenerateJwtToken(account);
 
             var response = _mapper.Map<AuthenticateResponse>(account);
             response.JwtToken = jwtToken;
@@ -190,9 +190,9 @@ namespace BusinessLogic.Services
 
         private async Task<string> generateVerificationToken()
         {
-            var token = Convert.ToHexString(RandomNumberGenerator.GetBytes(64));
+            string token = Convert.ToHexString(RandomNumberGenerator.GetBytes(64));
 
-            var tokenIsUnique = (await _repositoryWrapper.User.FindByCondition(x => x.VerificationToken == token)).Count == 0;
+            bool tokenIsUnique = (await _repositoryWrapper.User.FindByCondition(x => x.VerificationToken == token)).Count == 0;
             if (!tokenIsUnique)
                 return await generateVerificationToken();
 
@@ -208,7 +208,7 @@ namespace BusinessLogic.Services
 
             var account = _mapper.Map<User>(model);
 
-            var isFirstAccount = (await _repositoryWrapper.User.FindAll()).Count == 0;
+            bool isFirstAccount = (await _repositoryWrapper.User.FindAll()).Count == 0;
             account.Role = isFirstAccount ? Role.Admin : Role.User;
             account.Created = DateTime.UtcNow;
             account.Verified = DateTime.UtcNow;

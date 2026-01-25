@@ -28,7 +28,7 @@ namespace BackendApi.Authorization
         public string GenerateJwtToken(User account)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
-            var key = Encoding.ASCII.GetBytes(_appSettings.Secret);
+            byte[] key = Encoding.ASCII.GetBytes(_appSettings.Secret);
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(new[] { new Claim("id", account.UserId.ToString()), new Claim(ClaimTypes.Role, account.Role.ToString()) }),
@@ -49,7 +49,7 @@ namespace BackendApi.Authorization
                 CreatedByIp = ipAddress
             };
 
-            var tokenIsUnique = (await _wrapper.User.FindByCondition(a => a.RefreshTokens.Any(t => t.Token == refreshToken.Token))).Count == 0;
+            bool tokenIsUnique = (await _wrapper.User.FindByCondition(a => a.RefreshTokens.Any(t => t.Token == refreshToken.Token))).Count == 0;
 
             if (!tokenIsUnique)
                 return await GenerateRefreshToken(ipAddress);
@@ -63,7 +63,7 @@ namespace BackendApi.Authorization
                 return null;
 
             var tokenHandler = new JwtSecurityTokenHandler();
-            var key = Encoding.ASCII.GetBytes(_appSettings.Secret);
+            byte[] key = Encoding.ASCII.GetBytes(_appSettings.Secret);
             try
             {
                 tokenHandler.ValidateToken(token, new TokenValidationParameters
@@ -73,10 +73,10 @@ namespace BackendApi.Authorization
                     ValidateIssuer = false,
                     ValidateAudience = false,
                     ClockSkew = TimeSpan.Zero
-                }, out SecurityToken validatedToken);
+                }, out var validatedToken);
 
                 var jwtToken = (JwtSecurityToken)validatedToken;
-                var accountId = int.Parse(jwtToken.Claims.First(x => x.Type == "id").Value);
+                int accountId = int.Parse(jwtToken.Claims.First(x => x.Type == "id").Value);
 
                 return accountId;
             }

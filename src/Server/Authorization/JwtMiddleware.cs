@@ -18,8 +18,8 @@ namespace PepeProject.Authorization
 
         public async Task Invoke(HttpContext context, IRepositoryWrapper wrapper, IJwtUtils jwtUtils)
         {
-            var token = context.Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").Last();
-            var accountId = jwtUtils.ValidateJwtToken(token);
+            string? token = context.Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").Last();
+            int? accountId = jwtUtils.ValidateJwtToken(token);
             if (accountId != null)
             {
                 context.Items["User"] = await wrapper.User.GetByIdWithToken(accountId.Value);
