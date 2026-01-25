@@ -735,4 +735,11 @@ G:\Сопровождение информационных систем\PepeProj
 G:\Сопровождение информационных систем\PepeProject\src\Server\obj\Debug\net8.0\PepeProject.pdb
 G:\Сопровождение информационных систем\PepeProject\src\Server\obj\Debug\net8.0\PepeProject.genruntimeconfig.cache
 G:\Сопровождение информационных систем\PepeProject\src\Server\obj\Debug\net8.0\ref\PepeProject.dll
-G:\Сопровождение информационных систем\PepeProject\src\Server\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+G:\Сопровождение информационных систем\PepeProject\src\Server\bin\Debug\net8.0\BCrypt.Net-Next.dll
+G:\Сопровождение информационных систем\PepeProject\src\Server\bin\Debug\net8.0\BouncyCastle.Cryptography.dll
+G:\Сопровождение информационных систем\PepeProject\src\Server\bin\Debug\net8.0\MailKit.dll
+G:\Сопровождение информационных систем\PepeProject\src\Server\bin\Debug\net8.0\Mapster.DependencyInjection.dll
+G:\Сопровождение информационных систем\PepeProject\src\Server\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+G:\Сопровождение информационных систем\PepeProject\src\Server\bin\Debug\net8.0\MimeKit.dll
+G:\Сопровождение информационных систем\PepeProject\src\Server\bin\Debug\net8.0\System.Security.Cryptography.Pkcs.dll
+G:\Сопровождение информационных систем\PepeProject\src\Server\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
