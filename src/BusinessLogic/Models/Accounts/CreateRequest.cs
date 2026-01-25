@@ -15,7 +15,7 @@ namespace BusinessLogic.Models.Accounts
         public string LastName { get; set; }
 
         [Required]
-        [EnumDataType(typeof(Role))]
+        [EnumDataType(typeof(SystemRole))]
         public string Role { get; set; }
 
         [Required]

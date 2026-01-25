@@ -63,7 +63,7 @@ namespace PepeProject.Controllers
             if (string.IsNullOrEmpty(token))
                 return BadRequest(new { message = "Token is required" });
 
-            if (!User.OwnsToken(token) && User.Role != Role.Admin)
+            if (!User.OwnsToken(token) && User.SystemRole != SystemRole.Admin)
                 return Unauthorized(new { message = "Unauthorized" });
 
             await _accountService.RevokeToken(token, ipAddress());
@@ -110,7 +110,7 @@ namespace PepeProject.Controllers
             return Ok(new { message = "Password reset successful, you can now login" });
         }
 
-        [Authorize(Role.Admin)]
+        [Authorize(SystemRole.Admin)]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<AccountResponse>>> GetAll()
         {
@@ -121,14 +121,14 @@ namespace PepeProject.Controllers
         [HttpGet("{id:int}")]
         public async Task<ActionResult<AccountResponse>> GetById(int id)
         {
-            if (id != User.UserId && User.Role != Role.Admin)
+            if (id != User.UserId && User.SystemRole != SystemRole.Admin)
                 return Unauthorized(new { message = "Unauthorized" });
 
             var account = await _accountService.GetById(id);
             return Ok(account);
         }
 
-        [Authorize(Role.Admin)]
+        [Authorize(SystemRole.Admin)]
         [HttpPost]
         public async Task<ActionResult<AccountResponse>> Create(CreateRequest model)
         {
@@ -139,10 +139,10 @@ namespace PepeProject.Controllers
         [HttpPut("{id:int}")]
         public async Task<ActionResult<AccountResponse>> Update(int id, UpdateRequest model)
         {
-            if (id != User.UserId && User.Role != Role.Admin)
+            if (id != User.UserId && User.SystemRole != SystemRole.Admin)
                 return Unauthorized(new { message = "Unauthorized" });
 
-            if (User.Role != Role.Admin)
+            if (User.SystemRole != SystemRole.Admin)
                 model.Role = null;
 
             var account = await _accountService.Update(id, model);
@@ -152,7 +152,7 @@ namespace PepeProject.Controllers
         [HttpDelete("{id:int}")]
         public async Task<IActionResult> Delete(int id)
         {
-            if (id != User.UserId && User.Role != Role.Admin)
+            if (id != User.UserId && User.SystemRole != SystemRole.Admin)
                 return Unauthorized(new { message = "Unauthorized" });
 
             await _accountService.Delete(id);
