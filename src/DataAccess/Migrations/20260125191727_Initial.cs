@@ -5,24 +5,18 @@
 namespace DataAccess.Migrations
 {
     /// <inheritdoc />
-    public partial class _25012026 : Migration
+    public partial class Initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.RenameColumn(
-                name: "Role",
-                table: "users",
-                newName: "SystemRole");
+
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.RenameColumn(
-                name: "SystemRole",
-                table: "users",
-                newName: "Role");
+
         }
     }
 }
