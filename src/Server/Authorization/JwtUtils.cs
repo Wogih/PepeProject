@@ -31,7 +31,7 @@ namespace BackendApi.Authorization
             byte[] key = Encoding.ASCII.GetBytes(_appSettings.Secret);
             var tokenDescriptor = new SecurityTokenDescriptor
             {
-                Subject = new ClaimsIdentity(new[] { new Claim("id", account.UserId.ToString()), new Claim(ClaimTypes.Role, account.Role.ToString()) }),
+                Subject = new ClaimsIdentity(new[] { new Claim("id", account.UserId.ToString()), new Claim(ClaimTypes.Role, account.SystemRole.ToString()) }),
                 Expires = DateTime.UtcNow.AddMinutes(15),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
             };

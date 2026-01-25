@@ -8,7 +8,6 @@ using MapsterMapper;
 using Microsoft.Extensions.Options;
 using System.Security.Cryptography;
 using System.Threading.Tasks;
-using Role = Domain.Entites.Role;
 
 namespace BusinessLogic.Services
 {
@@ -209,7 +208,7 @@ namespace BusinessLogic.Services
             var account = _mapper.Map<User>(model);
 
             bool isFirstAccount = (await _repositoryWrapper.User.FindAll()).Count == 0;
-            account.Role = isFirstAccount ? Role.Admin : Role.User;
+            account.SystemRole = isFirstAccount ? SystemRole.Admin : SystemRole.User;
             account.Created = DateTime.UtcNow;
             account.Verified = DateTime.UtcNow;
             account.VerificationToken = await generateVerificationToken();

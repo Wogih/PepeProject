@@ -533,7 +533,7 @@ namespace DataAccess.Migrations
                     b.Property<DateTime?>("ResetTokenExpires")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("Role")
+                    b.Property<int>("SystemRole")
                         .HasColumnType("int");
 
                     b.Property<DateTime?>("Updated")

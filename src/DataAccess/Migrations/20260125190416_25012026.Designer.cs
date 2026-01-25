@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataAccess.Migrations
 {
     [DbContext(typeof(MisContext))]
-    [Migration("20260125172453_25.01.2026")]
+    [Migration("20260125190416_25012026")]
     partial class _25012026
     {
         /// <inheritdoc />
@@ -536,7 +536,7 @@ namespace DataAccess.Migrations
                     b.Property<DateTime?>("ResetTokenExpires")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("Role")
+                    b.Property<int>("SystemRole")
                         .HasColumnType("int");
 
                     b.Property<DateTime?>("Updated")

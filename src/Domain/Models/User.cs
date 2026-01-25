@@ -16,7 +16,7 @@ public partial class User
 
 
     public bool AcceptTerms { get; set; }
-    public Entites.Role Role { get; set; }
+    public SystemRole SystemRole { get; set; }
     public string? VerificationToken { get; set; }
     public DateTime? Verified { get; set; }
     public bool IsVerified => Verified.HasValue || PasswordReset.HasValue;
