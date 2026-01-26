@@ -1,3 +1,4 @@
+using Domain.Entites;
 using Domain.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,6 +14,8 @@ public partial class MisContext : DbContext
         : base(options)
     {
     }
+
+    public virtual DbSet<RefreshToken> RefreshTokens { get; set; }
 
     public virtual DbSet<Collection> Collections { get; set; }
 
@@ -40,6 +43,44 @@ public partial class MisContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.Entity<RefreshToken>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__refresh___3213E83F1A14E395");
+
+            entity.ToTable("refresh_tokens");
+
+            entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.Created)
+                .HasColumnType("datetime")
+                .HasColumnName("created");
+            entity.Property(e => e.CreatedByIp)
+                .HasMaxLength(50)
+                .HasColumnName("created_by_ip");
+            entity.Property(e => e.Expires)
+                .HasColumnType("datetime")
+                .HasColumnName("expires");
+            entity.Property(e => e.ReasonRevoked)
+                .HasMaxLength(500)
+                .HasColumnName("reason_revoked");
+            entity.Property(e => e.ReplacedByToken)
+                .HasMaxLength(1000)
+                .HasColumnName("replaced_by_token");
+            entity.Property(e => e.Revoked)
+                .HasColumnType("datetime")
+                .HasColumnName("revoked");
+            entity.Property(e => e.RevokedByIp)
+                .HasMaxLength(50)
+                .HasColumnName("revoked_by_ip");
+            entity.Property(e => e.Token)
+                .HasMaxLength(1000)
+                .HasColumnName("token");
+
+            entity.HasOne(d => d.Account)
+                .WithMany(p => p.RefreshTokens)
+                .HasForeignKey("user_id")
+                .HasConstraintName("FK__refresh_t__user___6C190EBB");
+        });
+
         modelBuilder.Entity<Collection>(entity =>
         {
             entity.HasKey(e => e.CollectionId).HasName("PK__collecti__53D3A5CAB5272981");
@@ -320,15 +361,21 @@ public partial class MisContext : DbContext
 
         modelBuilder.Entity<User>(entity =>
         {
-            entity.HasKey(e => e.UserId).HasName("PK__users__B9BE370F7F35AA08");
+            entity.HasKey(e => e.UserId).HasName("PK__users__B9BE370F3C69FB99");
 
             entity.ToTable("users");
 
-            entity.HasIndex(e => e.Email, "UQ__users__AB6E616448A45D4C").IsUnique();
-
-            entity.HasIndex(e => e.Username, "UQ__users__F3DBC572F302E448").IsUnique();
+            entity.HasIndex(e => e.Email, "UQ__users__AB6E616418F0B0D9").IsUnique();
+            entity.HasIndex(e => e.Username, "UQ__users__F3DBC57296E81119").IsUnique();
 
             entity.Property(e => e.UserId).HasColumnName("user_id");
+            entity.Property(e => e.AcceptTerms)
+                .HasDefaultValue(false)
+                .HasColumnName("accept_terms");
+            entity.Property(e => e.Created)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime")
+                .HasColumnName("created");
             entity.Property(e => e.CreatedAt)
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime")
@@ -337,11 +384,33 @@ public partial class MisContext : DbContext
                 .HasMaxLength(100)
                 .HasColumnName("email");
             entity.Property(e => e.PasswordHash)
-                .HasMaxLength(255)
+                .HasMaxLength(500)
                 .HasColumnName("password_hash");
+            entity.Property(e => e.PasswordReset)
+                .HasColumnType("datetime")
+                .HasColumnName("password_reset");
+            entity.Property(e => e.ResetToken)
+                .HasMaxLength(1000)
+                .HasColumnName("reset_token");
+            entity.Property(e => e.ResetTokenExpires)
+                .HasColumnType("datetime")
+                .HasColumnName("reset_token_expires");
+            entity.Property(e => e.SystemRole)
+                .HasMaxLength(20)
+                .HasColumnName("system_role")
+                .HasConversion<string>();
+            entity.Property(e => e.Updated)
+                .HasColumnType("datetime")
+                .HasColumnName("updated");
             entity.Property(e => e.Username)
                 .HasMaxLength(50)
                 .HasColumnName("username");
+            entity.Property(e => e.VerificationToken)
+                .HasMaxLength(1000)
+                .HasColumnName("verification_token");
+            entity.Property(e => e.Verified)
+                .HasColumnType("datetime")
+                .HasColumnName("verified");
         });
 
         modelBuilder.Entity<UserRole>(entity =>
