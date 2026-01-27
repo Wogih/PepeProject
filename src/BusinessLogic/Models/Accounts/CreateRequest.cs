@@ -6,17 +6,11 @@ namespace BusinessLogic.Models.Accounts
     public class CreateRequest
     {
         [Required]
-        public string Title { get; set; }
-
-        [Required]
-        public string FirstName { get; set; }
-
-        [Required]
-        public string LastName { get; set; }
+        public string Username { get; set; }
 
         [Required]
         [EnumDataType(typeof(SystemRole))]
-        public string Role { get; set; }
+        public string SystemRole { get; set; }
 
         [Required]
         [EmailAddress]
