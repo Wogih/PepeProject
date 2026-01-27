@@ -376,10 +376,6 @@ public partial class MisContext : DbContext
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime")
                 .HasColumnName("created");
-            entity.Property(e => e.CreatedAt)
-                .HasDefaultValueSql("(getdate())")
-                .HasColumnType("datetime")
-                .HasColumnName("created_at");
             entity.Property(e => e.Email)
                 .HasMaxLength(100)
                 .HasColumnName("email");

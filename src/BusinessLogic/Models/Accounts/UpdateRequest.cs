@@ -11,9 +11,6 @@ namespace BusinessLogic.Models.Accounts
         private string _role;
         private string _email;
 
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-
         [EnumDataType(typeof(SystemRole))]
         public string Role
         {
