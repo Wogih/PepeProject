@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/bash
 LOG_FILE="$(dirname "$0")/pre-commit.log"
 STATUS_FILE="$(dirname "$0")/pre-commit.status"
 

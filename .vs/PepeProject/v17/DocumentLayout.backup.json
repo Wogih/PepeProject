@@ -1,65 +1,105 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "G:\\\u0421\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\PepeProject\\",
+  "WorkspaceRootPath": "D:\\\u0421\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\PepeProject\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DFE46086-56FB-4D39-8CF1-6F0DBF0B1D1A}|src\\DataAccess\\DataAccess.csproj|g:\\\u0441\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\pepeproject\\src\\dataaccess\\migrations\\miscontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DFE46086-56FB-4D39-8CF1-6F0DBF0B1D1A}|src\\DataAccess\\DataAccess.csproj|solutionrelative:src\\dataaccess\\migrations\\miscontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FA04C35A-A54C-4479-8E8A-510A5CA463AB}|src\\BusinessLogic\\BusinessLogic.csproj|d:\\\u0441\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\pepeproject\\src\\businesslogic\\models\\accounts\\verifyemailrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FA04C35A-A54C-4479-8E8A-510A5CA463AB}|src\\BusinessLogic\\BusinessLogic.csproj|solutionrelative:src\\businesslogic\\models\\accounts\\verifyemailrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AB633CB2-938E-4CFA-8A20-DA6D848FB025}|src\\Domain\\Domain.csproj|g:\\\u0441\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\pepeproject\\src\\domain\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{FA04C35A-A54C-4479-8E8A-510A5CA463AB}|src\\BusinessLogic\\BusinessLogic.csproj|d:\\\u0441\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\pepeproject\\src\\businesslogic\\models\\accounts\\validateresettokenrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FA04C35A-A54C-4479-8E8A-510A5CA463AB}|src\\BusinessLogic\\BusinessLogic.csproj|solutionrelative:src\\businesslogic\\models\\accounts\\validateresettokenrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FA04C35A-A54C-4479-8E8A-510A5CA463AB}|src\\BusinessLogic\\BusinessLogic.csproj|d:\\\u0441\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\pepeproject\\src\\businesslogic\\models\\accounts\\updaterequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FA04C35A-A54C-4479-8E8A-510A5CA463AB}|src\\BusinessLogic\\BusinessLogic.csproj|solutionrelative:src\\businesslogic\\models\\accounts\\updaterequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FA04C35A-A54C-4479-8E8A-510A5CA463AB}|src\\BusinessLogic\\BusinessLogic.csproj|d:\\\u0441\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\pepeproject\\src\\businesslogic\\models\\accounts\\revoketokenrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FA04C35A-A54C-4479-8E8A-510A5CA463AB}|src\\BusinessLogic\\BusinessLogic.csproj|solutionrelative:src\\businesslogic\\models\\accounts\\revoketokenrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FA04C35A-A54C-4479-8E8A-510A5CA463AB}|src\\BusinessLogic\\BusinessLogic.csproj|d:\\\u0441\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\pepeproject\\src\\businesslogic\\models\\accounts\\resetpasswordrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FA04C35A-A54C-4479-8E8A-510A5CA463AB}|src\\BusinessLogic\\BusinessLogic.csproj|solutionrelative:src\\businesslogic\\models\\accounts\\resetpasswordrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FA04C35A-A54C-4479-8E8A-510A5CA463AB}|src\\BusinessLogic\\BusinessLogic.csproj|d:\\\u0441\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\pepeproject\\src\\businesslogic\\models\\accounts\\registerrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FA04C35A-A54C-4479-8E8A-510A5CA463AB}|src\\BusinessLogic\\BusinessLogic.csproj|solutionrelative:src\\businesslogic\\models\\accounts\\registerrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FA04C35A-A54C-4479-8E8A-510A5CA463AB}|src\\BusinessLogic\\BusinessLogic.csproj|d:\\\u0441\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\pepeproject\\src\\businesslogic\\models\\accounts\\forgotpasswordrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FA04C35A-A54C-4479-8E8A-510A5CA463AB}|src\\BusinessLogic\\BusinessLogic.csproj|solutionrelative:src\\businesslogic\\models\\accounts\\forgotpasswordrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FA04C35A-A54C-4479-8E8A-510A5CA463AB}|src\\BusinessLogic\\BusinessLogic.csproj|d:\\\u0441\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\pepeproject\\src\\businesslogic\\models\\accounts\\authenticateresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FA04C35A-A54C-4479-8E8A-510A5CA463AB}|src\\BusinessLogic\\BusinessLogic.csproj|solutionrelative:src\\businesslogic\\models\\accounts\\authenticateresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FA04C35A-A54C-4479-8E8A-510A5CA463AB}|src\\BusinessLogic\\BusinessLogic.csproj|d:\\\u0441\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\pepeproject\\src\\businesslogic\\models\\accounts\\authenticaterequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FA04C35A-A54C-4479-8E8A-510A5CA463AB}|src\\BusinessLogic\\BusinessLogic.csproj|solutionrelative:src\\businesslogic\\models\\accounts\\authenticaterequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FA04C35A-A54C-4479-8E8A-510A5CA463AB}|src\\BusinessLogic\\BusinessLogic.csproj|d:\\\u0441\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\pepeproject\\src\\businesslogic\\models\\accounts\\accountresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FA04C35A-A54C-4479-8E8A-510A5CA463AB}|src\\BusinessLogic\\BusinessLogic.csproj|solutionrelative:src\\businesslogic\\models\\accounts\\accountresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB633CB2-938E-4CFA-8A20-DA6D848FB025}|src\\Domain\\Domain.csproj|d:\\\u0441\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\pepeproject\\src\\domain\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AB633CB2-938E-4CFA-8A20-DA6D848FB025}|src\\Domain\\Domain.csproj|solutionrelative:src\\domain\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{697C5CBA-77A6-4D0A-92ED-6757575BCC42}|src\\Server\\PepeProject.csproj|g:\\\u0441\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\pepeproject\\src\\server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{DFE46086-56FB-4D39-8CF1-6F0DBF0B1D1A}|src\\DataAccess\\DataAccess.csproj|d:\\\u0441\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\pepeproject\\src\\dataaccess\\migrations\\miscontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFE46086-56FB-4D39-8CF1-6F0DBF0B1D1A}|src\\DataAccess\\DataAccess.csproj|solutionrelative:src\\dataaccess\\migrations\\miscontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{697C5CBA-77A6-4D0A-92ED-6757575BCC42}|src\\Server\\PepeProject.csproj|d:\\\u0441\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\pepeproject\\src\\server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{697C5CBA-77A6-4D0A-92ED-6757575BCC42}|src\\Server\\PepeProject.csproj|solutionrelative:src\\server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AB633CB2-938E-4CFA-8A20-DA6D848FB025}|src\\Domain\\Domain.csproj|g:\\\u0441\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\pepeproject\\src\\domain\\models\\userrole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{AB633CB2-938E-4CFA-8A20-DA6D848FB025}|src\\Domain\\Domain.csproj|d:\\\u0441\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\pepeproject\\src\\domain\\models\\userrole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AB633CB2-938E-4CFA-8A20-DA6D848FB025}|src\\Domain\\Domain.csproj|solutionrelative:src\\domain\\models\\userrole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AB633CB2-938E-4CFA-8A20-DA6D848FB025}|src\\Domain\\Domain.csproj|g:\\\u0441\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\pepeproject\\src\\domain\\models\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{AB633CB2-938E-4CFA-8A20-DA6D848FB025}|src\\Domain\\Domain.csproj|d:\\\u0441\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\pepeproject\\src\\domain\\models\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AB633CB2-938E-4CFA-8A20-DA6D848FB025}|src\\Domain\\Domain.csproj|solutionrelative:src\\domain\\models\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FA04C35A-A54C-4479-8E8A-510A5CA463AB}|src\\BusinessLogic\\BusinessLogic.csproj|g:\\\u0441\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\pepeproject\\src\\businesslogic\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{FA04C35A-A54C-4479-8E8A-510A5CA463AB}|src\\BusinessLogic\\BusinessLogic.csproj|d:\\\u0441\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\pepeproject\\src\\businesslogic\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FA04C35A-A54C-4479-8E8A-510A5CA463AB}|src\\BusinessLogic\\BusinessLogic.csproj|solutionrelative:src\\businesslogic\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{697C5CBA-77A6-4D0A-92ED-6757575BCC42}|src\\Server\\PepeProject.csproj|g:\\\u0441\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\pepeproject\\src\\server\\controllers\\accountscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{697C5CBA-77A6-4D0A-92ED-6757575BCC42}|src\\Server\\PepeProject.csproj|d:\\\u0441\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\pepeproject\\src\\server\\controllers\\accountscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{697C5CBA-77A6-4D0A-92ED-6757575BCC42}|src\\Server\\PepeProject.csproj|solutionrelative:src\\server\\controllers\\accountscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{697C5CBA-77A6-4D0A-92ED-6757575BCC42}|src\\Server\\PepeProject.csproj|g:\\\u0441\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\pepeproject\\src\\server\\controllers\\basecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{697C5CBA-77A6-4D0A-92ED-6757575BCC42}|src\\Server\\PepeProject.csproj|d:\\\u0441\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\pepeproject\\src\\server\\controllers\\basecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{697C5CBA-77A6-4D0A-92ED-6757575BCC42}|src\\Server\\PepeProject.csproj|solutionrelative:src\\server\\controllers\\basecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{697C5CBA-77A6-4D0A-92ED-6757575BCC42}|src\\Server\\PepeProject.csproj|g:\\\u0441\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\pepeproject\\src\\server\\authorization\\jwtutils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{697C5CBA-77A6-4D0A-92ED-6757575BCC42}|src\\Server\\PepeProject.csproj|d:\\\u0441\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\pepeproject\\src\\server\\authorization\\jwtutils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{697C5CBA-77A6-4D0A-92ED-6757575BCC42}|src\\Server\\PepeProject.csproj|solutionrelative:src\\server\\authorization\\jwtutils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AB633CB2-938E-4CFA-8A20-DA6D848FB025}|src\\Domain\\Domain.csproj|g:\\\u0441\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\pepeproject\\src\\domain\\entites\\refreshtoken.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{AB633CB2-938E-4CFA-8A20-DA6D848FB025}|src\\Domain\\Domain.csproj|d:\\\u0441\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\pepeproject\\src\\domain\\entites\\refreshtoken.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AB633CB2-938E-4CFA-8A20-DA6D848FB025}|src\\Domain\\Domain.csproj|solutionrelative:src\\domain\\entites\\refreshtoken.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{697C5CBA-77A6-4D0A-92ED-6757575BCC42}|src\\Server\\PepeProject.csproj|g:\\\u0441\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\pepeproject\\src\\server\\authorization\\allowanonymousattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{697C5CBA-77A6-4D0A-92ED-6757575BCC42}|src\\Server\\PepeProject.csproj|d:\\\u0441\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\pepeproject\\src\\server\\authorization\\allowanonymousattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{697C5CBA-77A6-4D0A-92ED-6757575BCC42}|src\\Server\\PepeProject.csproj|solutionrelative:src\\server\\authorization\\allowanonymousattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{697C5CBA-77A6-4D0A-92ED-6757575BCC42}|src\\Server\\PepeProject.csproj|g:\\\u0441\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\pepeproject\\src\\server\\authorization\\jwtmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{697C5CBA-77A6-4D0A-92ED-6757575BCC42}|src\\Server\\PepeProject.csproj|d:\\\u0441\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\pepeproject\\src\\server\\authorization\\jwtmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{697C5CBA-77A6-4D0A-92ED-6757575BCC42}|src\\Server\\PepeProject.csproj|solutionrelative:src\\server\\authorization\\jwtmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{697C5CBA-77A6-4D0A-92ED-6757575BCC42}|src\\Server\\PepeProject.csproj|g:\\\u0441\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\pepeproject\\src\\server\\authorization\\authorizeattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{697C5CBA-77A6-4D0A-92ED-6757575BCC42}|src\\Server\\PepeProject.csproj|d:\\\u0441\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\pepeproject\\src\\server\\authorization\\authorizeattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{697C5CBA-77A6-4D0A-92ED-6757575BCC42}|src\\Server\\PepeProject.csproj|solutionrelative:src\\server\\authorization\\authorizeattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{697C5CBA-77A6-4D0A-92ED-6757575BCC42}|src\\Server\\PepeProject.csproj|g:\\\u0441\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\pepeproject\\src\\server\\helpers\\errorhandlermiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{697C5CBA-77A6-4D0A-92ED-6757575BCC42}|src\\Server\\PepeProject.csproj|d:\\\u0441\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\pepeproject\\src\\server\\helpers\\errorhandlermiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{697C5CBA-77A6-4D0A-92ED-6757575BCC42}|src\\Server\\PepeProject.csproj|solutionrelative:src\\server\\helpers\\errorhandlermiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FA04C35A-A54C-4479-8E8A-510A5CA463AB}|src\\BusinessLogic\\BusinessLogic.csproj|g:\\\u0441\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\pepeproject\\src\\businesslogic\\services\\accountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{FA04C35A-A54C-4479-8E8A-510A5CA463AB}|src\\BusinessLogic\\BusinessLogic.csproj|d:\\\u0441\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\pepeproject\\src\\businesslogic\\services\\accountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FA04C35A-A54C-4479-8E8A-510A5CA463AB}|src\\BusinessLogic\\BusinessLogic.csproj|solutionrelative:src\\businesslogic\\services\\accountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -70,8 +110,20 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 6,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{25f7e850-ffa1-11d0-b63f-00a0c922e851}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{873151d0-cf2e-48cc-b4bf-ad0394f6a3c3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
@@ -81,25 +133,159 @@
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e506b91c-c606-466a-90a9-123d1d1e12b3}"
+            },
+            {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "VerifyEmailRequest.cs",
+              "DocumentMoniker": "D:\\\u0421\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\PepeProject\\src\\BusinessLogic\\Models\\Accounts\\VerifyEmailRequest.cs",
+              "RelativeDocumentMoniker": "src\\BusinessLogic\\Models\\Accounts\\VerifyEmailRequest.cs",
+              "ToolTip": "D:\\\u0421\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\PepeProject\\src\\BusinessLogic\\Models\\Accounts\\VerifyEmailRequest.cs",
+              "RelativeToolTip": "src\\BusinessLogic\\Models\\Accounts\\VerifyEmailRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-27T07:57:10.193Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ValidateResetTokenRequest.cs",
+              "DocumentMoniker": "D:\\\u0421\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\PepeProject\\src\\BusinessLogic\\Models\\Accounts\\ValidateResetTokenRequest.cs",
+              "RelativeDocumentMoniker": "src\\BusinessLogic\\Models\\Accounts\\ValidateResetTokenRequest.cs",
+              "ToolTip": "D:\\\u0421\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\PepeProject\\src\\BusinessLogic\\Models\\Accounts\\ValidateResetTokenRequest.cs",
+              "RelativeToolTip": "src\\BusinessLogic\\Models\\Accounts\\ValidateResetTokenRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-27T07:57:08.81Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UpdateRequest.cs",
+              "DocumentMoniker": "D:\\\u0421\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\PepeProject\\src\\BusinessLogic\\Models\\Accounts\\UpdateRequest.cs",
+              "RelativeDocumentMoniker": "src\\BusinessLogic\\Models\\Accounts\\UpdateRequest.cs",
+              "ToolTip": "D:\\\u0421\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\PepeProject\\src\\BusinessLogic\\Models\\Accounts\\UpdateRequest.cs",
+              "RelativeToolTip": "src\\BusinessLogic\\Models\\Accounts\\UpdateRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-27T07:57:07.436Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "RevokeTokenRequest.cs",
+              "DocumentMoniker": "D:\\\u0421\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\PepeProject\\src\\BusinessLogic\\Models\\Accounts\\RevokeTokenRequest.cs",
+              "RelativeDocumentMoniker": "src\\BusinessLogic\\Models\\Accounts\\RevokeTokenRequest.cs",
+              "ToolTip": "D:\\\u0421\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\PepeProject\\src\\BusinessLogic\\Models\\Accounts\\RevokeTokenRequest.cs",
+              "RelativeToolTip": "src\\BusinessLogic\\Models\\Accounts\\RevokeTokenRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-27T07:57:05.872Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ResetPasswordRequest.cs",
+              "DocumentMoniker": "D:\\\u0421\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\PepeProject\\src\\BusinessLogic\\Models\\Accounts\\ResetPasswordRequest.cs",
+              "RelativeDocumentMoniker": "src\\BusinessLogic\\Models\\Accounts\\ResetPasswordRequest.cs",
+              "ToolTip": "D:\\\u0421\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\PepeProject\\src\\BusinessLogic\\Models\\Accounts\\ResetPasswordRequest.cs",
+              "RelativeToolTip": "src\\BusinessLogic\\Models\\Accounts\\ResetPasswordRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-27T07:57:04.75Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "RegisterRequest.cs",
+              "DocumentMoniker": "D:\\\u0421\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\PepeProject\\src\\BusinessLogic\\Models\\Accounts\\RegisterRequest.cs",
+              "RelativeDocumentMoniker": "src\\BusinessLogic\\Models\\Accounts\\RegisterRequest.cs",
+              "ToolTip": "D:\\\u0421\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\PepeProject\\src\\BusinessLogic\\Models\\Accounts\\RegisterRequest.cs",
+              "RelativeToolTip": "src\\BusinessLogic\\Models\\Accounts\\RegisterRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-27T07:56:58.109Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ForgotPasswordRequest.cs",
+              "DocumentMoniker": "D:\\\u0421\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\PepeProject\\src\\BusinessLogic\\Models\\Accounts\\ForgotPasswordRequest.cs",
+              "RelativeDocumentMoniker": "src\\BusinessLogic\\Models\\Accounts\\ForgotPasswordRequest.cs",
+              "ToolTip": "D:\\\u0421\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\PepeProject\\src\\BusinessLogic\\Models\\Accounts\\ForgotPasswordRequest.cs",
+              "RelativeToolTip": "src\\BusinessLogic\\Models\\Accounts\\ForgotPasswordRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-27T07:56:57.138Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AuthenticateResponse.cs",
+              "DocumentMoniker": "D:\\\u0421\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\PepeProject\\src\\BusinessLogic\\Models\\Accounts\\AuthenticateResponse.cs",
+              "RelativeDocumentMoniker": "src\\BusinessLogic\\Models\\Accounts\\AuthenticateResponse.cs",
+              "ToolTip": "D:\\\u0421\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\PepeProject\\src\\BusinessLogic\\Models\\Accounts\\AuthenticateResponse.cs",
+              "RelativeToolTip": "src\\BusinessLogic\\Models\\Accounts\\AuthenticateResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-27T07:56:48.947Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AuthenticateRequest.cs",
+              "DocumentMoniker": "D:\\\u0421\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\PepeProject\\src\\BusinessLogic\\Models\\Accounts\\AuthenticateRequest.cs",
+              "RelativeDocumentMoniker": "src\\BusinessLogic\\Models\\Accounts\\AuthenticateRequest.cs",
+              "ToolTip": "D:\\\u0421\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\PepeProject\\src\\BusinessLogic\\Models\\Accounts\\AuthenticateRequest.cs",
+              "RelativeToolTip": "src\\BusinessLogic\\Models\\Accounts\\AuthenticateRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-27T07:56:46.357Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AccountResponse.cs",
+              "DocumentMoniker": "D:\\\u0421\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\PepeProject\\src\\BusinessLogic\\Models\\Accounts\\AccountResponse.cs",
+              "RelativeDocumentMoniker": "src\\BusinessLogic\\Models\\Accounts\\AccountResponse.cs",
+              "ToolTip": "D:\\\u0421\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\PepeProject\\src\\BusinessLogic\\Models\\Accounts\\AccountResponse.cs",
+              "RelativeToolTip": "src\\BusinessLogic\\Models\\Accounts\\AccountResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-27T07:56:24.579Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "MisContextModelSnapshot.cs",
-              "DocumentMoniker": "G:\\\u0421\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\PepeProject\\src\\DataAccess\\Migrations\\MisContextModelSnapshot.cs",
+              "DocumentMoniker": "D:\\\u0421\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\PepeProject\\src\\DataAccess\\Migrations\\MisContextModelSnapshot.cs",
               "RelativeDocumentMoniker": "src\\DataAccess\\Migrations\\MisContextModelSnapshot.cs",
-              "ToolTip": "G:\\\u0421\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\PepeProject\\src\\DataAccess\\Migrations\\MisContextModelSnapshot.cs",
+              "ToolTip": "D:\\\u0421\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\PepeProject\\src\\DataAccess\\Migrations\\MisContextModelSnapshot.cs",
               "RelativeToolTip": "src\\DataAccess\\Migrations\\MisContextModelSnapshot.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAIwBsAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-25T19:52:25.986Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 13,
               "Title": "UserRole.cs",
-              "DocumentMoniker": "G:\\\u0421\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\PepeProject\\src\\Domain\\Models\\UserRole.cs",
+              "DocumentMoniker": "D:\\\u0421\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\PepeProject\\src\\Domain\\Models\\UserRole.cs",
               "RelativeDocumentMoniker": "src\\Domain\\Models\\UserRole.cs",
-              "ToolTip": "G:\\\u0421\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\PepeProject\\src\\Domain\\Models\\UserRole.cs",
+              "ToolTip": "D:\\\u0421\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\PepeProject\\src\\Domain\\Models\\UserRole.cs",
               "RelativeToolTip": "src\\Domain\\Models\\UserRole.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -107,11 +293,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 14,
               "Title": "Role.cs",
-              "DocumentMoniker": "G:\\\u0421\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\PepeProject\\src\\Domain\\Models\\Role.cs",
+              "DocumentMoniker": "D:\\\u0421\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\PepeProject\\src\\Domain\\Models\\Role.cs",
               "RelativeDocumentMoniker": "src\\Domain\\Models\\Role.cs",
-              "ToolTip": "G:\\\u0421\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\PepeProject\\src\\Domain\\Models\\Role.cs",
+              "ToolTip": "D:\\\u0421\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\PepeProject\\src\\Domain\\Models\\Role.cs",
               "RelativeToolTip": "src\\Domain\\Models\\Role.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -119,24 +305,24 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 10,
               "Title": "User.cs",
-              "DocumentMoniker": "G:\\\u0421\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\PepeProject\\src\\Domain\\Models\\User.cs",
+              "DocumentMoniker": "D:\\\u0421\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\PepeProject\\src\\Domain\\Models\\User.cs",
               "RelativeDocumentMoniker": "src\\Domain\\Models\\User.cs",
-              "ToolTip": "G:\\\u0421\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\PepeProject\\src\\Domain\\Models\\User.cs",
+              "ToolTip": "D:\\\u0421\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\PepeProject\\src\\Domain\\Models\\User.cs",
               "RelativeToolTip": "src\\Domain\\Models\\User.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAgwCwAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-25T18:57:02.107Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 15,
               "Title": "UserService.cs",
-              "DocumentMoniker": "G:\\\u0421\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\PepeProject\\src\\BusinessLogic\\Services\\UserService.cs",
+              "DocumentMoniker": "D:\\\u0421\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\PepeProject\\src\\BusinessLogic\\Services\\UserService.cs",
               "RelativeDocumentMoniker": "src\\BusinessLogic\\Services\\UserService.cs",
-              "ToolTip": "G:\\\u0421\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\PepeProject\\src\\BusinessLogic\\Services\\UserService.cs",
+              "ToolTip": "D:\\\u0421\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\PepeProject\\src\\BusinessLogic\\Services\\UserService.cs",
               "RelativeToolTip": "src\\BusinessLogic\\Services\\UserService.cs",
               "ViewState": "AgIAAAoAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -144,24 +330,23 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 12,
               "Title": "Program.cs",
-              "DocumentMoniker": "G:\\\u0421\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\PepeProject\\src\\Server\\Program.cs",
+              "DocumentMoniker": "D:\\\u0421\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\PepeProject\\src\\Server\\Program.cs",
               "RelativeDocumentMoniker": "src\\Server\\Program.cs",
-              "ToolTip": "G:\\\u0421\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\PepeProject\\src\\Server\\Program.cs",
+              "ToolTip": "D:\\\u0421\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\PepeProject\\src\\Server\\Program.cs",
               "RelativeToolTip": "src\\Server\\Program.cs",
               "ViewState": "AgIAAHMAAAAAAAAAAAAmwIgAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-25T17:21:00.999Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-25T17:21:00.999Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 17,
               "Title": "BaseController.cs",
-              "DocumentMoniker": "G:\\\u0421\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\PepeProject\\src\\Server\\Controllers\\BaseController.cs",
+              "DocumentMoniker": "D:\\\u0421\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\PepeProject\\src\\Server\\Controllers\\BaseController.cs",
               "RelativeDocumentMoniker": "src\\Server\\Controllers\\BaseController.cs",
-              "ToolTip": "G:\\\u0421\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\PepeProject\\src\\Server\\Controllers\\BaseController.cs",
+              "ToolTip": "D:\\\u0421\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\PepeProject\\src\\Server\\Controllers\\BaseController.cs",
               "RelativeToolTip": "src\\Server\\Controllers\\BaseController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -169,11 +354,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 16,
               "Title": "AccountsController.cs",
-              "DocumentMoniker": "G:\\\u0421\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\PepeProject\\src\\Server\\Controllers\\AccountsController.cs",
+              "DocumentMoniker": "D:\\\u0421\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\PepeProject\\src\\Server\\Controllers\\AccountsController.cs",
               "RelativeDocumentMoniker": "src\\Server\\Controllers\\AccountsController.cs",
-              "ToolTip": "G:\\\u0421\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\PepeProject\\src\\Server\\Controllers\\AccountsController.cs",
+              "ToolTip": "D:\\\u0421\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\PepeProject\\src\\Server\\Controllers\\AccountsController.cs",
               "RelativeToolTip": "src\\Server\\Controllers\\AccountsController.cs",
               "ViewState": "AgIAAIcAAAAAAAAAAAAAwJoAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -181,11 +366,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 19,
               "Title": "RefreshToken.cs",
-              "DocumentMoniker": "G:\\\u0421\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\PepeProject\\src\\Domain\\Entites\\RefreshToken.cs",
+              "DocumentMoniker": "D:\\\u0421\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\PepeProject\\src\\Domain\\Entites\\RefreshToken.cs",
               "RelativeDocumentMoniker": "src\\Domain\\Entites\\RefreshToken.cs",
-              "ToolTip": "G:\\\u0421\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\PepeProject\\src\\Domain\\Entites\\RefreshToken.cs",
+              "ToolTip": "D:\\\u0421\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\PepeProject\\src\\Domain\\Entites\\RefreshToken.cs",
               "RelativeToolTip": "src\\Domain\\Entites\\RefreshToken.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwAkAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -193,11 +378,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 18,
               "Title": "JwtUtils.cs",
-              "DocumentMoniker": "G:\\\u0421\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\PepeProject\\src\\Server\\Authorization\\JwtUtils.cs",
+              "DocumentMoniker": "D:\\\u0421\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\PepeProject\\src\\Server\\Authorization\\JwtUtils.cs",
               "RelativeDocumentMoniker": "src\\Server\\Authorization\\JwtUtils.cs",
-              "ToolTip": "G:\\\u0421\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\PepeProject\\src\\Server\\Authorization\\JwtUtils.cs",
+              "ToolTip": "D:\\\u0421\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\PepeProject\\src\\Server\\Authorization\\JwtUtils.cs",
               "RelativeToolTip": "src\\Server\\Authorization\\JwtUtils.cs",
               "ViewState": "AgIAAB4AAAAAAAAAAAAuwC4AAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -205,11 +390,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 21,
               "Title": "JwtMiddleware.cs",
-              "DocumentMoniker": "G:\\\u0421\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\PepeProject\\src\\Server\\Authorization\\JwtMiddleware.cs",
+              "DocumentMoniker": "D:\\\u0421\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\PepeProject\\src\\Server\\Authorization\\JwtMiddleware.cs",
               "RelativeDocumentMoniker": "src\\Server\\Authorization\\JwtMiddleware.cs",
-              "ToolTip": "G:\\\u0421\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\PepeProject\\src\\Server\\Authorization\\JwtMiddleware.cs",
+              "ToolTip": "D:\\\u0421\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\PepeProject\\src\\Server\\Authorization\\JwtMiddleware.cs",
               "RelativeToolTip": "src\\Server\\Authorization\\JwtMiddleware.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -217,11 +402,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 22,
               "Title": "AuthorizeAttribute.cs",
-              "DocumentMoniker": "G:\\\u0421\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\PepeProject\\src\\Server\\Authorization\\AuthorizeAttribute.cs",
+              "DocumentMoniker": "D:\\\u0421\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\PepeProject\\src\\Server\\Authorization\\AuthorizeAttribute.cs",
               "RelativeDocumentMoniker": "src\\Server\\Authorization\\AuthorizeAttribute.cs",
-              "ToolTip": "G:\\\u0421\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\PepeProject\\src\\Server\\Authorization\\AuthorizeAttribute.cs",
+              "ToolTip": "D:\\\u0421\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\PepeProject\\src\\Server\\Authorization\\AuthorizeAttribute.cs",
               "RelativeToolTip": "src\\Server\\Authorization\\AuthorizeAttribute.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAAAA4AAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -229,11 +414,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 20,
               "Title": "AllowAnonymousAttribute.cs",
-              "DocumentMoniker": "G:\\\u0421\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\PepeProject\\src\\Server\\Authorization\\AllowAnonymousAttribute.cs",
+              "DocumentMoniker": "D:\\\u0421\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\PepeProject\\src\\Server\\Authorization\\AllowAnonymousAttribute.cs",
               "RelativeDocumentMoniker": "src\\Server\\Authorization\\AllowAnonymousAttribute.cs",
-              "ToolTip": "G:\\\u0421\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\PepeProject\\src\\Server\\Authorization\\AllowAnonymousAttribute.cs",
+              "ToolTip": "D:\\\u0421\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\PepeProject\\src\\Server\\Authorization\\AllowAnonymousAttribute.cs",
               "RelativeToolTip": "src\\Server\\Authorization\\AllowAnonymousAttribute.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -241,11 +426,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 23,
               "Title": "ErrorHandlerMiddleware.cs",
-              "DocumentMoniker": "G:\\\u0421\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\PepeProject\\src\\Server\\Helpers\\ErrorHandlerMiddleware.cs",
+              "DocumentMoniker": "D:\\\u0421\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\PepeProject\\src\\Server\\Helpers\\ErrorHandlerMiddleware.cs",
               "RelativeDocumentMoniker": "src\\Server\\Helpers\\ErrorHandlerMiddleware.cs",
-              "ToolTip": "G:\\\u0421\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\PepeProject\\src\\Server\\Helpers\\ErrorHandlerMiddleware.cs",
+              "ToolTip": "D:\\\u0421\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\PepeProject\\src\\Server\\Helpers\\ErrorHandlerMiddleware.cs",
               "RelativeToolTip": "src\\Server\\Helpers\\ErrorHandlerMiddleware.cs",
               "ViewState": "AgIAABUAAAAAAAAAAAAowC0AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -253,15 +438,43 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 24,
               "Title": "AccountService.cs",
-              "DocumentMoniker": "G:\\\u0421\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\PepeProject\\src\\BusinessLogic\\Services\\AccountService.cs",
+              "DocumentMoniker": "D:\\\u0421\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\PepeProject\\src\\BusinessLogic\\Services\\AccountService.cs",
               "RelativeDocumentMoniker": "src\\BusinessLogic\\Services\\AccountService.cs",
-              "ToolTip": "G:\\\u0421\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\PepeProject\\src\\BusinessLogic\\Services\\AccountService.cs",
+              "ToolTip": "D:\\\u0421\u043E\u043F\u0440\u043E\u0432\u043E\u0436\u0434\u0435\u043D\u0438\u0435 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445 \u0441\u0438\u0441\u0442\u0435\u043C\\PepeProject\\src\\BusinessLogic\\Services\\AccountService.cs",
               "RelativeToolTip": "src\\BusinessLogic\\Services\\AccountService.cs",
               "ViewState": "AgIAABABAAAAAAAAAAAqwCcBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-25T14:30:59.984Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 309,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{74946827-37a0-11d2-a273-00c04f8ef4ff}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 309,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
             }
           ]
         }
